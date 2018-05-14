@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Cuwor\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Paradice.432602986.00" t="ExcludeRecursive" />
+    <e p="E:\0LL_PROJECTS\Unity_Projects\Paradice" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets\FromAssetStore" t="Include">
+        <e p="read me.txt" t="Include" />
+      </e>
+      <e p="Assets\Homeworks" t="Include">
+        <e p="Homework1.txt" t="Include" />
+      </e>
+      <e p="Assets\Lessons" t="Include">
+        <e p="Transform" t="Include">
+          <e p="CubeCreator.cs" t="Include" />
+          <e p="LessonTransform.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Paradice.sln" t="IncludeFlat" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
+    </e>
+  </component>
+</project>
