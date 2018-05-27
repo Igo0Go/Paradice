@@ -4,9 +4,10 @@
     <list default="true" id="a9612a98-9012-48fc-a11d-a9369da6f48b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Paradice/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Paradice/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Paradice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Paradice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lessons/Transform/CubeCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lessons/Transform/CubeCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Viktoria/Homework1/Materials/stone_texture165.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Viktoria/Homework1/Materials/stone_texture165.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Viktoria/Homework1/Transform.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Viktoria/Homework1/Transform.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,13 +16,72 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Paradice" />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="LessonTransform.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="MouseMove2.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="932">
-              <caret line="180" column="80" selection-start-line="180" selection-start-column="80" selection-end-line="180" selection-end-column="80" />
+            <state relative-caret-position="210">
+              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+              <folding>
+                <marker date="1527440676666" expanded="false" signature="6:78" ph="..." />
+                <marker date="1527440676666" expanded="true" signature="119:554" ph="{...}" />
+                <marker date="1527440676666" expanded="true" signature="302:309" ph="{...}" />
+                <marker date="1527440676666" expanded="true" signature="327:552" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bullet.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+              <folding>
+                <marker date="1527455002187" expanded="false" signature="6:78" ph="..." />
+                <marker date="1527455002187" expanded="true" signature="115:458" ph="{...}" />
+                <marker date="1527455002187" expanded="true" signature="156:246" ph="{...}" />
+                <marker date="1527455002187" expanded="true" signature="265:272" ph="{...}" />
+                <marker date="1527455002187" expanded="true" signature="318:456" ph="{...}" />
+                <marker date="1527455002187" expanded="true" signature="368:453" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ObjectMove.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+              <folding>
+                <marker date="1527448918857" expanded="true" signature="6:120" ph="..." />
+                <marker date="1527448918857" expanded="true" signature="161:820" ph="{...}" />
+                <marker date="1527448918857" expanded="true" signature="345:408" ph="{...}" />
+                <marker date="1527448918857" expanded="true" signature="426:478" ph="{...}" />
+                <marker date="1527448918857" expanded="true" signature="507:711" ph="{...}" />
+                <marker date="1527448918857" expanded="true" signature="725:818" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FallingTarget.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+              <folding>
+                <marker date="1527455007598" expanded="false" signature="6:78" ph="..." />
+                <marker date="1527455007598" expanded="true" signature="122:288" ph="{...}" />
+                <marker date="1527455007598" expanded="true" signature="164:204" ph="{...}" />
+                <marker date="1527455007598" expanded="true" signature="223:230" ph="{...}" />
+                <marker date="1527455007598" expanded="true" signature="257:286" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -33,13 +93,25 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Lessons/Transform/CubeCreator.cs" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Viktoria/Homework1/Les1.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs" />
         <option value="$PROJECT_DIR$/Assets/Lessons/Transform/CubeCreator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Viktoria/Homework1/Les1.cs" />
+        <option value="$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs" />
+        <option value="$PROJECT_DIR$/Assets/Viktoria/Homework2/Shoot.cs" />
+        <option value="$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs" />
+        <option value="$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs" />
       </list>
     </option>
   </component>
@@ -50,16 +122,19 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="25" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="676" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator currentView="UnityExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="SolutionExplorer">
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
+      </pane>
       <pane id="Scratches" />
       <pane id="UnityExplorer">
         <subPane>
@@ -68,14 +143,32 @@
               <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="Paradice" type="483dac07:UnityExplorerNode$Root" />
             </path>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Paradice" type="483dac07:UnityExplorerNode$Root" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Paradice" type="483dac07:UnityExplorerNode$Root" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Paradice" type="483dac07:UnityExplorerNode$Root" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="ad4990d8:FileSystemViewPaneBase$ProjectViewPaneTreeStructure$createRoot$1" />
+              <item name="Paradice" type="483dac07:UnityExplorerNode$Root" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+              <item name="" type="1045f7f1:UnityExplorerNode" />
+            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-hidden-items" value="false" />
-      </pane>
-      <pane id="SolutionExplorer">
-        <option name="show-file-system" value="false" />
-        <option name="show-all-items" value="false" />
       </pane>
     </panes>
   </component>
@@ -112,11 +205,13 @@
       <option name="presentableId" value="Default" />
       <updated>1526305959779</updated>
       <workItem from="1526305982775" duration="3231000" />
+      <workItem from="1527093487524" duration="2476000" />
+      <workItem from="1527429621134" duration="14965000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3231000" />
+    <option name="totallyTimeSpent" value="20672000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -128,31 +223,32 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="right" id="Errors In Solution" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Unit Tests" order="7" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966443" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Unity" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49834985" visible="true" weight="0.16187595" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" order="7" />
+      <window_info id="Structure" order="1" sideWeight="0.50165015" side_tool="true" weight="0.25340393" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Favorites" order="2" sideWeight="0.50165015" side_tool="true" weight="0.25340393" />
+      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="NuGet" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +258,26 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="30" lean-forward="true" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2700">
+          <caret line="180" column="80" selection-start-line="180" selection-start-column="80" selection-end-line="180" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/CubeCreator.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -172,8 +287,100 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="932">
+        <state relative-caret-position="2700">
           <caret line="180" column="80" selection-start-line="180" selection-start-column="80" selection-end-line="180" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework1/Les1.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding>
+            <marker date="1527430028813" expanded="false" signature="6:78" ph="..." />
+            <marker date="1527430028813" expanded="true" signature="105:128" ph="{...}" />
+            <marker date="1527430028813" expanded="true" signature="170:1378" ph="{...}" />
+            <marker date="1527430028813" expanded="true" signature="392:464" ph="{...}" />
+            <marker date="1527430028813" expanded="true" signature="483:598" ph="{...}" />
+            <marker date="1527430028813" expanded="true" signature="498:595" ph="{...}" />
+            <marker date="1527430028813" expanded="true" signature="567:591" ph="{...}" />
+            <marker date="1527430028813" expanded="true" signature="699:1376" ph="{...}" />
+            <marker date="1527430028813" expanded="true" signature="742:1128" ph="{...}" />
+            <marker date="1527430028813" expanded="true" signature="758:964" ph="{...}" />
+            <marker date="1527430028813" expanded="true" signature="1039:1103" ph="{...}" />
+            <marker date="1527430028813" expanded="true" signature="1173:1373" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Shoot.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding>
+            <marker date="1527448918857" expanded="true" signature="6:120" ph="..." />
+            <marker date="1527448918857" expanded="true" signature="161:820" ph="{...}" />
+            <marker date="1527448918857" expanded="true" signature="345:408" ph="{...}" />
+            <marker date="1527448918857" expanded="true" signature="426:478" ph="{...}" />
+            <marker date="1527448918857" expanded="true" signature="507:711" ph="{...}" />
+            <marker date="1527448918857" expanded="true" signature="725:818" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
+          <folding>
+            <marker date="1527455002187" expanded="false" signature="6:78" ph="..." />
+            <marker date="1527455002187" expanded="true" signature="115:458" ph="{...}" />
+            <marker date="1527455002187" expanded="true" signature="156:246" ph="{...}" />
+            <marker date="1527455002187" expanded="true" signature="265:272" ph="{...}" />
+            <marker date="1527455002187" expanded="true" signature="318:456" ph="{...}" />
+            <marker date="1527455002187" expanded="true" signature="368:453" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding>
+            <marker date="1527455007598" expanded="false" signature="6:78" ph="..." />
+            <marker date="1527455007598" expanded="true" signature="122:288" ph="{...}" />
+            <marker date="1527455007598" expanded="true" signature="164:204" ph="{...}" />
+            <marker date="1527455007598" expanded="true" signature="223:230" ph="{...}" />
+            <marker date="1527455007598" expanded="true" signature="257:286" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+          <folding>
+            <marker date="1527440676666" expanded="false" signature="6:78" ph="..." />
+            <marker date="1527440676666" expanded="true" signature="119:554" ph="{...}" />
+            <marker date="1527440676666" expanded="true" signature="302:309" ph="{...}" />
+            <marker date="1527440676666" expanded="true" signature="327:552" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

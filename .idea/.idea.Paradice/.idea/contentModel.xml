@@ -1,12 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\MyProgram\Unity\projects\Eden_Project\Paradice" t="IncludeFlat">
+    <e p="C:\Users\Виктория\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Paradice.-277694668.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Виктория\Paradice" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="FromAssetStore" t="Include">
+          <e p="read me.txt" t="Include" />
+        </e>
+        <e p="Homeworks" t="Include">
+          <e p="Homework1.txt" t="Include" />
+          <e p="Homework2.txt" t="Include" />
+        </e>
+        <e p="Lessons" t="Include">
+          <e p="GetComponent" t="Include">
+            <e p="ConveyorMainScript.cs" t="Include" />
+            <e p="ConveyorScript.cs" t="Include" />
+            <e p="PlayerCameraScript.cs" t="Include" />
+          </e>
+          <e p="Input" t="Include">
+            <e p="DroidScript.cs" t="Include" />
+          </e>
+          <e p="Transform" t="Include">
+            <e p="CubeCreator.cs" t="Include" />
+            <e p="LessonTransform.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Semen" t="Include">
+          <e p="Homework 1" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Creator.cs" t="Include" />
+              <e p="Move.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Homework 2" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="GunShoot.cs" t="Include" />
+              <e p="MouseRotate.cs" t="Include" />
+              <e p="Target.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Viktoria" t="Include">
+          <e p="Homework1" t="Include">
+            <e p="Les1.cs" t="Include" />
+            <e p="PrefabsCreator.cs" t="Include" />
+          </e>
+          <e p="Homework2" t="Include">
+            <e p="Bullet.cs" t="Include" />
+            <e p="FallingTarget.cs" t="Include" />
+            <e p="MouseMove2.cs" t="Include" />
+            <e p="ObjectMove.cs" t="Include" />
+          </e>
+        </e>
+      </e>
       <e p="Library" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
       <e p="Paradice.sln" t="IncludeFlat" />
-      <e p="Temp" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
     </e>
-    <e p="C:\Users\ИгоGo.LAPTOP-V4S5R4B7\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Paradice.-654974098.00" t="ExcludeRecursive" />
   </component>
 </project>

@@ -8,6 +8,7 @@ TagManager:
   - SavePoint
   - JumpPoint
   - CameraChenger
+  - FallingTarget
   layers:
   - Default
   - TransparentFX

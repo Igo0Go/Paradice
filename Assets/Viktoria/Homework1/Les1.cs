@@ -8,7 +8,7 @@ public enum MovementType1
 	Smooth
 }
 
-public class Transform : MonoBehaviour
+public class MyTransform : MonoBehaviour
 {
 	public List<GameObject> GOs;
 
