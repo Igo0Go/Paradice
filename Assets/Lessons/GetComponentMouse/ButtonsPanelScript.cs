@@ -2,18 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IMechanic
-{
-    void Activate();
-    void Stop(bool value);
-    void Action();
-}
+public class ButtonsPanelScript : MonoBehaviour {
 
-public class PlayerCameraScript : MonoBehaviour {
+    public GameObject Mech;
 
-
+	// Use this for initialization
 	void Start () {
-		
+		//sdaas
 	}
 	
 	// Update is called once per frame

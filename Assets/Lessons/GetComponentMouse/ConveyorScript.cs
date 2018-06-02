@@ -20,7 +20,6 @@ public class ConveyorScript : MonoBehaviour {
         _moveVector = _target - _start;
 	}
 	
-	
 	void Update () {
 
         if(Reset)
