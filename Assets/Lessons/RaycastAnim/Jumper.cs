@@ -19,7 +19,7 @@ public class Jumper : MonoBehaviour {
     private const float k_GroundRayLength = 1f;
     private AsyncOperation _async;
 
-    // Use this for initialization
+ 
     void Start () {
         Cursor.lockState = CursorLockMode.Locked;
         _rigidbody = GetComponent<Rigidbody>();
@@ -37,14 +37,14 @@ public class Jumper : MonoBehaviour {
         MoveJumper();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Physics.Raycast(transform.position, -Vector3.up, k_GroundRayLength, ~(1 << 8)))
+            if (Physics.Raycast(transform.position, Vector3.down, k_GroundRayLength, ~(1 << 8)))
             {
                 Jump();
             }
         }
         else
         {
-            _rigidbody.AddForce(Vector3.down* ForceGrav, ForceMode.Force);
+            _rigidbody.AddForce(Vector3.down * ForceGrav, ForceMode.Force);
 
         }
         CamMove();
@@ -78,7 +78,7 @@ public class Jumper : MonoBehaviour {
 
     private void CamMove()
     {
-        Cam.transform.position = new Vector3(_standartCamPos.x, transform.position.y+_camOfset.y, _standartCamPos.z);
+        Cam.transform.position = new Vector3(_standartCamPos.x, transform.position.y + _camOfset.y, _standartCamPos.z);
     }
 
     private void OnTriggerEnter(Collider other)
