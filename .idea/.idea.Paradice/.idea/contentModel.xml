@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Виктория\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Paradice.-277694668.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Виктория\Paradice" t="IncludeRecursive">
+    <e p="C:\Users\Cuwor\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Paradice.432602986.00" t="ExcludeRecursive" />
+    <e p="E:\0LL_PROJECTS\Unity_Projects\Paradice" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="CameraChenged.cs" t="Include" />
+        <e p="ControlWork" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="GetBullets.cs" t="Include" />
+            <e p="GunDestroy.cs" t="Include" />
+            <e p="LookAndShoot.cs" t="Include" />
+            <e p="PlayerMove.cs" t="Include" />
+            <e p="Weapon.cs" t="Include" />
+          </e>
+        </e>
         <e p="FromAssetStore" t="Include">
           <e p="read me.txt" t="Include" />
         </e>
@@ -13,13 +23,32 @@
           <e p="Homework2.txt" t="Include" />
         </e>
         <e p="Lessons" t="Include">
-          <e p="GetComponent" t="Include">
+          <e p="GetComponentMouse" t="Include">
+            <e p="ButtonScript.cs" t="Include" />
+            <e p="ButtonsPanelScript.cs" t="Include" />
             <e p="ConveyorMainScript.cs" t="Include" />
             <e p="ConveyorScript.cs" t="Include" />
+            <e p="IMechanic.cs" t="Include" />
             <e p="PlayerCameraScript.cs" t="Include" />
+            <e p="SuperCube.cs" t="Include" />
           </e>
           <e p="Input" t="Include">
             <e p="DroidScript.cs" t="Include" />
+          </e>
+          <e p="RaycastAnim" t="Include">
+            <e p="ConsoleScript.cs" t="Include" />
+            <e p="Jumper.cs" t="Include" />
+          </e>
+          <e p="RaycastParticle" t="Include">
+            <e p="ForceReactor.cs" t="Include" />
+            <e p="ForceScript.cs" t="Include" />
+          </e>
+          <e p="SilaArtema" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="FORCER.cs" t="Include" />
+              <e p="ForceReaction.cs" t="Include" />
+              <e p="MouseLook.cs" t="Include" />
+            </e>
           </e>
           <e p="Transform" t="Include">
             <e p="CubeCreator.cs" t="Include" />
@@ -53,6 +82,7 @@
             <e p="ObjectMove.cs" t="Include" />
           </e>
         </e>
+        <e p="Wheel.cs" t="Include" />
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
