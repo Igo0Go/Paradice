@@ -156,7 +156,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: DeadZoneUP
-  m_Speed: 0.01
+  m_Speed: 0.011
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101734474989915006}

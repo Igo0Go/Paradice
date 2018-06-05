@@ -9,6 +9,8 @@ TagManager:
   - JumpPoint
   - CameraChenger
   - FallingTarget
+  - Target
+  - Force
   layers:
   - Default
   - TransparentFX
