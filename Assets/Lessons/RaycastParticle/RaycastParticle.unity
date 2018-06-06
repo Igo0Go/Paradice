@@ -456,6 +456,10 @@ Prefab:
       propertyPath: near clip plane
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 1215321516341012, guid: 1d93df8d937c9034dac6addf92cf9dff, type: 2}
+      propertyPath: m_Name
+      value: Weapon
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1d93df8d937c9034dac6addf92cf9dff, type: 2}
   m_IsPrefabParent: 0
