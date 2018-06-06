@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RelictusController : MonoBehaviour {
 
-    public List<ObjectForMission> Keys;//sad
+    public List<ObjectForMission> Keys;
     public List<GameObject> KeysImages;
     public Animator Connect;
     public Text InterfaceText;
@@ -17,12 +17,19 @@ public class RelictusController : MonoBehaviour {
     public float MinVert;
     public int EnergySpeed;
 
-    private CharacterController _controller;
+    private CharacterController _controller;//sad
     private Vector3 _moveVector;
     private float _rotationX;
     private float _rotationY;
 
+    //гравитация
+    private float _grav;
+    private float _jumpSpeed;
+    private float _vertSpeed;
+
     void Start () {
+        _grav = -9.8f;
+        _jumpSpeed = 5;
         MissionText.text = "Доберитесь до медецинского отсека";
         InterfaceText.text = string.Empty;
         Energy.value = 100;
@@ -37,7 +44,7 @@ public class RelictusController : MonoBehaviour {
     }
 	
 	void Update () {
-        Energy.value -= 0.001f * EnergySpeed*Time.deltaTime;
+        Energy.value -= EnergySpeed*Time.deltaTime;
         RelictusMove();
         Rotate();
         MaxSpeed();
@@ -45,17 +52,28 @@ public class RelictusController : MonoBehaviour {
 
     private void RelictusMove()
     {
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        var x = Input.GetAxis("Horizontal");
+        var z = Input.GetAxis("Vertical");
+        _moveVector = transform.right * x + transform.forward * z;
+        if (_controller.isGrounded)
         {
-            var x = Input.GetAxis("Horizontal");
-            var z = Input.GetAxis("Vertical");
-            _moveVector = transform.right * x + transform.forward * z;
-            _moveVector = new Vector3(_moveVector.x, 0, _moveVector.z);
-            if (_moveVector != Vector3.zero)
+            _vertSpeed = 0;
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                EnergySpeed = 5;
-                _controller.Move(_moveVector.normalized * Speed * Time.fixedDeltaTime);
+                _vertSpeed = _jumpSpeed;
+                Energy.value -= 1;//sad
             }
+        }
+        _vertSpeed += _grav * Time.deltaTime;
+        _moveVector = new Vector3(_moveVector.x * Speed * Time.fixedDeltaTime, _vertSpeed * Time.deltaTime, _moveVector.z * Speed * Time.fixedDeltaTime);
+        if (_moveVector != Vector3.zero)
+        {
+            EnergySpeed = 3;
+            _controller.Move(_moveVector);
+        }
+        else
+        {
+            EnergySpeed = 0;
         }
     }
 
@@ -69,7 +87,11 @@ public class RelictusController : MonoBehaviour {
             _rotationY += v * RotateSpeed;
             _rotationY = Mathf.Clamp(_rotationY, MinVert, MaxVert);
             transform.localEulerAngles = new Vector3(-_rotationY, _rotationX, 0);
-            EnergySpeed = 3;
+            EnergySpeed = 1;
+        }
+        else
+        {
+            EnergySpeed = 0;
         }
     }
 
@@ -94,7 +116,7 @@ public class RelictusController : MonoBehaviour {
         {
             Connect.SetBool("Active", false);
             other.GetComponent<Animator>().SetBool("Active", false);
-            EnergySpeed = 1;
+            EnergySpeed = 0;
         }
         if (other.tag.Equals("Target"))
         {
@@ -110,6 +132,7 @@ public class RelictusController : MonoBehaviour {
             if(Input.GetKeyDown(KeyCode.E))
             {
                 other.GetComponent<ObjectReactor>().Action(this);
+                Energy.value -= 2;
             }
         }
     }
@@ -145,12 +168,12 @@ public class RelictusController : MonoBehaviour {
         if(Input.GetKey(KeyCode.LeftShift))
         {
             Speed = 8;
-            EnergySpeed = 10;
+            EnergySpeed = 5;
         }
         else
         {
             Speed = 4;
-            EnergySpeed = 1;
+            EnergySpeed = 0;
         }
     }
 }
