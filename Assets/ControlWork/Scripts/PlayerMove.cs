@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-
 	public float Speed;
 	public float RotationSpeed;
 	
@@ -12,19 +11,20 @@ public class PlayerMove : MonoBehaviour
 	private float _y;
 	private Rigidbody _body;
 	private Vector3 _moveVector;
+	private float horizontal;
+	private float vertical;
 	
 	void Start ()
 	{
-		Speed = 1f;
+		Speed = 1.5f;
 		RotationSpeed = 1f;
 		_body = GetComponent<Rigidbody>();
 	}
 	
-	
 	void Update () {
 		_y = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * RotationSpeed;
 		_x += Input.GetAxis("Mouse Y") * Speed;
-		_x = Mathf.Clamp (_x, -90, 80);
+		_x = Mathf.Clamp(_x, -90, 80);
 		transform.localEulerAngles = new Vector3(-_x, _y, 0);
 
 		if (Input.GetKeyDown(KeyCode.Escape))
@@ -35,7 +35,7 @@ public class PlayerMove : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+		/*if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
 		{
 			if (Input.GetKey(KeyCode.LeftShift))
 			{
@@ -54,6 +54,10 @@ public class PlayerMove : MonoBehaviour
 			_body.AddForce(transform.forward * _forward * Speed, ForceMode.VelocityChange);
 			_body.AddForce(transform.right * _right * Speed, ForceMode.VelocityChange);
 			
+			horizontal = Input.GetAxis("Horizontal");
+			vertical = Input.GetAxis("Vertical");
+			_body.AddForce(((transform.right * horizontal) + (transform.forward * vertical)) * Speed);
+			
 			if(Mathf.Abs(_body.velocity.x) > Speed)
 			{
 				_body.velocity = new Vector3(Mathf.Sign(_body.velocity.x) * Speed, _body.velocity.y, _body.velocity.z);
@@ -66,6 +70,20 @@ public class PlayerMove : MonoBehaviour
 		else
 		{
 			_body.drag = 20;
+		}*/
+		
+		if (Input.GetKey(KeyCode.LeftShift))
+		{
+			Speed = 2;
 		}
+		else
+		{
+			Speed = 1;
+		}
+		
+		horizontal = Input.GetAxis("Horizontal");
+		vertical = Input.GetAxis("Vertical");
+		_body.AddForce(((transform.right * horizontal) + (transform.forward * vertical)) * Speed);
 	}
+
 }

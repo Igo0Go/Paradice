@@ -6,17 +6,15 @@ using UnityEngine;
 
 public class LookAndShoot : MonoBehaviour
 {
-
 	public List<GameObject> Guns;
 	public GameObject Bullet;
 	public GameObject Position;
 	public float Force;
 	
-	
-	void Start () {
-		
+	void Start ()
+	{
+		Force = 1.0f;
 	}
-	
 	
 	void Update () {
 		
@@ -34,13 +32,14 @@ public class LookAndShoot : MonoBehaviour
 				}
 			}
 
-			
 			if (this.tag.Equals("Shoot") || this.tag.Equals("LookAndShoot"))
 			{
-				
 				foreach (var _gun in Guns)
 				{
+					/*GameObject bul = Instantiate(Bullet, other.transform.position, other.transform.rotation);
+					bul.GetComponent<Rigidbody>().AddForce(transform.forward * Force, ForceMode.Impulse);*/
 					
+					// Просто слишком неадекватно стреляет. И зачем это вообше нужно было?..
 				}
 			}
 		}

@@ -23,5 +23,7 @@ public class GetBullets : MonoBehaviour {
 		{
 			other.GetComponent<Weapon>().NumberOfBullets = 30;
 		}
+		
+		//Destroy(gameObject);
 	}
 }

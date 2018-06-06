@@ -27,14 +27,15 @@ public class Weapon : MonoBehaviour
 				NumberOfBullets = 30;
 				break;
 		}
-
+		
 		_shoot = false;
 	}
 	
-	void Update () {
-		if (Input.GetMouseButtonDown(0))
+	void Update () 
+	{
+		if (Input.GetMouseButtonDown(1))
 		{
-			if (NumberOfBullets > 0 && _shoot && tag == _weaponType)
+			if (NumberOfBullets > 0 && _shoot && CompareTag(_weaponType))
 			{
 				GameObject bullet = Instantiate(Bullet, Target.transform.position, Target.transform.rotation);
 				bullet.GetComponent<Rigidbody>().AddForce(bullet.transform.forward.normalized * Force, ForceMode.Impulse);
@@ -46,13 +47,18 @@ public class Weapon : MonoBehaviour
 	private void OnMouseDown()
 	{
 		transform.SetParent(Player.transform);
-		transform.position = Position.transform.position;
-		transform.rotation = Position.transform.rotation;
-		Cursor.visible = false;
-		Cursor.lockState = CursorLockMode.Locked;
-		_shoot = true;
+        transform.position = Position.transform.position;
+        transform.rotation = Position.transform.rotation;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        _shoot = true;
 		_weaponType = tag;
 	}
 
+	private void OnGUI()
+	{
+		if(_shoot)
+			GUI.Label(new Rect(10,10,100,100), "Патроны: " + NumberOfBullets);
+	}
 	
 }
