@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Lessons.SilaArtema
@@ -6,9 +7,17 @@ namespace Lessons.SilaArtema
     public class ForceReaction : MonoBehaviour
     {
         private Rigidbody _rb;
-        public GameObject Player;
         public float attractionForce = 10;
         public int Forcing = 1;
+        public ParticleSystem Particle;
+        public ParticleSystem.EmissionModule BoostAvailable;
+
+
+        void Awake()
+        {
+            BoostAvailable = Particle.emission;
+            BoostAvailable.enabled = false;
+        }
 
         // Use this for initialization
         void Start()
@@ -38,9 +47,11 @@ namespace Lessons.SilaArtema
                 //Debug.Log("currentDistance = " + currentDistance.ToString());
 
                 // Прикладываем к телу силу, направленную в сторону точки
-                GetComponent<Rigidbody>().AddForce((target - transform.position).normalized * attractionForce, ForceMode.Acceleration);
+                GetComponent<Rigidbody>().AddForce((target - transform.position).normalized * attractionForce,
+                    ForceMode.Acceleration);
                 // Прикладываем к телу силу противодействия, направленную в противоположную сторону, с величиной, пропорциональной пройденному пути (чем меньше осталось до точки, тем выше сила)
-                GetComponent<Rigidbody>().AddForce(-(target - transform.position).normalized * attractionForce * percentage * 2,
+                GetComponent<Rigidbody>().AddForce(
+                    -(target - transform.position).normalized * attractionForce * percentage * 2,
                     ForceMode.Acceleration);
 
                 yield return new WaitForFixedUpdate();
@@ -53,10 +64,10 @@ namespace Lessons.SilaArtema
             Debug.Log("End of coroutine");
             yield return null;
         }
-        
+
         private void OnTriggerStay(Collider other)
         {
-            if(other.tag.Equals("Force"))
+            if (other.tag.Equals("Force"))
             {
                 Vector3 forceVector = Vector3.zero;
                 if (Input.GetKeyDown(KeyCode.Q))
@@ -64,14 +75,27 @@ namespace Lessons.SilaArtema
 //                    StopAllCoroutines();
 //                    StartCoroutine(MoveToTarget(Player.transform.position));.
                     forceVector = other.transform.up;
+                    BoostAvailable.enabled = true;
+
+                    Invoke("Poff", 0.5f);
                 }
+
                 if (Input.GetKeyDown(KeyCode.E))
                 {
 //                    StopAllCoroutines();
-                    forceVector = -other.transform.up; 
+                    forceVector = -other.transform.up;
+                    BoostAvailable.enabled = true;
+
+                    Invoke("Poff", 0.5f);
                 }
-                _rb.AddForce(forceVector.normalized*Forcing,ForceMode.Impulse);
+
+                _rb.AddForce(forceVector.normalized * Forcing, ForceMode.Impulse);
             }
+        }
+
+        void Poff()
+        {
+            BoostAvailable.enabled = false;
         }
     }
 }

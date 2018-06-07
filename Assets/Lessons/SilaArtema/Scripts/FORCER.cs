@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Lessons.SilaArtema;
 using UnityEngine;
 
 public class FORCER : MonoBehaviour
@@ -17,7 +18,7 @@ public class FORCER : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1))
         {
-            Physics.Raycast(transform.position, transform.forward, out hit, RayDistance, ~(1<<9));
+            Physics.Raycast(transform.position, transform.forward, out hit, RayDistance, ~(1 << 9));
 
             if (hit.rigidbody)
             {
@@ -41,6 +42,7 @@ public class FORCER : MonoBehaviour
             {
                 hit.rigidbody.velocity =
                     (offset.position - (hit.transform.position + hit.rigidbody.centerOfMass)) * grabPower;
+                hit.rigidbody.GetComponent<ForceReaction>().BoostAvailable.enabled = true;
             }
         }
 
@@ -50,7 +52,13 @@ public class FORCER : MonoBehaviour
             {
                 hit.rigidbody.velocity = transform.forward * throwPower;
                 Throw = false;
+                Invoke("Poff", 0.5f);
             }
         }
+        
+    }
+    void Poff()
+    {
+        hit.rigidbody.GetComponent<ForceReaction>().BoostAvailable.enabled = false;
     }
 }

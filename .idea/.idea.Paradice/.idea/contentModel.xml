@@ -8,6 +8,7 @@
         <e p="CameraChenged.cs" t="Include" />
         <e p="ControlWork" t="Include">
           <e p="Scripts" t="Include">
+            <e p="BulletDestroy.cs" t="Include" />
             <e p="GetBullets.cs" t="Include" />
             <e p="GunDestroy.cs" t="Include" />
             <e p="LookAndShoot.cs" t="Include" />
@@ -48,11 +49,17 @@
               <e p="FORCER.cs" t="Include" />
               <e p="ForceReaction.cs" t="Include" />
               <e p="MouseLook.cs" t="Include" />
+              <e p="Mover.cs" t="Include" />
             </e>
           </e>
           <e p="Transform" t="Include">
             <e p="CubeCreator.cs" t="Include" />
             <e p="LessonTransform.cs" t="Include" />
+          </e>
+          <e p="UICam" t="Include">
+            <e p="MissionPoint.cs" t="Include" />
+            <e p="ObjectReactor.cs" t="Include" />
+            <e p="RelictusController.cs" t="Include" />
           </e>
         </e>
         <e p="Semen" t="Include">

@@ -6,6 +6,7 @@ Temp/
 Library/
 Builds/
 Assets/IgoGo/
+Assets/IgoGo.meta
 .idea/
  
 # ===================================== #
@@ -22,6 +23,7 @@ obj/
 *.user
 *.unityproj
 *.booproj
+
  
 # ============ #
 # OS generated #
