@@ -17,8 +17,10 @@ public class RelictusController : MonoBehaviour {
     public float MinVert;
     public int EnergySpeed;
 
-    private CharacterController _controller;//sad
+    private CharacterController _controller;
+    private Animator _anim;
     private Vector3 _moveVector;
+    private float _speed;
     private float _rotationX;
     private float _rotationY;
 
@@ -28,6 +30,8 @@ public class RelictusController : MonoBehaviour {
     private float _vertSpeed;
 
     void Start () {
+        _speed = Speed;
+        _anim = GetComponent<Animator>();
         _grav = -9.8f;
         _jumpSpeed = 5;
         MissionText.text = "Доберитесь до медецинского отсека";
@@ -55,6 +59,7 @@ public class RelictusController : MonoBehaviour {
         var x = Input.GetAxis("Horizontal");
         var z = Input.GetAxis("Vertical");
         _moveVector = transform.right * x + transform.forward * z;
+        _anim.SetFloat("RunWalk", Mathf.Clamp(_moveVector.magnitude * _speed/10, 0, 1));
         if (_controller.isGrounded)
         {
             _vertSpeed = 0;
@@ -65,7 +70,7 @@ public class RelictusController : MonoBehaviour {
             }
         }
         _vertSpeed += _grav * Time.deltaTime;
-        _moveVector = new Vector3(_moveVector.x * Speed * Time.fixedDeltaTime, _vertSpeed * Time.deltaTime, _moveVector.z * Speed * Time.fixedDeltaTime);
+        _moveVector = new Vector3(_moveVector.x * _speed * Time.fixedDeltaTime, _vertSpeed * Time.deltaTime, _moveVector.z * _speed * Time.fixedDeltaTime);
         if (_moveVector != Vector3.zero)
         {
             EnergySpeed = 3;
@@ -108,7 +113,7 @@ public class RelictusController : MonoBehaviour {
             Connect.SetBool("Active", true);
             InterfaceText.text = other.GetComponent<ObjectReactor>().Message;
         }
-    }
+    }//sad
 
     private void OnTriggerExit(Collider other)
     {
@@ -167,12 +172,12 @@ public class RelictusController : MonoBehaviour {
     {
         if(Input.GetKey(KeyCode.LeftShift))
         {
-            Speed = 8;
+            _speed = Speed*2;
             EnergySpeed = 5;
         }
         else
         {
-            Speed = 4;
+            _speed = Speed;
             EnergySpeed = 0;
         }
     }
