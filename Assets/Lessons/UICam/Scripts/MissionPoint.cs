@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MissionPoint : MonoBehaviour {
 
+    public string Message;
+
 	// Use this for initialization
 	void Start () {
 		

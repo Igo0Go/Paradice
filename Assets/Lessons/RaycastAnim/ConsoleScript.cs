@@ -15,7 +15,6 @@ public class ConsoleScript : MonoBehaviour {
     private float _time;
     private float _connectTime;
 
-	// Use this for initialization
 	void Start () {
         _connectTime = 1;
         _position = Pos.transform.position;
