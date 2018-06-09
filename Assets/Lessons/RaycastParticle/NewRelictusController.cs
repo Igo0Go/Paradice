@@ -9,6 +9,7 @@ public class NewRelictusController : MonoBehaviour {
     public List<GameObject> KeysImages;
     public Animator Connect;
     public Animator Cam;
+    public Animator EnergyFill;
     public Text InterfaceText;
     public Text MissionText;
     public Slider Energy;
@@ -17,7 +18,7 @@ public class NewRelictusController : MonoBehaviour {
     public float RotateSpeed;
     public float MaxVert;
     public float MinVert;
-    public int EnergySpeed;
+    public bool Reload;
 
     private CharacterController _controller;
     private Animator _anim;
@@ -26,6 +27,9 @@ public class NewRelictusController : MonoBehaviour {
     private float _speed;
     private float _rotationX;
     private float _rotationY;
+    private float _energyTime;
+    private int _energySpeed;
+    private bool _reforce;
     private Vector3 _savePosition;
 
     //гравитация
@@ -35,6 +39,8 @@ public class NewRelictusController : MonoBehaviour {
 
     void Start()
     {
+        _reforce = false;
+        Reload = false;
         Health.value = 100;
         _savePosition = transform.position;
         _speed = Speed;
@@ -44,7 +50,7 @@ public class NewRelictusController : MonoBehaviour {
         MissionText.text = "Доберитесь до медецинского отсека";
         InterfaceText.text = string.Empty;
         Energy.value = 100;
-        EnergySpeed = 1;
+        _energySpeed = 2;
         _controller = GetComponent<CharacterController>();
         _rotationX = _rotationY = 0;
         Cursor.lockState = CursorLockMode.Locked;
@@ -52,8 +58,8 @@ public class NewRelictusController : MonoBehaviour {
         {
             c.SetActive(false);
         }
-        _async = EditorSceneManager.LoadSceneAsync("RaycastParticle");
-        _async.allowSceneActivation = false;
+        //_async = EditorSceneManager.LoadSceneAsync("RaycastParticle");
+        //_async.allowSceneActivation = false;
     }
 
     void Update()
@@ -63,9 +69,8 @@ public class NewRelictusController : MonoBehaviour {
             Health.value -= 30;
         }
 
+        Shoot();
 
-        Energy.value += EnergySpeed * Time.deltaTime;
-        
         if (Health.value > 0)
         {
             RelictusMove();
@@ -76,6 +81,7 @@ public class NewRelictusController : MonoBehaviour {
         {
             FatlError();
         }
+        EnergyChanger();
     }
 
     private void RelictusMove()
@@ -83,13 +89,14 @@ public class NewRelictusController : MonoBehaviour {
         var x = Input.GetAxis("Horizontal");
         var z = Input.GetAxis("Vertical");
         _moveVector = transform.right * x + transform.forward * z;
-        _anim.SetFloat("RunWalk", Mathf.Clamp(_moveVector.magnitude * _speed / 24, 0, 1));
+        _anim.SetFloat("RunWalk", Mathf.Clamp(_moveVector.magnitude * _speed / (Speed*2), 0, 1));
         if (_controller.isGrounded)
         {
             _vertSpeed = 0;
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 _vertSpeed = _jumpSpeed;
+                _energyTime = 0;
             }
         }
         _vertSpeed += _grav * Time.deltaTime;
@@ -112,18 +119,19 @@ public class NewRelictusController : MonoBehaviour {
             transform.localEulerAngles = new Vector3(-_rotationY, _rotationX, 0);
         }
     }
-    //sad
+    
     private void MaxSpeed()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && !_reforce)
         {
             _speed = Speed * 2;
-            EnergySpeed = -3;
+            _energySpeed = -5;
+            _energyTime = 0;
         }
         else
         {
             _speed = Speed;
-            EnergySpeed = 1;
+            _energySpeed = 1;
         }
     }
 
@@ -189,5 +197,41 @@ public class NewRelictusController : MonoBehaviour {
         }
     }
 
-  
+    private void Shoot()
+    {
+        if(Input.GetMouseButtonDown(0) && !Reload && Energy.value > 15)
+        {
+            Energy.value -= 12;
+            _anim.SetFloat("RunWalk", 0);
+            _anim.SetTrigger("Shoot");
+            _energyTime = 0;
+        }
+    } 
+
+    private void EnergyChanger()
+    {
+        if(_energyTime < 2)
+        {
+            _energyTime +=  Time.deltaTime;
+            Energy.value += _energySpeed * Time.deltaTime;
+        }
+        else
+        {
+            _energySpeed = 7;
+            Energy.value += _energySpeed * Time.deltaTime;
+        }
+        if(Energy.value == 0)
+        {
+            _reforce = true;
+        }
+        else if(Energy.value <= 15)
+        {
+            EnergyFill.SetBool("Fill", false);
+        }
+        else
+        {
+            _reforce = false;
+            EnergyFill.SetBool("Fill", true);
+        }
+    }
 }
