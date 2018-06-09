@@ -73,7 +73,7 @@ public class RelictusController : MonoBehaviour {
         var x = Input.GetAxis("Horizontal");
         var z = Input.GetAxis("Vertical");
         _moveVector = transform.right * x + transform.forward * z;
-        _anim.SetFloat("RunWalk", Mathf.Clamp(_moveVector.magnitude * _speed / 20, 0, 1));
+        _anim.SetFloat("RunWalk", Mathf.Clamp(_moveVector.magnitude * _speed / 24, 0, 1));
         if (_controller.isGrounded)
         {
             _vertSpeed = 0;
@@ -172,9 +172,12 @@ public class RelictusController : MonoBehaviour {
         }
         if (other.tag.Equals("Look"))
         {
-            InterfaceText.text = "Чтобы использовать консоль, нажмите E";
-            Connect.SetBool("Active", true);
-            _anim.SetTrigger("Connect");
+            if(other.GetComponent<NewConsoleScript>().Connect)
+            {
+                InterfaceText.text = "Чтобы использовать консоль, нажмите E";
+                Connect.SetBool("Active", true);
+                _anim.SetTrigger("Connect");
+            }
         }
         if (other.tag.Equals("Shoot"))
         {
@@ -227,7 +230,7 @@ public class RelictusController : MonoBehaviour {
         }
         if (other.tag.Equals("Look"))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && other.GetComponent<NewConsoleScript>().Connect)
             {
                 other.GetComponent<NewConsoleScript>().Use();
                 Energy.value -= 3;
