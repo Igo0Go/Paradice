@@ -19,19 +19,19 @@ public class NewRelictusController : MonoBehaviour
     public float RotateSpeed;
     public float MaxVert;
     public float MinVert;
+    public float EnergyTime;
+    public int EnergySpeed;
     public bool Reload;
     public LineRenderer LineRenderer;
     public Transform GunEnd;
 
-    private CharacterController _controller;
     private Animator _anim;
+    private CharacterController _controller;
     private AsyncOperation _async;
     private Vector3 _moveVector;
     private float _speed;
     private float _rotationX;
     private float _rotationY;
-    private float _energyTime;
-    private int _energySpeed;
     private bool _reforce;
     private Vector3 _savePosition;
 
@@ -54,7 +54,7 @@ public class NewRelictusController : MonoBehaviour
         MissionText.text = "Доберитесь до медецинского отсека";
         InterfaceText.text = string.Empty;
         Energy.value = 100;
-        _energySpeed = 2;
+        EnergySpeed = 2;
         _controller = GetComponent<CharacterController>();
         _rotationX = _rotationY = 0;
         Cursor.lockState = CursorLockMode.Locked;
@@ -97,7 +97,7 @@ public class NewRelictusController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 _vertSpeed = _jumpSpeed;
-                _energyTime = 0;
+                EnergyTime = 0;
             }
         }
 
@@ -128,13 +128,13 @@ public class NewRelictusController : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift) && !_reforce)
         {
             _speed = Speed * 2;
-            _energySpeed = -5;
-            _energyTime = 0;
+            EnergySpeed = -5;
+            EnergyTime = 0;
         }
         else
         {
             _speed = Speed;
-            _energySpeed = 1;
+            EnergySpeed = 1;
         }
     }
 
@@ -143,7 +143,7 @@ public class NewRelictusController : MonoBehaviour
         _anim.SetTrigger("Fatal");
         Cursor.lockState = CursorLockMode.None;
     }
-
+    
     public void Retry()
     {
         _async.allowSceneActivation = true;
@@ -208,7 +208,7 @@ public class NewRelictusController : MonoBehaviour
             Energy.value -= 12;
             _anim.SetFloat("RunWalk", 0);
             _anim.SetTrigger("Shoot");
-            _energyTime = 0;
+            EnergyTime = 0;
             DrowShoot();
         }
     }
@@ -241,15 +241,15 @@ public class NewRelictusController : MonoBehaviour
 
     private void EnergyChanger()
     {
-        if (_energyTime < 2)
+        if (EnergyTime < 2)
         {
-            _energyTime += Time.deltaTime;
-            Energy.value += _energySpeed * Time.deltaTime;
+            EnergyTime += Time.deltaTime;
+            Energy.value += EnergySpeed * Time.deltaTime;
         }
         else
         {
-            _energySpeed = 7;
-            Energy.value += _energySpeed * Time.deltaTime;
+            EnergySpeed = 7;
+            Energy.value += EnergySpeed * Time.deltaTime;
         }
 
         if (Energy.value == 0)

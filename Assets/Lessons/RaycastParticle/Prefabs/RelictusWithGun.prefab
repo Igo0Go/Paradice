@@ -3524,7 +3524,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1234639121581918}
   m_LocalRotation: {x: -0.8849398, y: -0.0012524656, z: -0.0021926463, w: 0.46569872}
-  m_LocalPosition: {x: -0, y: -0.02, z: 0.001}
+  m_LocalPosition: {x: 0, y: -0.02, z: 0.001}
   m_LocalScale: {x: 0.51576996, y: 0.51576996, z: 0.5157699}
   m_Children:
   - {fileID: 4166937122077408}
@@ -6945,10 +6945,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e55e64355486ff346a4e52370aa9ec84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ForceZone: {fileID: 1667903873625272}
+  offset: {fileID: 4968039983910052}
   grabPower: 10
   throwPower: 10
   RayDistance: 3
-  offset: {fileID: 4968039983910052}
+  ForceType: 0
 --- !u!114 &114169720610756838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7490,6 +7492,8 @@ MonoBehaviour:
   RotateSpeed: 5
   MaxVert: 60
   MinVert: -45
+  EnergyTime: 0
+  EnergySpeed: 0
   Reload: 0
   LineRenderer: {fileID: 120313016815993078}
   GunEnd: {fileID: 4293426717069564}

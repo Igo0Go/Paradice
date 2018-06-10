@@ -8,7 +8,7 @@ namespace Lessons.SilaArtema
     {
         private Rigidbody _rb;
         public float attractionForce = 10;
-        public int Forcing = 1;
+        public float Forcing = 0.5f;
         public ParticleSystem Particle;
         public ParticleSystem.EmissionModule BoostAvailable;
 
@@ -65,31 +65,18 @@ namespace Lessons.SilaArtema
             yield return null;
         }
 
-        private void OnTriggerStay(Collider other)
+        public void UseForce(Vector3 forceVector, int type)
+        {
+            _rb.AddForce(forceVector.normalized * type * Forcing, ForceMode.Impulse);
+            BoostAvailable.enabled = true;
+            Invoke("Poff", 0.5f);
+        }
+
+        private void OnTriggerEnter(Collider other)
         {
             if (other.tag.Equals("Force"))
             {
-                Vector3 forceVector = Vector3.zero;
-                if (Input.GetKeyDown(KeyCode.Q))
-                {
-//                    StopAllCoroutines();
-//                    StartCoroutine(MoveToTarget(Player.transform.position));.
-                    forceVector = other.transform.up;
-                    BoostAvailable.enabled = true;
-
-                    Invoke("Poff", 0.5f);
-                }
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-//                    StopAllCoroutines();
-                    forceVector = -other.transform.up;
-                    BoostAvailable.enabled = true;
-
-                    Invoke("Poff", 0.5f);
-                }
-
-                _rb.AddForce(forceVector.normalized * Forcing, ForceMode.Impulse);
+                UseForce(other.transform.up, other.GetComponentInParent<FORCER>().ForceType);
             }
         }
 
