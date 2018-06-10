@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 
 public class Weapon : MonoBehaviour
 {
-	[HideInInspector]
+	
 	public byte NumberOfBullets;
 	public float Force;
 	public GameObject Target;
@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour
 
 	private bool _shoot;
 	private string _weaponType;
+
 	
 	void Start ()
 	{
@@ -30,10 +31,25 @@ public class Weapon : MonoBehaviour
 		
 		_shoot = false;
 	}
+
+	
 	
 	void Update () 
 	{
-		if (Input.GetMouseButtonDown(1))
+		if (NumberOfBullets == 0)
+		{
+			switch (_weaponType)
+			{
+				case "Pistol":
+					NumberOfBullets = 20;
+					break;
+				case "Rifle":
+					NumberOfBullets = 30;
+					break;
+			}
+		}
+		
+		if (Input.GetMouseButtonDown(0))
 		{
 			if (NumberOfBullets > 0 && _shoot && CompareTag(_weaponType))
 			{
@@ -44,15 +60,15 @@ public class Weapon : MonoBehaviour
 		}
 	}
 
-	private void OnMouseDown()
+	private void OnMouseDrag()
 	{
-		transform.SetParent(Player.transform);
-        transform.position = Position.transform.position;
-        transform.rotation = Position.transform.rotation;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        _shoot = true;
-		_weaponType = tag;
+			transform.SetParent(Player.transform);
+			transform.position = Position.transform.position;
+			transform.rotation = Position.transform.rotation;
+			Cursor.visible = false;
+			Cursor.lockState = CursorLockMode.Locked;
+			_shoot = true;
+			_weaponType = tag;
 	}
 
 	private void OnGUI()

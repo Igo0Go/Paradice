@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33225921747943960}
   - component: {fileID: 23768308854086706}
   - component: {fileID: 65222439638461292}
-  - component: {fileID: 114780138557462552}
   - component: {fileID: 95650182720904838}
+  - component: {fileID: 114196202486293882}
   m_Layer: 0
   m_Name: BulletsBox
   m_TagString: Untagged
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1496190432314246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.449318, y: 0.075, z: -20.479576}
+  m_LocalPosition: {x: 20.427, y: 0.678, z: -20.385}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children: []
   m_Father: {fileID: 0}
@@ -96,8 +96,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 5, z: 4}
-  m_Center: {x: 0, y: -1.75, z: 0}
+  m_Size: {x: 4, y: 4, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95650182720904838
 Animator:
   serializedVersion: 3
@@ -116,7 +116,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114780138557462552
+--- !u!114 &114196202486293882
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

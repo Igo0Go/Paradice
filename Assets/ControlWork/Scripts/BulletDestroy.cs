@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class BulletDestroy : MonoBehaviour {
 
-	// Понятия не имею, как со всеми этими ***** триггерами и кучей тэгов адекватно уничтожить эту ***** пулю
 	
-	void Start () {
-		
+	
+	void Start ()
+	{
+		StartCoroutine(DestroyMe());
 	}
 	
 	void Update (){
 		
 	}
-
-	private void OnTriggerEnter(Collider other)
-	{
-		
+	
+	
+	IEnumerator DestroyMe() {
+		yield return new WaitForSeconds(3f);
+		Destroy(this.gameObject);
 	}
+
+
 }

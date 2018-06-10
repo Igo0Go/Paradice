@@ -8,7 +8,7 @@ public class GunDestroy : MonoBehaviour
 	
 	void Start ()
 	{
-		_health = 2;
+		_health = 3;
 	}
 	
 	void Update () {
@@ -20,17 +20,11 @@ public class GunDestroy : MonoBehaviour
 		if (other.tag.Equals("Bullet"))
 		{
 			_health--;
-
+			Destroy(other.gameObject);
 			if (_health == 0)
 			{
 				Destroy(this.gameObject);
 			}
 		}
 	}
-
-	/*public void Shoot(GameObject target)
-	{
-		GameObject bul = Instantiate(Bullet, _gun.transform.position, _gun.transform.rotation);
-		bul.GetComponent<Rigidbody>().AddForce(transform.forward * Force, ForceMode.Impulse);
-	}*/
 }
