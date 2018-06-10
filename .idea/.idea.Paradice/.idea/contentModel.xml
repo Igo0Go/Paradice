@@ -43,6 +43,7 @@
           <e p="RaycastParticle" t="Include">
             <e p="ForceReactor.cs" t="Include" />
             <e p="ForceScript.cs" t="Include" />
+            <e p="NewRelictusController.cs" t="Include" />
           </e>
           <e p="SilaArtema" t="Include">
             <e p="Scripts" t="Include">
@@ -57,9 +58,14 @@
             <e p="LessonTransform.cs" t="Include" />
           </e>
           <e p="UICam" t="Include">
-            <e p="MissionPoint.cs" t="Include" />
-            <e p="ObjectReactor.cs" t="Include" />
-            <e p="RelictusController.cs" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="KeyTerminal.cs" t="Include" />
+              <e p="MissionPoint.cs" t="Include" />
+              <e p="NewConsoleScript.cs" t="Include" />
+              <e p="ObjectReactor.cs" t="Include" />
+              <e p="PortalScript.cs" t="Include" />
+              <e p="RelictusController.cs" t="Include" />
+            </e>
           </e>
         </e>
         <e p="Semen" t="Include">

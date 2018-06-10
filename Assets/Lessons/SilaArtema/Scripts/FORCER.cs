@@ -9,16 +9,17 @@ public class FORCER : MonoBehaviour
     public float throwPower = 10.0f;
     public RaycastHit hit;
     public float RayDistance = 3.0f;
-    private bool Grab = false;
-    private bool Throw = false;
+    private bool Grab = false; // взять
+    private bool Throw = false; // кинуть
     public Transform offset;
 
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            Physics.Raycast(transform.position, transform.forward, out hit, RayDistance, ~(1 << 9));
+            if (!hit.rigidbody)
+                Physics.Raycast(transform.position, transform.forward, out hit, RayDistance, ~(1 << 9));
 
             if (hit.rigidbody)
             {
@@ -26,8 +27,7 @@ public class FORCER : MonoBehaviour
             }
         }
 
-
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             if (Grab)
             {
@@ -35,6 +35,7 @@ public class FORCER : MonoBehaviour
                 Throw = true;
             }
         }
+
 
         if (Grab)
         {
@@ -55,8 +56,8 @@ public class FORCER : MonoBehaviour
                 Invoke("Poff", 0.5f);
             }
         }
-        
     }
+
     void Poff()
     {
         hit.rigidbody.GetComponent<ForceReaction>().BoostAvailable.enabled = false;

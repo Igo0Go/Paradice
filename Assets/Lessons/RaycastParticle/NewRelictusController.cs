@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor.SceneManagement;
 
-public class NewRelictusController : MonoBehaviour {
+public class NewRelictusController : MonoBehaviour
+{
     public List<ObjectForMission> Keys;
     public List<GameObject> KeysImages;
     public Animator Connect;
@@ -19,6 +20,8 @@ public class NewRelictusController : MonoBehaviour {
     public float MaxVert;
     public float MinVert;
     public bool Reload;
+    public LineRenderer LineRenderer;
+    public Transform GunEnd;
 
     private CharacterController _controller;
     private Animator _anim;
@@ -39,6 +42,7 @@ public class NewRelictusController : MonoBehaviour {
 
     void Start()
     {
+        LineRenderer.positionCount = 2;
         _reforce = false;
         Reload = false;
         Health.value = 100;
@@ -58,17 +62,13 @@ public class NewRelictusController : MonoBehaviour {
         {
             c.SetActive(false);
         }
+
         //_async = EditorSceneManager.LoadSceneAsync("RaycastParticle");
         //_async.allowSceneActivation = false;
     }
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))
-        {
-            Health.value -= 30;
-        }
-
         Shoot();
 
         if (Health.value > 0)
@@ -81,6 +81,7 @@ public class NewRelictusController : MonoBehaviour {
         {
             FatlError();
         }
+
         EnergyChanger();
     }
 
@@ -89,7 +90,7 @@ public class NewRelictusController : MonoBehaviour {
         var x = Input.GetAxis("Horizontal");
         var z = Input.GetAxis("Vertical");
         _moveVector = transform.right * x + transform.forward * z;
-        _anim.SetFloat("RunWalk", Mathf.Clamp(_moveVector.magnitude * _speed / (Speed*2), 0, 1));
+        _anim.SetFloat("RunWalk", Mathf.Clamp(_moveVector.magnitude * _speed / (Speed * 2), 0, 1));
         if (_controller.isGrounded)
         {
             _vertSpeed = 0;
@@ -99,8 +100,10 @@ public class NewRelictusController : MonoBehaviour {
                 _energyTime = 0;
             }
         }
+
         _vertSpeed += _grav * Time.deltaTime;
-        _moveVector = new Vector3(_moveVector.x * _speed * Time.fixedDeltaTime, _vertSpeed * Time.deltaTime, _moveVector.z * _speed * Time.fixedDeltaTime);
+        _moveVector = new Vector3(_moveVector.x * _speed * Time.fixedDeltaTime, _vertSpeed * Time.deltaTime,
+            _moveVector.z * _speed * Time.fixedDeltaTime);
         if (_moveVector != Vector3.zero)
         {
             _controller.Move(_moveVector);
@@ -119,7 +122,7 @@ public class NewRelictusController : MonoBehaviour {
             transform.localEulerAngles = new Vector3(-_rotationY, _rotationX, 0);
         }
     }
-    
+
     private void MaxSpeed()
     {
         if (Input.GetKey(KeyCode.LeftShift) && !_reforce)
@@ -152,23 +155,23 @@ public class NewRelictusController : MonoBehaviour {
         switch (key)
         {
             case ObjectForMission.GreenKey:
-                {
-                    KeysImages[0].SetActive(true);
-                    Keys.Add(key);
-                    break;
-                }
+            {
+                KeysImages[0].SetActive(true);
+                Keys.Add(key);
+                break;
+            }
             case ObjectForMission.YellowKey:
-                {
-                    KeysImages[1].SetActive(true);
-                    Keys.Add(key);
-                    break;
-                }
+            {
+                KeysImages[1].SetActive(true);
+                Keys.Add(key);
+                break;
+            }
             case ObjectForMission.RedKey:
-                {
-                    KeysImages[2].SetActive(true);
-                    Keys.Add(key);
-                    break;
-                }
+            {
+                KeysImages[2].SetActive(true);
+                Keys.Add(key);
+                break;
+            }
         }
     }
 
@@ -177,42 +180,70 @@ public class NewRelictusController : MonoBehaviour {
         switch (key)
         {
             case ObjectForMission.GreenKey:
-                {
-                    KeysImages[0].SetActive(false);
-                    Keys.Remove(key);
-                    break;
-                }
+            {
+                KeysImages[0].SetActive(false);
+                Keys.Remove(key);
+                break;
+            }
             case ObjectForMission.YellowKey:
-                {
-                    KeysImages[1].SetActive(false);
-                    Keys.Remove(key);
-                    break;
-                }
+            {
+                KeysImages[1].SetActive(false);
+                Keys.Remove(key);
+                break;
+            }
             case ObjectForMission.RedKey:
-                {
-                    KeysImages[2].SetActive(false);
-                    Keys.Remove(key);
-                    break;
-                }
+            {
+                KeysImages[2].SetActive(false);
+                Keys.Remove(key);
+                break;
+            }
         }
     }
 
+//выстрелы НАЧАЛО
     private void Shoot()
     {
-        if(Input.GetMouseButtonDown(0) && !Reload && Energy.value > 15)
+        if (Input.GetMouseButtonDown(0) && !Reload && Energy.value > 15)
         {
             Energy.value -= 12;
             _anim.SetFloat("RunWalk", 0);
             _anim.SetTrigger("Shoot");
             _energyTime = 0;
+            DrowShoot();
         }
-    } 
+    }
+
+    private void DrowShoot()
+    {
+        Ray ray = new Ray(GunEnd.position, transform.forward);
+        RaycastHit hit;
+
+        //Debug.DrawRay(transform.position, transform.forward * 10, Color.magenta, 0.2f);
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            MakeShoot(hit.point, -hit.normal, hit.collider.GetComponent<Rigidbody>());
+        }
+    }
+
+    private void MakeShoot(Vector3 shootPoint, Vector3 shootForce, Rigidbody targetRb)
+    {
+        LineRenderer.enabled = true;
+        LineRenderer.SetPosition(0, GunEnd.position);
+        LineRenderer.SetPosition(1, shootPoint);
+        if (targetRb)
+        {
+            targetRb.AddForceAtPosition(shootForce * 1000, shootPoint);
+        }
+    }
+
+// Выстрелы КОНЕЦ
 
     private void EnergyChanger()
     {
-        if(_energyTime < 2)
+        if (_energyTime < 2)
         {
-            _energyTime +=  Time.deltaTime;
+            _energyTime += Time.deltaTime;
             Energy.value += _energySpeed * Time.deltaTime;
         }
         else
@@ -220,11 +251,12 @@ public class NewRelictusController : MonoBehaviour {
             _energySpeed = 7;
             Energy.value += _energySpeed * Time.deltaTime;
         }
-        if(Energy.value == 0)
+
+        if (Energy.value == 0)
         {
             _reforce = true;
         }
-        else if(Energy.value <= 15)
+        else if (Energy.value <= 15)
         {
             EnergyFill.SetBool("Fill", false);
         }
