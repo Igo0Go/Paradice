@@ -17,6 +17,23 @@ ModelImporter:
     100022: Object038
     100024: Object039
     100026: Object040
+    100028: Halo001
+    100030: Halo002
+    100032: Halo003
+    100034: Halo004
+    100036: Halo005
+    100038: Halo006
+    100040: Halo007
+    100042: Halo008
+    100044: Halo009
+    100046: Halo010
+    100048: Halo011
+    100050: Halo012
+    100052: Halo013
+    100054: Halo014
+    100056: Halo015
+    100058: Object041
+    100060: Object042
     400000: Cylinder009
     400002: Cylinder010
     400004: //RootNode
@@ -31,6 +48,23 @@ ModelImporter:
     400022: Object038
     400024: Object039
     400026: Object040
+    400028: Halo001
+    400030: Halo002
+    400032: Halo003
+    400034: Halo004
+    400036: Halo005
+    400038: Halo006
+    400040: Halo007
+    400042: Halo008
+    400044: Halo009
+    400046: Halo010
+    400048: Halo011
+    400050: Halo012
+    400052: Halo013
+    400054: Halo014
+    400056: Halo015
+    400058: Object041
+    400060: Object042
     2100000: 'Material #632'
     2100002: 'Material #637'
     2100004: 'Material #636'
@@ -53,6 +87,23 @@ ModelImporter:
     2300022: Object038
     2300024: Object039
     2300026: Object040
+    2300028: Halo001
+    2300030: Halo002
+    2300032: Halo003
+    2300034: Halo004
+    2300036: Halo005
+    2300038: Halo006
+    2300040: Halo007
+    2300042: Halo008
+    2300044: Halo009
+    2300046: Halo010
+    2300048: Halo011
+    2300050: Halo012
+    2300052: Halo013
+    2300054: Halo014
+    2300056: Halo015
+    2300058: Object041
+    2300060: Object042
     3300000: Cylinder009
     3300002: Cylinder010
     3300004: //RootNode
@@ -67,6 +118,23 @@ ModelImporter:
     3300022: Object038
     3300024: Object039
     3300026: Object040
+    3300028: Halo001
+    3300030: Halo002
+    3300032: Halo003
+    3300034: Halo004
+    3300036: Halo005
+    3300038: Halo006
+    3300040: Halo007
+    3300042: Halo008
+    3300044: Halo009
+    3300046: Halo010
+    3300048: Halo011
+    3300050: Halo012
+    3300052: Halo013
+    3300054: Halo014
+    3300056: Halo015
+    3300058: Object041
+    3300060: Object042
     4300000: Gun
     4300002: Object039
     4300004: Object037
@@ -81,6 +149,23 @@ ModelImporter:
     4300022: Cylinder010
     4300024: Cylinder009
     4300026: Object040
+    4300028: Halo015
+    4300030: Halo014
+    4300032: Halo013
+    4300034: Halo012
+    4300036: Halo011
+    4300038: Halo010
+    4300040: Halo009
+    4300042: Halo008
+    4300044: Halo007
+    4300046: Halo006
+    4300048: Halo005
+    4300050: Halo004
+    4300052: Halo003
+    4300054: Halo002
+    4300056: Halo001
+    4300058: Object042
+    4300060: Object041
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -113,7 +198,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 0.2
-    meshCompression: 0
+    meshCompression: 3
     addColliders: 0
     importVisibility: 0
     importBlendShapes: 1
