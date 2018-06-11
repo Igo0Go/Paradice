@@ -24,6 +24,8 @@ public class NewRelictusController : MonoBehaviour
     public bool Reload;
     public LineRenderer LineRenderer;
     public Transform GunEnd;
+    public AudioSource ShootAudio;
+    public float WaitShootTime = 0;
 
     private Animator _anim;
     private CharacterController _controller;
@@ -34,6 +36,7 @@ public class NewRelictusController : MonoBehaviour
     private float _rotationY;
     private bool _reforce;
     private Vector3 _savePosition;
+    private WaitForSeconds _lineRendVisTime;
 
     //гравитация
     private float _grav;
@@ -42,6 +45,7 @@ public class NewRelictusController : MonoBehaviour
 
     void Start()
     {
+        _lineRendVisTime = new WaitForSeconds(WaitShootTime);
         LineRenderer.positionCount = 2;
         _reforce = false;
         Reload = false;
@@ -237,6 +241,9 @@ public class NewRelictusController : MonoBehaviour
         {
             targetRb.AddForceAtPosition(shootForce * 1000, shootPoint);
         }
+
+        StartCoroutine(HandleLineRenderer());
+        ShootAudio.Play();
     }
 
     private void TargetDamage(string tag)
@@ -246,6 +253,18 @@ public class NewRelictusController : MonoBehaviour
             
         }
     }
+    
+    public void ClearShootTrace()
+    {
+        LineRenderer.enabled = false;
+    }
+    private IEnumerator HandleLineRenderer()
+    {
+        yield return _lineRendVisTime;
+        ClearShootTrace();
+    }
+    
+    
 
 // Выстрелы КОНЕЦ
 

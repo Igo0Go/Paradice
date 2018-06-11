@@ -12,6 +12,7 @@
             <e p="GetBullets.cs" t="Include" />
             <e p="GunDestroy.cs" t="Include" />
             <e p="LookAndShoot.cs" t="Include" />
+            <e p="PlayerHealth.cs" t="Include" />
             <e p="PlayerMove.cs" t="Include" />
             <e p="Weapon.cs" t="Include" />
           </e>
@@ -41,6 +42,8 @@
             <e p="Jumper.cs" t="Include" />
           </e>
           <e p="RaycastParticle" t="Include">
+            <e p="DemonController.cs" t="Include" />
+            <e p="EnemyDamage.cs" t="Include" />
             <e p="ForceReactor.cs" t="Include" />
             <e p="ForceScript.cs" t="Include" />
             <e p="NewRelictusController.cs" t="Include" />
