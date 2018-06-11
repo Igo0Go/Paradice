@@ -295,4 +295,12 @@ public class NewRelictusController : MonoBehaviour
             EnergyFill.SetBool("Fill", true);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag.Equals("Gun"))
+        {
+            Health.value -= 10;
+        }
+    }
 }
