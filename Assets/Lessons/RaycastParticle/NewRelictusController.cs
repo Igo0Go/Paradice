@@ -222,18 +222,28 @@ public class NewRelictusController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            MakeShoot(hit.point, -hit.normal, hit.collider.GetComponent<Rigidbody>());
+            MakeShoot(hit.point, -hit.normal, hit.collider.GetComponent<Rigidbody>(), hit);
         }
     }
 
-    private void MakeShoot(Vector3 shootPoint, Vector3 shootForce, Rigidbody targetRb)
+    private void MakeShoot(Vector3 shootPoint, Vector3 shootForce, Rigidbody targetRb, RaycastHit hit)
     {
+        string tag = hit.collider.tag;
         LineRenderer.enabled = true;
         LineRenderer.SetPosition(0, GunEnd.position);
         LineRenderer.SetPosition(1, shootPoint);
+        TargetDamage(tag);
         if (targetRb)
         {
             targetRb.AddForceAtPosition(shootForce * 1000, shootPoint);
+        }
+    }
+
+    private void TargetDamage(string tag)
+    {
+        if(tag.Equals("Bullet"))
+        {
+            
         }
     }
 
