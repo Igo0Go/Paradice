@@ -28,7 +28,7 @@ namespace Lessons.SilaArtema
         }
 
 
-        private IEnumerator MoveToTarget(Vector3 target)
+      /*  private IEnumerator MoveToTarget(Vector3 target)
         {
             yield return new WaitForFixedUpdate();
 
@@ -66,7 +66,8 @@ namespace Lessons.SilaArtema
             Debug.Log("End of coroutine");
             yield return null;
         }
-
+*/
+        
         public void UseForce(Vector3 forceVector, int type)
         {
             _rb.AddForce(forceVector.normalized * type * Forcing, ForceMode.Impulse);

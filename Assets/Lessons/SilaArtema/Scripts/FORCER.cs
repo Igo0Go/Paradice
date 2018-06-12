@@ -19,6 +19,7 @@ public class FORCER : MonoBehaviour
     private float _forceTime;
     private bool Grab = false; // взять
     private bool Throw = false; // кинуть
+    public bool hitRb = false;
     
 
     private void Start()
@@ -37,8 +38,13 @@ public class FORCER : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.R))
             {
-                if (!hit.rigidbody)
-                    Physics.Raycast(transform.position, transform.forward, out hit, RayDistance, ~(1 << 9));
+                if (hitRb == false)
+                {
+                    if (Physics.Raycast(transform.position, transform.forward, out hit, RayDistance, (1 << 10)))
+                    {
+                        hitRb = true;
+                    }
+                }
 
                 if (hit.rigidbody)
                 {
@@ -81,7 +87,10 @@ public class FORCER : MonoBehaviour
                 NRC.EnergyTime = 0;
                 hit.rigidbody.velocity =
                     (offset.position - (hit.transform.position + hit.rigidbody.centerOfMass)) * grabPower;
-                hit.rigidbody.GetComponent<ForceReaction>().BoostAvailable.enabled = true;
+                
+                   hit.rigidbody.GetComponent<ForceReaction>().BoostAvailable.enabled = true;
+                
+                
             }
         }
 
@@ -92,6 +101,7 @@ public class FORCER : MonoBehaviour
             Invoke("Poff", 0.5f);
             _anim.SetBool("UseForce", false);
             _anim.SetInteger("Force", 0);
+            hitRb = false;
         }
 
         if (Throw)
@@ -101,6 +111,7 @@ public class FORCER : MonoBehaviour
                 NRC.Energy.value -= 3;
                 hit.rigidbody.velocity = transform.forward * throwPower;
                 Throw = false;
+                hitRb = false;
                 Invoke("Poff", 0.5f);
             }
         }

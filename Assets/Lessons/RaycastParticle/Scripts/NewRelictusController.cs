@@ -251,7 +251,7 @@ public class NewRelictusController : MonoBehaviour
 
         //Debug.DrawRay(transform.position, transform.forward * 10, Color.magenta, 0.2f);
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, 1000, ~(1 << 2)))//ВОТ ВСТАВИЛ, но теперь пришлось ограничить длину луча...
         {
             MakeShoot(hit.point, -hit.normal, hit.collider.GetComponent<Rigidbody>(), hit);
         }
