@@ -9,10 +9,14 @@ public class NewRelictusController : MonoBehaviour
     public List<ObjectForMission> Keys;
     public List<GameObject> KeysImages;
     public Animator Connect;
-    public Animator Cam;
     public Animator EnergyFill;
+    public Camera Cam;
     public Text InterfaceText;
     public Text MissionText;
+    public LineRenderer LineRenderer;
+    public Transform GunEnd;
+    public AudioSource ShootAudio;
+    public GameObject VisorPanel;
     public Slider Energy;
     public Slider Health;
     public float Speed;
@@ -22,21 +26,19 @@ public class NewRelictusController : MonoBehaviour
     public float EnergyTime;
     public int EnergySpeed;
     public bool Reload;
-    public LineRenderer LineRenderer;
-    public Transform GunEnd;
-    public AudioSource ShootAudio;
     public float WaitShootTime = 0;
 
+    private Animator _camAnim;
     private Animator _anim;
     private CharacterController _controller;
     private AsyncOperation _async;
+    private WaitForSeconds _lineRendVisTime;
     private Vector3 _moveVector;
+    private Vector3 _savePosition;
     private float _speed;
     private float _rotationX;
     private float _rotationY;
     private bool _reforce;
-    private Vector3 _savePosition;
-    private WaitForSeconds _lineRendVisTime;
 
     //гравитация
     private float _grav;
@@ -45,6 +47,8 @@ public class NewRelictusController : MonoBehaviour
 
     void Start()
     {
+        _camAnim = Cam.GetComponent<Animator>();
+        VisorPanel.SetActive(false);
         _lineRendVisTime = new WaitForSeconds(WaitShootTime);
         LineRenderer.positionCount = 2;
         _reforce = false;
@@ -54,7 +58,7 @@ public class NewRelictusController : MonoBehaviour
         _speed = Speed;
         _anim = GetComponent<Animator>();
         _grav = -9.8f;
-        _jumpSpeed = 5;
+        _jumpSpeed = 7;
         MissionText.text = "Доберитесь до медецинского отсека";
         InterfaceText.text = string.Empty;
         Energy.value = 100;
@@ -80,6 +84,7 @@ public class NewRelictusController : MonoBehaviour
             RelictusMove();
             Rotate();
             MaxSpeed();
+            Visor();
         }
         else
         {
@@ -204,6 +209,27 @@ public class NewRelictusController : MonoBehaviour
         }
     }
 
+    public void Visor()
+    {
+        if (VisorPanel.activeSelf)
+        {
+            Energy.value -= 0.1f;
+            EnergyTime = 0;
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            VisorPanel.SetActive(!VisorPanel.activeSelf);
+            if(VisorPanel.activeSelf)
+            {
+                Cam.cullingMask = -1;
+            }
+            else
+            {
+                Cam.cullingMask = -513;
+            }
+        }
+    }
+
 //выстрелы НАЧАЛО
     private void Shoot()
     {
@@ -301,6 +327,35 @@ public class NewRelictusController : MonoBehaviour
         if(other.tag.Equals("Gun"))
         {
             Health.value -= 10;
+        }
+        if (other.tag.Equals("SavePoint"))
+        {
+            Connect.SetBool("Active", true);
+            _savePosition = other.transform.position;
+        }
+        if (other.tag.Equals("Durk"))
+        {
+            _vertSpeed = 0;
+            _speed = 0;
+            transform.position = _savePosition;
+            _camAnim.SetTrigger("Portal");
+            Energy.value -= 10;
+            Health.value -= 7;
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag.Equals("SavePoint"))
+        {
+            Health.value += 1;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag.Equals("SavePoint"))
+        {
+            Connect.SetBool("Active", false);
         }
     }
 }
