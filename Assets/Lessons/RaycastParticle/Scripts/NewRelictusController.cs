@@ -347,23 +347,33 @@ public class NewRelictusController : MonoBehaviour
             _speed = 0;
             transform.position = _savePosition;
             _camAnim.SetTrigger("Portal");
-            Energy.value -= 10;
+            Energy.value -= 50;
+            EnergySpeed = 0;
+            EnergyTime = 0;
             Health.value -= 7;
+        }
+        if (other.tag.Equals("Finish"))
+        {
+            other.GetComponent<PlatformForBox>().Weight += 0.5f;
         }
     }
     private void OnTriggerStay(Collider other)
     {
         if (other.tag.Equals("SavePoint"))
         {
-            Health.value += 1;
+            Health.value += Time.deltaTime;
+            EnergyTime = 0;
         }
     }
-
     private void OnTriggerExit(Collider other)
     {
         if (other.tag.Equals("SavePoint"))
         {
             Connect.SetBool("Active", false);
+        }
+        if (other.tag.Equals("Finish"))
+        {
+            other.GetComponent<PlatformForBox>().Weight -= 0.5f;
         }
     }
 }

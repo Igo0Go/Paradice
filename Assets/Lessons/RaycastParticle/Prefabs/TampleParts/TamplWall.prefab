@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 33721882852090812}
   - component: {fileID: 23740840658392770}
   - component: {fileID: 64434636850241892}
+  - component: {fileID: 208829541686819314}
   m_Layer: 0
   m_Name: TamplWall
   m_TagString: Untagged
@@ -187,3 +188,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: f458f0413cdca8d469d89ab3b800697f, type: 3}
+--- !u!208 &208829541686819314
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1686353855513596}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 4.933, y: 1.853, z: 2.723}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 1.171}
+  m_TimeToStationary: 0.5

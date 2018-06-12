@@ -252,7 +252,6 @@ GameObject:
   - component: {fileID: 114134796936652418}
   - component: {fileID: 120313016815993078}
   - component: {fileID: 82852661754514942}
-  - component: {fileID: 136589713529704294}
   m_Layer: 0
   m_Name: RelictusWithGun
   m_TagString: Player
@@ -8151,19 +8150,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1891343345088994}
   m_Enabled: 1
---- !u!136 &136589713529704294
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1177861428073496}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &136785111253096356
 CapsuleCollider:
   m_ObjectHideFlags: 1

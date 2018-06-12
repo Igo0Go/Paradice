@@ -6,6 +6,8 @@ namespace Lessons.SilaArtema
 {
     public class ForceReaction : MonoBehaviour
     {
+        public float Weight;
+
         private Rigidbody _rb;
         public float attractionForce = 10;
         public float Forcing = 0.5f;
@@ -77,6 +79,17 @@ namespace Lessons.SilaArtema
             if (other.tag.Equals("Force"))
             {
                 UseForce(other.transform.up, other.GetComponentInParent<FORCER>().ForceType);
+            }
+            if (other.tag.Equals("Finish"))
+            {
+                other.GetComponent<PlatformForBox>().Weight += Weight/10;
+            }
+        }
+        private void OnTriggerExit(Collider other)
+        {
+            if (other.tag.Equals("Finish"))
+            {
+                other.GetComponent<PlatformForBox>().Weight -= Weight/10;
             }
         }
 
