@@ -7641,6 +7641,8 @@ MonoBehaviour:
   EnergySpeed: 0
   Reload: 0
   WaitShootTime: 0.1
+  ShootParticle: {fileID: 1895358132776828, guid: 6c4c80b115ab67c448ab09cef8ff7837,
+    type: 2}
 --- !u!114 &114590240850428004
 MonoBehaviour:
   m_ObjectHideFlags: 1

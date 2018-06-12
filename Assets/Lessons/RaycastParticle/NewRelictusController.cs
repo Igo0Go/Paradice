@@ -27,7 +27,8 @@ public class NewRelictusController : MonoBehaviour
     public int EnergySpeed;
     public bool Reload;
     public float WaitShootTime = 0;
-
+    public GameObject ShootParticle;
+    
     private Animator _camAnim;
     private Animator _anim;
     private CharacterController _controller;
@@ -269,6 +270,7 @@ public class NewRelictusController : MonoBehaviour
         }
 
         StartCoroutine(HandleLineRenderer());
+        StartCoroutine(ShootPart(shootPoint));
         ShootAudio.Play();
     }
 
@@ -290,7 +292,13 @@ public class NewRelictusController : MonoBehaviour
         ClearShootTrace();
     }
     
-    
+    private IEnumerator ShootPart(Vector3 shootPoint)
+    {
+        GameObject obj = Instantiate(ShootParticle,shootPoint, Quaternion.identity);
+        yield return new WaitForSeconds(1);
+        Destroy(obj);
+    }
+
 
 // Выстрелы КОНЕЦ
 

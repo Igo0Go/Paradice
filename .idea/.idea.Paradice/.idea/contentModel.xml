@@ -46,6 +46,7 @@
             <e p="EnemyDamage.cs" t="Include" />
             <e p="ForceReactor.cs" t="Include" />
             <e p="ForceScript.cs" t="Include" />
+            <e p="ForceTech.cs" t="Include" />
             <e p="NewRelictusController.cs" t="Include" />
           </e>
           <e p="SilaArtema" t="Include">
