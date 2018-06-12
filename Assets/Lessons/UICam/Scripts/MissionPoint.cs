@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class MissionPoint : MonoBehaviour {
 
     public string Message;
+    public AudioClip Clip;
 
 	// Use this for initialization
 	void Start () {

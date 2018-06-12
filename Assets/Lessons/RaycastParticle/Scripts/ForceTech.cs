@@ -23,11 +23,16 @@ public class ForceTech : MonoBehaviour {
         if (other.tag.Equals("Force"))
         {
             int f = other.GetComponentInParent<FORCER>().ForceType;
-            _anim.SetInteger("Active", f);
-            foreach(var c in RefObj)
-            {
-                c.SetInteger("Active", f);
-            }
+            Action(f);
+        }
+    }
+
+    public void Action(int f)
+    {
+        _anim.SetInteger("Active", f);
+        foreach (var c in RefObj)
+        {
+            c.SetInteger("Active", f);
         }
     }
 }

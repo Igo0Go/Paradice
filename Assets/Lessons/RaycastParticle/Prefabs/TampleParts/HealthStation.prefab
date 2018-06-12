@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4385176795994644}
   - component: {fileID: 65553843390312328}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: HealthStation
   m_TagString: SavePoint
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 33067651920264624}
   - component: {fileID: 23232815093993292}
   - component: {fileID: 65624513720751848}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

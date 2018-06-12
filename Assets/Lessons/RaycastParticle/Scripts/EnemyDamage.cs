@@ -8,13 +8,25 @@ public class EnemyDamage : MonoBehaviour {
     public GameObject MainObj;
     public float DeadTime;
 
-	
-    public void Func()
+    private Animator _anim;
+
+    public void Start()
     {
-        GetComponent<Animator>().SetTrigger("TheEnd");
-        Invoke("Death", DeadTime);
+        Health = 100;
+        _anim = MainObj.GetComponent<Animator>();
     }
 
+    public void GetDamage(float damage)
+    {
+        Health -= damage;
+        if(Health <= 0)
+        {
+            _anim.SetBool("Attack", false);
+            _anim.SetBool("Walk", false);
+            _anim.SetTrigger("TheEnd");
+            Invoke("Death", DeadTime);
+        }
+    }
 
     private void Death()
     {

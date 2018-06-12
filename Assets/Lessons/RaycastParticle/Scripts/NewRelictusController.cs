@@ -15,6 +15,7 @@ public class NewRelictusController : MonoBehaviour
     public Text MissionText;
     public LineRenderer LineRenderer;
     public Transform GunEnd;
+    public AudioSource Music;
     public AudioSource ShootAudio;
     public GameObject VisorPanel;
     public Slider Energy;
@@ -40,6 +41,8 @@ public class NewRelictusController : MonoBehaviour
     private float _rotationX;
     private float _rotationY;
     private bool _reforce;
+    private int _defaultLayerMask;
+
 
     //гравитация
     private float _grav;
@@ -48,6 +51,7 @@ public class NewRelictusController : MonoBehaviour
 
     void Start()
     {
+        _defaultLayerMask = Cam.cullingMask;
         _camAnim = Cam.GetComponent<Animator>();
         VisorPanel.SetActive(false);
         _lineRendVisTime = new WaitForSeconds(WaitShootTime);
@@ -59,8 +63,7 @@ public class NewRelictusController : MonoBehaviour
         _speed = Speed;
         _anim = GetComponent<Animator>();
         _grav = -9.8f;
-        _jumpSpeed = 7;
-        MissionText.text = "Доберитесь до медецинского отсека";
+        _jumpSpeed = 5;
         InterfaceText.text = string.Empty;
         Energy.value = 100;
         EnergySpeed = 2;
@@ -72,8 +75,8 @@ public class NewRelictusController : MonoBehaviour
             c.SetActive(false);
         }
 
-        //_async = EditorSceneManager.LoadSceneAsync("RaycastParticle");
-        //_async.allowSceneActivation = false;
+        _async = EditorSceneManager.LoadSceneAsync("RaycastParticle");
+        _async.allowSceneActivation = false;
     }
 
     void Update()
@@ -226,7 +229,7 @@ public class NewRelictusController : MonoBehaviour
             }
             else
             {
-                Cam.cullingMask = -513;
+                Cam.cullingMask = _defaultLayerMask;
             }
         }
     }
@@ -251,7 +254,7 @@ public class NewRelictusController : MonoBehaviour
 
         //Debug.DrawRay(transform.position, transform.forward * 10, Color.magenta, 0.2f);
 
-        if (Physics.Raycast(ray, out hit, 1000, ~(1 << 2)))//ВОТ ВСТАВИЛ, но теперь пришлось ограничить длину луча...
+        if (Physics.Raycast(ray, out hit, 1000, ~(1 << 2)))
         {
             MakeShoot(hit.point, -hit.normal, hit.collider.GetComponent<Rigidbody>(), hit);
         }
@@ -259,11 +262,10 @@ public class NewRelictusController : MonoBehaviour
 
     private void MakeShoot(Vector3 shootPoint, Vector3 shootForce, Rigidbody targetRb, RaycastHit hit)
     {
-        string tag = hit.collider.tag;
         LineRenderer.enabled = true;
         LineRenderer.SetPosition(0, GunEnd.position);
         LineRenderer.SetPosition(1, shootPoint);
-        TargetDamage(tag);
+        TargetDamage(hit.collider.gameObject);
         if (targetRb)
         {
             targetRb.AddForceAtPosition(shootForce * 1000, shootPoint);
@@ -274,11 +276,31 @@ public class NewRelictusController : MonoBehaviour
         ShootAudio.Play();
     }
 
-    private void TargetDamage(string tag)
+    private void TargetDamage(GameObject hit)
     {
-        if(tag.Equals("Bullet"))
+        
+        if(hit.tag.Equals("Bullet"))
         {
-            
+            EnemyDamage ED = hit.GetComponent<EnemyDamage>();
+            Animator anim = hit.GetComponent<Animator>();
+            if (ED.Health - 40 > 0)
+            {
+                ED.GetDamage(40);
+                anim.SetInteger("Damage", 1);
+                anim.SetTrigger("GetDamage");
+            }
+            else
+            {
+                ED.GetDamage(ED.Health);
+            }
+        }
+        if (hit.tag.Equals(""))
+        {
+            hit.GetComponent<EnemyDamage>().GetDamage(100);
+        }
+        if (hit.tag.Equals("Shoot"))
+        {
+            hit.GetComponent<ForceTech>().Action(-1);
         }
     }
     
@@ -334,7 +356,7 @@ public class NewRelictusController : MonoBehaviour
     {
         if(other.tag.Equals("Gun"))
         {
-            Health.value -= 10;
+            Health.value -= 40;
         }
         if (other.tag.Equals("SavePoint"))
         {
@@ -354,7 +376,25 @@ public class NewRelictusController : MonoBehaviour
         }
         if (other.tag.Equals("Finish"))
         {
-            other.GetComponent<PlatformForBox>().Weight += 0.5f;
+            other.GetComponent<PlatformForBox>().Weight += 1f;
+        }
+        if (other.tag.Equals("Rifle"))
+        {
+            Energy.value += 5;
+            Destroy(other.gameObject);
+        }
+        if (other.tag.Equals("CameraChenger"))
+        {
+            MissionPoint MP = other.GetComponent<MissionPoint>();
+            MissionText.text = MP.Message;
+            if (MP.Clip != null)
+            {
+                if (Music.isPlaying) Music.Stop();
+                Music.clip = MP.Clip;
+                Music.Play();
+            }
+
+            Destroy(other.gameObject);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -373,7 +413,7 @@ public class NewRelictusController : MonoBehaviour
         }
         if (other.tag.Equals("Finish"))
         {
-            other.GetComponent<PlatformForBox>().Weight -= 0.5f;
+            other.GetComponent<PlatformForBox>().Weight -= 1f;
         }
     }
 }

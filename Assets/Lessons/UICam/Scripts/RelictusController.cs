@@ -8,6 +8,7 @@ public class RelictusController : MonoBehaviour {
 
     public List<ObjectForMission> Keys;
     public List<GameObject> KeysImages;
+    public AudioSource Music;
     public Animator Connect;
     public Animator Cam;
     public Text InterfaceText;
@@ -150,7 +151,13 @@ public class RelictusController : MonoBehaviour {
         }
         if (other.tag.Equals("CameraChenger"))
         {
-            MissionText.text = other.GetComponent<MissionPoint>().Message;
+            MissionPoint MP = other.GetComponent<MissionPoint>();
+            MissionText.text = MP.Message;
+            if(MP.Clip != null)
+            {
+                Music.clip = MP.Clip;
+            }
+           
             Destroy(other.gameObject);
         }
         if (other.tag.Equals("FallingTarget"))

@@ -52,7 +52,7 @@ public class FORCER : MonoBehaviour
                     _anim.SetBool("UseForce", true);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F) && hitRb)
             {
                 Grab = false;
                 Throw = true;
@@ -89,8 +89,6 @@ public class FORCER : MonoBehaviour
                     (offset.position - (hit.transform.position + hit.rigidbody.centerOfMass)) * grabPower;
                 
                    hit.rigidbody.GetComponent<ForceReaction>().BoostAvailable.enabled = true;
-                
-                
             }
         }
 

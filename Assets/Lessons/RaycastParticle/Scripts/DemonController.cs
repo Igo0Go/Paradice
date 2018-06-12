@@ -28,14 +28,18 @@ public class DemonController : MonoBehaviour {
         {
             DefaultState();
         }
-        else if(f <= DemonAngel && f > 3.5f)
+        else if(f <= DemonAngel && f > 5f)
         {
             if(ISeeYou())
             {
                 MoveToPlayer();
             }
         }
-        else if(f <= 3.5f)
+        else if(f <= 5 && f > 2.5f)
+        {
+            MoveToPlayer();
+        }
+        else if(f <= 2.5f)
         {
             Attack();
         }
@@ -82,10 +86,20 @@ public class DemonController : MonoBehaviour {
     {
         transform.LookAt(Player.transform.position);
         _anim.SetBool("Attack", true);
+        _anim.SetBool("Walk", true);
     }
 
     private void StopAttack()
     {
         _anim.SetBool("Attack", false);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag.Equals("Force"))
+        {
+            _anim.SetInteger("Damage", -1);
+            _anim.SetTrigger("GetDamage");
+        }
     }
 }
