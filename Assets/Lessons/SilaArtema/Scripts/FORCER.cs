@@ -11,7 +11,7 @@ public class FORCER : MonoBehaviour
     public Transform offset;
     public float grabPower = 10.0f;
     public float throwPower = 10.0f;
-    public float RayDistance = 3.0f;
+    public float RayDistance = 13.0f;
     public int ForceType;
 
     private Animator _anim;
