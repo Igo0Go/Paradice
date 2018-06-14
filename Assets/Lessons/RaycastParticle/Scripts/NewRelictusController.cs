@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor.SceneManagement;
 
+public delegate void ShootHandler(Vector3 pos);
+
 public class NewRelictusController : MonoBehaviour
 {
+    public event ShootHandler ShootSound;
     public List<ObjectForMission> Keys;
     public List<GameObject> KeysImages;
     public Animator Connect;
@@ -26,8 +29,9 @@ public class NewRelictusController : MonoBehaviour
     public float MinVert;
     public float EnergyTime;
     public int EnergySpeed;
-    public bool Reload;
     public float WaitShootTime = 0;
+    public bool Reload;
+    public bool Fast;
     public GameObject ShootParticle;
     
     private Animator _camAnim;
@@ -140,12 +144,14 @@ public class NewRelictusController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift) && !_reforce)
         {
+            Fast = true;
             _speed = Speed * 2;
             EnergySpeed = -5;
             EnergyTime = 0;
         }
         else
         {
+            Fast = false;
             _speed = Speed;
             EnergySpeed = 1;
         }
@@ -234,11 +240,20 @@ public class NewRelictusController : MonoBehaviour
         }
     }
 
+    public void MakeSound()
+    {
+        if(ShootSound != null)
+        {
+            ShootSound.Invoke(transform.position);
+        }
+    }
+
 //выстрелы НАЧАЛО
     private void Shoot()
     {
         if (Input.GetMouseButtonDown(0) && !Reload && Energy.value > 15)
         {
+            MakeSound();
             Energy.value -= 12;
             _anim.SetFloat("RunWalk", 0);
             _anim.SetTrigger("Shoot");
@@ -283,6 +298,7 @@ public class NewRelictusController : MonoBehaviour
         {
             EnemyDamage ED = hit.GetComponent<EnemyDamage>();
             Animator anim = hit.GetComponent<Animator>();
+            hit.GetComponent<DemonController>().Alarm = true;
             if (ED.Health - 40 > 0)
             {
                 ED.GetDamage(40);

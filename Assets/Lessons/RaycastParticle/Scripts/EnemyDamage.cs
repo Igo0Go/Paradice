@@ -7,6 +7,7 @@ public class EnemyDamage : MonoBehaviour {
     public float Health;
     public GameObject MainObj;
     public float DeadTime;
+    public GameObject WhatIsIt;
 
     private Animator _anim;
 
@@ -30,6 +31,7 @@ public class EnemyDamage : MonoBehaviour {
 
     private void Death()
     {
+        GameObject.Find("RelictusWithGun").GetComponent<NewRelictusController>().ShootSound -= gameObject.GetComponent<DemonController>().ListenShoot;
         Destroy(MainObj);
     }
 

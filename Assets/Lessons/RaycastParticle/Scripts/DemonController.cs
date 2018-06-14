@@ -8,39 +8,61 @@ public class DemonController : MonoBehaviour {
     public GameObject Player;
     public float DemonDistance;
     public float DemonAngel;
+    public bool Search;
+    public bool Alarm;
 
     private Animator _anim;
     private NavMeshAgent _NMA;
-    private byte a;
+    private NewRelictusController _NRC;
+    private Vector3 _searchPos;
 
-	// Use this for initialization
+
 	void Start () {
+        Alarm = false;
+        Search = false;
         _anim = GetComponent<Animator>();
         _NMA = GetComponent<NavMeshAgent>();
+        _NRC = Player.GetComponent<NewRelictusController>();
+        _NRC.ShootSound += ListenShoot;
 	}
 	
-	// Update is called once per frame
+	
 	void Update () {
 
         float f = DistanceToPlayer();
 
-        if(f > DemonDistance)
+        if (Search)
+        {
+            MoveToTarget(_searchPos);
+        }
+        if (Alarm)
+        {
+            MoveToTarget(Player.transform.position);
+            if(f <= DemonDistance)
+            {
+                Alarm = false;
+            }
+        }
+        else if(f > DemonDistance && !Search )
         {
             DefaultState();
         }
-        else if(f <= DemonAngel && f > 5f)
+        else if(f <= DemonDistance && f > 5f)
         {
-            if(ISeeYou())
+            Search = false;
+            if(ISeeYou() || _NRC.Fast)
             {
-                MoveToPlayer();
+                MoveToTarget(Player.transform.position);
             }
         }
-        else if(f <= 5 && f > 2.5f)
+        else if(f <= 5 && f > 3.5)
         {
-            MoveToPlayer();
+            Search = false;
+            MoveToTarget(Player.transform.position);
         }
-        else if(f <= 2.5f)
+        else if(f <= 3.5f)
         {
+            Search = false;
             Attack();
         }
 	}
@@ -74,9 +96,9 @@ public class DemonController : MonoBehaviour {
         return false;
     }
 
-    private void MoveToPlayer()
+    private void MoveToTarget(Vector3 pos)
     {
-        Vector3 targer = Player.transform.position;
+        Vector3 targer = pos;
         _anim.SetBool("Walk", true);
         _NMA.destination = targer;
         _anim.SetBool("Attack", false);
@@ -94,10 +116,25 @@ public class DemonController : MonoBehaviour {
         _anim.SetBool("Attack", false);
     }
 
+    private void GetAlarm()
+    {
+        Alarm = true;
+    }
+
+    public void ListenShoot(Vector3 pos)
+    {
+        if(DistanceToPlayer() <= 30)
+        {
+            Search = true;
+            _searchPos = pos;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag.Equals("Force"))
         {
+            Invoke("GetAlarm", 1f);
             _anim.SetInteger("Damage", -1);
             _anim.SetTrigger("GetDamage");
         }
