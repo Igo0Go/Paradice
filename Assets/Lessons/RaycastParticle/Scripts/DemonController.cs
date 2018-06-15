@@ -8,6 +8,7 @@ public class DemonController : MonoBehaviour {
     public GameObject Player;
     public float DemonDistance;
     public float DemonAngel;
+    public float StunTime;
     public bool Search;
     public bool Alarm;
 
@@ -15,6 +16,8 @@ public class DemonController : MonoBehaviour {
     private NavMeshAgent _NMA;
     private NewRelictusController _NRC;
     private Vector3 _searchPos;
+    private float _time;
+    private bool stun;
 
 
 	void Start () {
@@ -29,42 +32,52 @@ public class DemonController : MonoBehaviour {
 	
 	void Update () {
 
-        float f = DistanceToPlayer();
+        if(stun)
+        {
+            Timer();
+            _NMA.destination = transform.position;
+        }
+        else
+        {
+            float f = DistanceToPlayer();
 
-        if (Search)
-        {
-            MoveToTarget(_searchPos);
-        }
-        if (Alarm)
-        {
-            MoveToTarget(Player.transform.position);
-            if(f <= DemonDistance)
+            if (Search && !stun)
             {
-                Alarm = false;
+                MoveToTarget(_searchPos);
             }
-        }
-        else if(f > DemonDistance && !Search )
-        {
-            DefaultState();
-        }
-        else if(f <= DemonDistance && f > 5f)
-        {
-            Search = false;
-            if(ISeeYou() || _NRC.Fast)
+            if (Alarm && !stun)
             {
                 MoveToTarget(Player.transform.position);
+                if (f <= DemonDistance)
+                {
+                    Alarm = false;
+                }
+            }
+            else if (f > DemonDistance && !Search)
+            {
+                DefaultState();
+            }
+            else if (f <= DemonDistance && f > 5f)
+            {
+                Search = false;
+                if (ISeeYou() || _NRC.Fast)
+                {
+                    MoveToTarget(Player.transform.position);
+                }
+            }
+            else if (f <= 5 && f > 3.5)
+            {
+                Search = false;
+                MoveToTarget(Player.transform.position);
+            }
+            else if (f <= 3.5f)
+            {
+                Search = false;
+                Attack();
             }
         }
-        else if(f <= 5 && f > 3.5)
-        {
-            Search = false;
-            MoveToTarget(Player.transform.position);
-        }
-        else if(f <= 3.5f)
-        {
-            Search = false;
-            Attack();
-        }
+
+        
 	}
 
     private float DistanceToPlayer()
@@ -137,6 +150,28 @@ public class DemonController : MonoBehaviour {
             Invoke("GetAlarm", 1f);
             _anim.SetInteger("Damage", -1);
             _anim.SetTrigger("GetDamage");
+            StartStun(0.7f);
+        }
+    }
+
+    public void StartStun(float stunTime)
+    {
+        _time = 0;
+        StunTime = stunTime;
+        stun = true;
+    }
+
+    private void Timer()
+    {
+        if(_time + Time.deltaTime <= StunTime)
+        {
+            _time += Time.deltaTime;
+            stun = true;
+        }
+        else
+        {
+            _time = StunTime;
+            stun = false;
         }
     }
 }

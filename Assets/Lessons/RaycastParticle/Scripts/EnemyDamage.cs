@@ -7,7 +7,6 @@ public class EnemyDamage : MonoBehaviour {
     public float Health;
     public GameObject MainObj;
     public float DeadTime;
-    public GameObject WhatIsIt;
 
     private Animator _anim;
 

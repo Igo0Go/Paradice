@@ -49,7 +49,7 @@ public class NewRelictusController : MonoBehaviour
 
 
     //гравитация
-    private float _grav;
+    private float _grav;//sad
     private float _jumpSpeed;
     private float _vertSpeed;
 
@@ -225,18 +225,22 @@ public class NewRelictusController : MonoBehaviour
         {
             Energy.value -= 0.1f;
             EnergyTime = 0;
+            if(Energy.value <= 0)
+            {
+                VisorPanel.SetActive(false);
+            }
+        }
+        if (VisorPanel.activeSelf)
+        {
+            Cam.cullingMask = -1;
+        }
+        else
+        {
+            Cam.cullingMask = _defaultLayerMask;
         }
         if (Input.GetKeyDown(KeyCode.V))
         {
             VisorPanel.SetActive(!VisorPanel.activeSelf);
-            if(VisorPanel.activeSelf)
-            {
-                Cam.cullingMask = -1;
-            }
-            else
-            {
-                Cam.cullingMask = _defaultLayerMask;
-            }
         }
     }
 
@@ -298,7 +302,9 @@ public class NewRelictusController : MonoBehaviour
         {
             EnemyDamage ED = hit.GetComponent<EnemyDamage>();
             Animator anim = hit.GetComponent<Animator>();
-            hit.GetComponent<DemonController>().Alarm = true;
+            DemonController DC = hit.GetComponent<DemonController>();
+            DC.Alarm = true;
+            DC.StartStun(0.5f);
             if (ED.Health - 40 > 0)
             {
                 ED.GetDamage(40);
