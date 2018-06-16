@@ -6,92 +6,108 @@ public class CameraMoving : MonoBehaviour {
 
     public MenuScene ActiveScene;
     public float CameraSpeed;
+    public float RotateSpeed;
 
     private Quaternion _targetRotation;
     private Vector3 _targetPosition;
     private Vector3 _moveVector;
-    private bool _newVector;
     private bool _move;
     private bool _rotate;
+    private int _rotateType;
 
-	void Start () {
-        _newVector = false;
-	}
-	
-	
-	void Update () {
-		if(_rotate)
+    void Update()
+    {
+        if (_rotate)
         {
             CameraRotate();
         }
-        if(_move)
+        if (_move)
         {
             CameraMove();
         }
-	}
+    }
 
     private void GetCameraSettings()
     {
         _targetPosition = ActiveScene.CamPos1.transform.position;
         _targetRotation = ActiveScene.CamPos1.transform.rotation;
+        _moveVector = _targetPosition - transform.position;
     }
 
     private void CameraRotate()
     {
-        transform.rotation = _targetRotation;
-        _rotate = false;
+        if (transform.rotation != _targetRotation)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, _targetRotation, 0.1f);
+        }
+        else
+        {
+            _rotate = false;
+        }
     }
-        
 
     private void CameraMove()
     {
-        if(_newVector)
-        {
-            _moveVector = _targetPosition = transform.position;
-            _newVector = false;
-        }
         float x = Vector3.Distance(transform.position, _targetPosition);
-        if (CameraSpeed * Time.deltaTime < x)                                     
+        if (CameraSpeed * Time.deltaTime < x)
         {
-            transform.position += _moveVector.normalized * CameraSpeed * Time.deltaTime; 
-        }                                                                          
-        else                                                                  
+            transform.position += _moveVector.normalized * CameraSpeed * Time.fixedDeltaTime;
+        }
+        else
         {
             _move = false;
-            transform.position += _moveVector.normalized * x;                       
+            transform.position += _moveVector.normalized * x;
         }
+    }
+
+    private bool Vectors(Vector3 Face, Vector3 move)
+    {
+
+        Vector3 FaceVector = new Vector3(Face.x, 0, Face.z);
+        Vector3 MoveVector = new Vector3(move.x, 0, move.z);
+        float f = Vector3.Angle(FaceVector, MoveVector);
+        Debug.Log(f);
+        if (Vector3.Angle(FaceVector, MoveVector) < 1)
+        {
+            return false;
+        }
+        return true;
     }
 
     public void Next()
     {
-        if(ActiveScene.Next != null)
+        if (ActiveScene.Next != null)
         {
+            Disactive();
             ActiveScene = ActiveScene.Next;
             GetCameraSettings();
-            transform.rotation = _targetRotation;
-            transform.position = _targetPosition;
-            //_rotate = true;
-            //_move = true;
-            //_newVector = true;
+            _rotateType = 1;
+            _move = true;
+            _rotate = true;
         }
-        
+
     }
 
     public void Previos()
     {
-        if(ActiveScene.Previos != null)
+        if (ActiveScene.Previos != null)
         {
+            Disactive();
             ActiveScene = ActiveScene.Previos;
             GetCameraSettings();
-            transform.rotation = _targetRotation;
-            transform.position = _targetPosition;
-            //_rotate = true;
-            //_move = true;
+            _rotateType = -1;
+            _move = true;
+            _rotate = true;
         }
     }
 
     public void Active()
     {
-        ActiveScene.Anim.SetTrigger("Open");
+        ActiveScene.Anim.SetBool("Open", true);
+    }
+
+    public void Disactive()
+    {
+        ActiveScene.Anim.SetBool("Open", false);
     }
 }
