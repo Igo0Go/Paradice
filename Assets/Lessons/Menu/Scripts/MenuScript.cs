@@ -3,17 +3,93 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public static class LoadLevel
+{
+    public static event VolumeHelper VolumeChanged;
+    public static event ParticalHelper ParticalChanged;
+
+    public static string name;
+    public static float GlobalVolume
+    {
+        get
+        {
+            return s_globalVolume;
+        }
+        set
+        {
+            s_globalVolume = value;
+            VolumeChanged?.Invoke(TypeAudio.Global, value);
+        }
+    }
+    public static float MusicVolume
+    {
+        get
+        {
+            return s_musicVolume;
+        }
+        set
+        {
+            s_musicVolume = value;
+            VolumeChanged?.Invoke(TypeAudio.Music, value);
+        }
+    }
+    public static float SoundVolume
+    {
+        get
+        {
+            return s_soundVolume;
+        }
+        set
+        {
+            s_soundVolume = value;
+            VolumeChanged?.Invoke(TypeAudio.Sound, value);
+        }
+    }
+    public static bool Partical
+    {
+        get
+        {
+            return s_partical;
+        }
+        set
+        {
+            s_partical = value;
+            ParticalChanged?.Invoke(value, LevelDetal);
+        }
+    }
+    public static LevelDetal LevelDetal
+    {
+        get
+        {
+            return s_levelDetal;
+        }
+        set
+        {
+            s_levelDetal = value;
+            ParticalChanged?.Invoke(Partical, value);
+        }
+    }
+
+    private static float s_globalVolume;
+    private static float s_musicVolume;
+    private static float s_soundVolume;
+    private static bool s_partical;
+    private static LevelDetal s_levelDetal;
+}
+
 public class SelectLevel
 {
     public Animator gate;
     public Animator[] nombers;
     public GameObject lookAt;
+    public string name;
 
-    public SelectLevel(Animator gate, Animator[] nombers, GameObject lookAt)
+    public SelectLevel(Animator gate, Animator[] nombers, GameObject lookAt, string name)
     {
         this.gate = gate;
         this.nombers = nombers;
         this.lookAt = lookAt;
+        this.name = name;
     }
 
     public void GateOpen(bool open = true)
@@ -38,7 +114,23 @@ public class SelectLevel
 
 }
 
+public enum TypeAudio
+{
+    Music = 0,
+    Sound = 1,
+    Global = 2
+}
+
+public enum LevelDetal
+{
+    Low = 0,
+    Medium = 1,
+    High = 2
+}
+
 public delegate void SelectHelper(int index);
+public delegate void ParticalHelper(bool partical,LevelDetal levelDetal);
+public delegate void VolumeHelper(TypeAudio typeAudio, float level);
 
 public class MenuScript : MonoBehaviour {
 
@@ -56,6 +148,7 @@ public class MenuScript : MonoBehaviour {
         set
         {
             _selectedIndex = value;
+            LoadLevel.name = _selectLevels[value].name;
             SelectIndexChanged?.Invoke(value);
             if (value > 0)
             {
@@ -188,12 +281,13 @@ public class MenuScript : MonoBehaviour {
 
         _selectLevels = new SelectLevel[]
         {
-            new SelectLevel(_minionGate, _minionNombers,minionLookAt),
-            new SelectLevel(_simulationGate, _simulationNombers,simmulationLookAt),
-            new SelectLevel(_templeGate, _templeNombers,templeLookAt)
+            new SelectLevel(_minionGate, _minionNombers,minionLookAt,"RaycastAnim"),
+            new SelectLevel(_simulationGate, _simulationNombers,simmulationLookAt,"UICam"),
+            new SelectLevel(_templeGate, _templeNombers,templeLookAt,"RaycastParticle")
         };
 
         SelectedIndex = 0;
+        LoadLevel.name = _selectLevels[SelectedIndex].name;
         _go = false;
         _right = 0;
         SelectIndexChanged += SelectIndexChange;
