@@ -346,7 +346,6 @@ public class MenuScript : MonoBehaviour {
             _selectLevels[SelectedIndex].GateOpen();
             _selectLevels[SelectedIndex].HideNombers();
             _go = false;
-            Debug.Log("if ((gameObject.transform.position != _target.position) && (gameObject.transform.rotation != _target.rotation))");
         }
     }
 }

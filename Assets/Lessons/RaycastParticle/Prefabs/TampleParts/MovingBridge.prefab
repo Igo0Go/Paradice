@@ -477,4 +477,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb545af8e9bd923449396d1639802a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ForceObject: 1
   RefObj: []

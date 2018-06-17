@@ -4,23 +4,18 @@ using UnityEngine;
 
 public class ForceTech : MonoBehaviour {
 
+    public bool ForceObject;
     public List<Animator> RefObj;
 
     private Animator _anim;
 
-	// Use this for initialization
 	void Start () {
         _anim = GetComponent<Animator>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.Equals("Force"))
+        if (other.tag.Equals("Force") && ForceObject)
         {
             int f = other.GetComponentInParent<FORCER>().ForceType;
             Action(f);

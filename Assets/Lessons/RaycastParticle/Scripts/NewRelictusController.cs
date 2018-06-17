@@ -323,6 +323,7 @@ public class NewRelictusController : MonoBehaviour
         if (hit.tag.Equals("Shoot"))
         {
             hit.GetComponent<ForceTech>().Action(-1);
+            hit.GetComponent<Animator>().SetInteger("Active", 1);
         }
     }
     
