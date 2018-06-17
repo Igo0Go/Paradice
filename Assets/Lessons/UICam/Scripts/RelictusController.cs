@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.SceneManagement;
 
 public class RelictusController : MonoBehaviour {
 
@@ -25,7 +24,6 @@ public class RelictusController : MonoBehaviour {
 
     private CharacterController _controller;
     private Animator _anim;
-    private AsyncOperation _async;
     private Vector3 _moveVector;
     private float _speed;
     private float _rotationX;
@@ -55,8 +53,6 @@ public class RelictusController : MonoBehaviour {
         {
             c.SetActive(false);
         }
-        _async = EditorSceneManager.LoadSceneAsync("UICam");
-        _async.allowSceneActivation = false;
     }
 
     void Update() {
@@ -332,10 +328,5 @@ public class RelictusController : MonoBehaviour {
     {
         _anim.SetTrigger("Fatal");
         Cursor.lockState = CursorLockMode.None;
-    }
-
-    public void Retry()
-    {
-        _async.allowSceneActivation = true;
     }
 }

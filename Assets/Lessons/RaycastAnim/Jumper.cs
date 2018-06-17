@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class Jumper : MonoBehaviour {
 
@@ -25,8 +25,6 @@ public class Jumper : MonoBehaviour {
         _rigidbody = GetComponent<Rigidbody>();
         _standartCamPos = Cam.transform.position;
         _camOfset = Cam.transform.position - transform.position;
-        _async = EditorSceneManager.LoadSceneAsync("RaycastAnim");
-        _async.allowSceneActivation = false;
         _anim = GetComponent<Animator>();
     }
 
@@ -85,7 +83,7 @@ public class Jumper : MonoBehaviour {
     {
         if (other.tag.Equals("Durk"))
         {
-            _async.allowSceneActivation = true;
+            GameObject.Find("GameMenuPanel").GetComponent<PauseScript>().RetryButtonClick();
         }
     }
 

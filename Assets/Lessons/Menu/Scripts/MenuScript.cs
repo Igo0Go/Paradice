@@ -168,6 +168,7 @@ public class MenuScript : MonoBehaviour {
             }
         }
     }
+    public GameObject camMain;
     public GameObject preViewButton;
     public GameObject nextViewButton;
 
@@ -301,44 +302,45 @@ public class MenuScript : MonoBehaviour {
         {
             Go();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (gamePanel.activeSelf)
+            {
+                BackGameButtonClick();
+            }
+            if (settingPanel.activeSelf)
+            {
+                BackSettingButtonClick();
+            }
+        }
     }
 
     private void SelectIndexChange(int index)
     {
         _go = true;
         _target = _selectLevels[SelectedIndex].lookAt.transform;
-        _vectorToTarget = _target.position - gameObject.transform.position;
+        _vectorToTarget = _target.position - camMain.gameObject.transform.position;
 
     }
 
     private void Go()
     {
-        if ((gameObject.transform.position != _target.position) && (gameObject.transform.rotation != _target.rotation)) 
+        if ((camMain.gameObject.transform.position != _target.position) && (camMain.gameObject.transform.rotation != _target.rotation)) 
         {
-            if (gameObject.transform.position != _target.position)
+            if (camMain.gameObject.transform.position != _target.position)
             {
-                if ((gameObject.transform.position - _target.position).magnitude > speedMoveCam * Time.deltaTime)
+                if ((camMain.gameObject.transform.position - _target.position).magnitude > speedMoveCam * Time.deltaTime)
                 {
-                    gameObject.transform.position += _vectorToTarget.normalized * speedMoveCam * Time.deltaTime;
+                    camMain.gameObject.transform.position += _vectorToTarget.normalized * speedMoveCam * Time.deltaTime;
                 }
                 else
                 {
-                    gameObject.transform.position = _target.position;
+                    camMain.gameObject.transform.position = _target.position;
                 }
             }
-            if (gameObject.transform.rotation != _target.rotation)
+            if (camMain.gameObject.transform.rotation != _target.rotation)
             {
-                transform.rotation = Quaternion.Slerp(transform.rotation, _target.rotation, speedAngleCam);
-                //if (Quaternion.Angle(transform.rotation, _target.rotation) >= speedAngleCam*10)
-                //{
-                //    transform.rotation = Quaternion.Slerp(transform.rotation, _target.rotation, speedAngleCam);
-                //}
-                //else
-                //{
-                //    transform.rotation = _target.rotation;
-                //    Debug.Log("if (gameObject.transform.rotation != _target.rotation)");
-                //}
-
+                camMain.transform.rotation = Quaternion.Slerp(camMain.transform.rotation, _target.rotation, speedAngleCam);
             }
         }
         else

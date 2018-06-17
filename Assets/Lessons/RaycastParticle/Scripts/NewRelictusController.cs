@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.SceneManagement;
 
 public delegate void ShootHandler(Vector3 pos);
 
@@ -37,7 +36,6 @@ public class NewRelictusController : MonoBehaviour
     private Animator _camAnim;
     private Animator _anim;
     private CharacterController _controller;
-    private AsyncOperation _async;
     private WaitForSeconds _lineRendVisTime;
     private Vector3 _moveVector;
     private Vector3 _savePosition;
@@ -80,9 +78,6 @@ public class NewRelictusController : MonoBehaviour
         {
             c.SetActive(false);
         }
-
-        _async = EditorSceneManager.LoadSceneAsync("RaycastParticle");
-        _async.allowSceneActivation = false;
     }
 
     void Update()
@@ -163,11 +158,6 @@ public class NewRelictusController : MonoBehaviour
     {
         _anim.SetTrigger("Fatal");
         Cursor.lockState = CursorLockMode.None;
-    }
-    
-    public void Retry()
-    {
-        _async.allowSceneActivation = true;
     }
 
     public void GetSpecKey(ObjectForMission key)
