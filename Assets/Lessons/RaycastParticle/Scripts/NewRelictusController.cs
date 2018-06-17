@@ -41,6 +41,7 @@ public class NewRelictusController : MonoBehaviour
     private WaitForSeconds _lineRendVisTime;
     private Vector3 _moveVector;
     private Vector3 _savePosition;
+    private ScoreScript _score;
     private float _speed;
     private float _rotationX;
     private float _rotationY;
@@ -49,12 +50,13 @@ public class NewRelictusController : MonoBehaviour
 
 
     //гравитация
-    private float _grav;//sad
+    private float _grav;
     private float _jumpSpeed;
     private float _vertSpeed;
 
     void Start()
     {
+        _score = GetComponent<ScoreScript>();
         _defaultLayerMask = Cam.cullingMask;
         _camAnim = Cam.GetComponent<Animator>();
         VisorPanel.SetActive(false);
@@ -307,12 +309,14 @@ public class NewRelictusController : MonoBehaviour
             DC.StartStun(0.5f);
             if (ED.Health - 40 > 0)
             {
+                _score.Score += 20;
                 ED.GetDamage(40);
                 anim.SetInteger("Damage", 1);
                 anim.SetTrigger("GetDamage");
             }
             else
             {
+                _score.Score += 50;
                 ED.GetDamage(ED.Health);
             }
         }
@@ -374,11 +378,12 @@ public class NewRelictusController : MonoBehaviour
             EnergyFill.SetBool("Fill", true);
         }
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag.Equals("Gun"))
         {
+            _score.Score -= 5;
             Health.value -= 40;
         }
         if (other.tag.Equals("SavePoint"))
@@ -388,6 +393,7 @@ public class NewRelictusController : MonoBehaviour
         }
         if (other.tag.Equals("Durk"))
         {
+            _score.Score -= 30;
             _vertSpeed = 0;
             _speed = 0;
             transform.position = _savePosition;
@@ -397,17 +403,15 @@ public class NewRelictusController : MonoBehaviour
             EnergyTime = 0;
             Health.value -= 7;
         }
-        if (other.tag.Equals("Finish"))
-        {
-            other.GetComponent<PlatformForBox>().Weight += 1f;
-        }
         if (other.tag.Equals("Rifle"))
         {
+            _score.Score += 5;
             Energy.value += 5;
             Destroy(other.gameObject);
         }
         if (other.tag.Equals("CameraChenger"))
         {
+            _score.Score += 100;
             MissionPoint MP = other.GetComponent<MissionPoint>();
             MissionText.text = MP.Message;
             if (MP.Clip != null)

@@ -92,7 +92,7 @@ public class Jumper : MonoBehaviour {
     private void OnTriggerStay(Collider other)
     {
         if (other.tag.Equals("SavePoint"))
-        {//sad
+        {
             ConsoleScript console = other.GetComponent<ConsoleScript>();
             if (Input.GetKeyDown(KeyCode.J) && console.Connect)
             {

@@ -6,6 +6,9 @@ using UnityEditor.SceneManagement;
 
 public class RelictusController : MonoBehaviour {
 
+    public GameObject FinalEnergy;
+    public Text FinalText;
+
     public List<ObjectForMission> Keys;
     public List<GameObject> KeysImages;
     public AudioSource Music;
@@ -35,6 +38,7 @@ public class RelictusController : MonoBehaviour {
     private float _vertSpeed;
 
     void Start() {
+        FinalEnergy.SetActive(false);
         _savePosition = transform.position;
         _speed = Speed;
         _anim = GetComponent<Animator>();
@@ -198,6 +202,12 @@ public class RelictusController : MonoBehaviour {
                 InterfaceText.text = "Требуется ключ";
             }
             _anim.SetTrigger("Connect");
+        }
+        if (other.tag.Equals("Finish"))
+        {
+            FinalText.text = "Остаток энкргии: " + Energy.value.ToString();
+            FinalEnergy.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
