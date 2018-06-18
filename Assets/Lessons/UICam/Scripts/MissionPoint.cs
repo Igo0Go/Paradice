@@ -8,6 +8,7 @@ public class MissionPoint : MonoBehaviour {
 
     public string Message;
     public AudioClip Clip;
+    public Animator Anim;
 
 	// Use this for initialization
 	void Start () {

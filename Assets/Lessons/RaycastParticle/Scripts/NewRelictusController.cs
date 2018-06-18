@@ -68,7 +68,8 @@ public class NewRelictusController : MonoBehaviour
         _anim = GetComponent<Animator>();
         _grav = -9.8f;
         _jumpSpeed = 5;
-        InterfaceText.text = string.Empty;
+        InterfaceText.text = "Новая задача";
+        Invoke("EmptyInterfaceText", 2);
         Energy.value = 100;
         EnergySpeed = 2;
         _controller = GetComponent<CharacterController>();
@@ -79,7 +80,7 @@ public class NewRelictusController : MonoBehaviour
             c.SetActive(false);
         }
     }
-
+    
     void Update()
     {
         Shoot();
@@ -244,6 +245,11 @@ public class NewRelictusController : MonoBehaviour
         }
     }
 
+    public void EmptyInterfaceText()
+    {
+        InterfaceText.text = string.Empty;
+    }
+
 //выстрелы НАЧАЛО
     private void Shoot()
     {
@@ -368,7 +374,7 @@ public class NewRelictusController : MonoBehaviour
             EnergyFill.SetBool("Fill", true);
         }
     }
-    
+   
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag.Equals("Gun"))
@@ -401,11 +407,14 @@ public class NewRelictusController : MonoBehaviour
         }
         if (other.tag.Equals("CameraChenger"))
         {
+            InterfaceText.text = "Новая задача";
+            Invoke("EmptyInterfaceText", 2);
             _score.Score += 100;
             MissionPoint MP = other.GetComponent<MissionPoint>();
             MissionText.text = MP.Message;
             if (MP.Clip != null)
             {
+                MP.Anim.SetInteger("Active", 1);
                 if (Music.isPlaying) Music.Stop();
                 Music.clip = MP.Clip;
                 Music.Play();

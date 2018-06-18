@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MenuScene : MonoBehaviour {
 
-    public GameObject CamPos1;//sad
+    public GameObject CamPos1;
     public GameObject CamPos2;
     public MenuScene Previos;
     public MenuScene Next;
