@@ -48,6 +48,7 @@ public class PauseScript : MonoBehaviour {
     {
         LoadLevel.name = SceneManager.GetActiveScene().name;
         _asyncOperation.allowSceneActivation = true;
+        Time.timeScale = 1;
     }
 
     public void SettingButtonClick()
@@ -60,6 +61,7 @@ public class PauseScript : MonoBehaviour {
     {
         LoadLevel.name = "Menu";
         _asyncOperation.allowSceneActivation = true;
+        Time.timeScale = 1;
     }
 
     public void BackSettingButtonClick()

@@ -76,7 +76,7 @@ public static class LoadLevel
     private static bool s_partical;
     private static LevelDetal s_levelDetal;
 }
-
+//sdsd
 public class SelectLevel
 {
     public Animator gate;
@@ -209,6 +209,7 @@ public class MenuScript : MonoBehaviour {
     public void PlayButtonClick()
     {
         _asyncOperation.allowSceneActivation = true;
+        Time.timeScale = 1;
     }
 
     public void GameButtonClick()
