@@ -83,21 +83,22 @@ public class NewRelictusController : MonoBehaviour
     
     void Update()
     {
-        Shoot();
-
-        if (Health.value > 0)
+        if (Time.timeScale > 0)
         {
-            RelictusMove();
-            Rotate();
-            MaxSpeed();
-            Visor();
+            if (Health.value > 0)
+            {
+                Shoot();
+                RelictusMove();
+                Rotate();
+                MaxSpeed();
+                Visor();
+            }
+            else
+            {
+                FatlError();
+            }
+            EnergyChanger();
         }
-        else
-        {
-            FatlError();
-        }
-
-        EnergyChanger();
     }
 
     private void RelictusMove()
@@ -159,6 +160,10 @@ public class NewRelictusController : MonoBehaviour
     {
         _anim.SetTrigger("Fatal");
         Cursor.lockState = CursorLockMode.None;
+        if (Input.anyKeyDown)
+        {
+            GameObject.Find("GameMenuPanel").GetComponent<PauseScript>().RetryButtonClick();
+        }
     }
 
     public void GetSpecKey(ObjectForMission key)

@@ -56,16 +56,19 @@ public class RelictusController : MonoBehaviour {
     }
 
     void Update() {
-        if(Energy.value > 0)
+        if (Time.timeScale > 0)
         {
-            Energy.value -= EnergySpeed * Time.deltaTime;
-            RelictusMove();
-            Rotate();
-            MaxSpeed();
-        }
-        else
-        {
-            FatlError();
+            if (Energy.value > 0)
+            {
+                Energy.value -= EnergySpeed * Time.deltaTime;
+                RelictusMove();
+                Rotate();
+                MaxSpeed();
+            }
+            else
+            {
+                FatlError();
+            }
         }
     }
 
@@ -328,5 +331,9 @@ public class RelictusController : MonoBehaviour {
     {
         _anim.SetTrigger("Fatal");
         Cursor.lockState = CursorLockMode.None;
+        if (Input.anyKeyDown)
+        {
+            GameObject.Find("GameMenuPanel").GetComponent<PauseScript>().RetryButtonClick();
+        }
     }
 }
