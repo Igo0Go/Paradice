@@ -176,9 +176,10 @@ public class MenuScript : MonoBehaviour {
     public GameObject simmulationLookAt;
     public GameObject templeLookAt;
 
+    public GameObject mainPanel;
     public GameObject gamePanel;
     public GameObject settingPanel;
-    public GameObject mainPanel;
+    public GameObject controlPanel;
 
     public GameObject minionGate;
     public GameObject simulationGate;
@@ -226,6 +227,12 @@ public class MenuScript : MonoBehaviour {
         settingPanel.SetActive(true);
     }
 
+    public void ControlButtonClick()
+    {
+        mainPanel.SetActive(false);
+        controlPanel.SetActive(true);
+    }
+
     public void ExitButtonClick()
     {
         Application.Quit();
@@ -243,6 +250,12 @@ public class MenuScript : MonoBehaviour {
         mainPanel.SetActive(true);
         _selectLevels[SelectedIndex].GateOpen(false);
         _selectLevels[SelectedIndex].HideNombers(false);
+    }
+
+    public void BackControlButtonClick()
+    {
+        mainPanel.SetActive(true);
+        controlPanel.SetActive(false);
     }
 
     public void PreViewButtonClick()
@@ -272,6 +285,7 @@ public class MenuScript : MonoBehaviour {
         gamePanel.SetActive(false);
         mainPanel.SetActive(true);
         settingPanel.SetActive(false);
+        controlPanel.SetActive(false);
 
         _minionGate = minionGate.GetComponent<Animator>();
         _simulationGate = simulationGate.GetComponent<Animator>();
