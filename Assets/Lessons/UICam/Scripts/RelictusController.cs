@@ -74,29 +74,32 @@ public class RelictusController : MonoBehaviour {
 
     private void RelictusMove()
     {
-        var x = Input.GetAxis("Horizontal");
-        var z = Input.GetAxis("Vertical");
-        _moveVector = transform.right * x + transform.forward * z;
-        _anim.SetFloat("RunWalk", Mathf.Clamp(_moveVector.magnitude * _speed / 24, 0, 1));
-        if (_controller.isGrounded)
+        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-            _vertSpeed = 0;
-            if (Input.GetKeyDown(KeyCode.Space))
+            var x = Input.GetAxis("Horizontal");
+            var z = Input.GetAxis("Vertical");
+            _moveVector = transform.right * x + transform.forward * z;
+            _anim.SetFloat("RunWalk", Mathf.Clamp(_moveVector.magnitude * _speed / 24, 0, 1));
+            if (_controller.isGrounded)
             {
-                _vertSpeed = _jumpSpeed;
-                Energy.value -= 1;
+                _vertSpeed = 0;
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    _vertSpeed = _jumpSpeed;
+                    Energy.value -= 1;
+                }
             }
-        }
-        _vertSpeed += _grav * Time.deltaTime;
-        _moveVector = new Vector3(_moveVector.x * _speed * Time.fixedDeltaTime, _vertSpeed * Time.deltaTime, _moveVector.z * _speed * Time.fixedDeltaTime);
-        if (_moveVector != Vector3.zero)
-        {
-            EnergySpeed = 3;
-            _controller.Move(_moveVector);
-        }
-        else
-        {
-            EnergySpeed = 0;
+            _vertSpeed += _grav * Time.deltaTime;
+            _moveVector = new Vector3(_moveVector.x * _speed * Time.fixedDeltaTime, _vertSpeed * Time.deltaTime, _moveVector.z * _speed * Time.fixedDeltaTime);
+            if (_moveVector != Vector3.zero)
+            {
+                EnergySpeed = 3;
+                _controller.Move(_moveVector);
+            }
+            else
+            {
+                EnergySpeed = 0;
+            }
         }
     }
 

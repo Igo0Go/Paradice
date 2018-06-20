@@ -8,17 +8,17 @@ public class ConsoleScript : MonoBehaviour {
     public GameObject Pos;
     public GameObject ConsoleLight;
     public bool Connect;
+    public bool active;
 
     private Vector3 _position;
     private Animator _consoleAnim;
-    private bool _active;
     private float _time;
     private float _connectTime;
 
 	void Start () {
         _connectTime = 1;
         _position = Pos.transform.position;
-        _active = false;
+        active = false;
         ConsoleLight.SetActive(true);
         Connect = true;
         _consoleAnim = GetComponent<Animator>();
@@ -36,12 +36,12 @@ public class ConsoleScript : MonoBehaviour {
 
     public void ActionConsole(GameObject actor)
     {
-        _active = !_active;
+        active = !active;
         foreach(var c in Objects)
         {
-            c.GetComponent<Animator>().SetBool("Active", _active);
+            c.GetComponent<Animator>().SetBool("Active", active);
         }
-        _consoleAnim.SetBool("Active", _active);
+        _consoleAnim.SetBool("Active", active);
         actor.transform.position = new Vector3(_position.x, actor.transform.position.y, _position.z);
         Vector3 moveVector = transform.position - actor.transform.position;
         moveVector = new Vector3(moveVector.x, 0, moveVector.z);

@@ -8,6 +8,7 @@ public static class LoadLevel
     public static event VolumeHelper VolumeChanged;
     public static event ParticalHelper ParticalChanged;
 
+    public static string namePlayer = "Anonim";
     public static string name;
     public static float GlobalVolume
     {

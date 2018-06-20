@@ -12,7 +12,6 @@ public class TimerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        ReturnMenuButton.SetActive(false);
         _time = 0;
         TimeText.text = _time.ToString();
 	}
@@ -28,7 +27,6 @@ public class TimerScript : MonoBehaviour {
         if(other.tag.Equals("Finish"))
         {
             Cursor.lockState = CursorLockMode.None;
-            ReturnMenuButton.SetActive(true);
             Destroy(this);
         }
     }
