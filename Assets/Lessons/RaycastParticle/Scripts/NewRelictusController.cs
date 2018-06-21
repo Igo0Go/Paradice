@@ -385,6 +385,7 @@ public class NewRelictusController : MonoBehaviour
    
     private void OnTriggerEnter(Collider other)
     {
+
         if(other.tag.Equals("Gun"))
         {
             _score.Score -= 5;
@@ -444,10 +445,6 @@ public class NewRelictusController : MonoBehaviour
         if (other.tag.Equals("SavePoint"))
         {
             Connect.SetBool("Active", false);
-        }
-        if (other.tag.Equals("Finish"))
-        {
-            other.GetComponent<PlatformForBox>().Weight -= 1f;
         }
     }
 }

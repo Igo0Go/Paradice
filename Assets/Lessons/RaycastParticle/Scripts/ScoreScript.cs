@@ -34,9 +34,7 @@ public class ScoreScript : MonoBehaviour {
         FinalButton.SetActive(false);
         ScoreText.text = "Счёт: " + _score;
         StartCoroutine(BonusScore());
-    }//asd
-
-   
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -45,6 +43,7 @@ public class ScoreScript : MonoBehaviour {
             TimeBonus.text = "Бонус за время: " + (int)_time;
             FinalButton.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+            Destroy(other.gameObject);
         }
     }
 
