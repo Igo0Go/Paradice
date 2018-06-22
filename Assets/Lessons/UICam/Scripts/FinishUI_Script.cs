@@ -35,6 +35,7 @@ public class FinishUI_Script : MonoBehaviour
         Error.SetActive(false);
         Goal.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         pauseScript.enabled = false;
         if (UIRecordTable.Records == null)
         {

@@ -77,6 +77,7 @@ public class NewRelictusController : MonoBehaviour
         _controller = GetComponent<CharacterController>();
         _rotationX = _rotationY = 0;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         foreach (var c in KeysImages)
         {
             c.SetActive(false);
@@ -444,7 +445,8 @@ public class NewRelictusController : MonoBehaviour
     {
         if (other.tag.Equals("SavePoint"))
         {
-            Health.value += Time.deltaTime;
+            Health.value += 10 * Time.deltaTime;
+            Energy.value += 5 * Time.deltaTime;
             EnergyTime = 0;
         }
     }

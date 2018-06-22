@@ -363,7 +363,7 @@ public class MenuScript : MonoBehaviour {
 
     private void Go()
     {
-        if ((camMain.gameObject.transform.position != _target.position) && (camMain.gameObject.transform.rotation != _target.rotation)) 
+        if ((camMain.gameObject.transform.position != _target.position) || (camMain.gameObject.transform.rotation != _target.rotation)) 
         {
             if (camMain.gameObject.transform.position != _target.position)
             {

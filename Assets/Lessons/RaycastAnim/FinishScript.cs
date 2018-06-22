@@ -89,6 +89,7 @@ public class FinishScript : MonoBehaviour
     private void Finish()
     {
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Time.timeScale = 0;
         _finish = true;
         finishPanel.SetActive(true);

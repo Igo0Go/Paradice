@@ -26,7 +26,7 @@ public class SettingScript : MonoBehaviour {
         globalSlider.value = LoadLevel.GlobalVolume;
         musicSlider.value = LoadLevel.MusicVolume;
         soundSlider.value = LoadLevel.SoundVolume;
-        fieldOfViewSlider.value = LoadLevel.FieldOfView * (float)0.01;
+        fieldOfViewSlider.value = LoadLevel.FieldOfView * 0.01f;
         particalToggle.isOn = LoadLevel.Partical;
         dropdownTypeLevel.value = (int)LoadLevel.LevelDetal;
         globalSlider.onValueChanged.AddListener(delegate { GlobalSliderValueChanged(); });

@@ -56,6 +56,7 @@ public class ScoreScript : MonoBehaviour
     {
         _key = false;
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         Time.timeScale = 0;
         GoalPanel.SetActive(false);
         scorePanel.SetActive(false);

@@ -35,6 +35,7 @@ public class PauseScript : MonoBehaviour {
             Time.timeScale = 0;
             pausePanel.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
@@ -43,6 +44,7 @@ public class PauseScript : MonoBehaviour {
         Time.timeScale = 1;
         pausePanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void RetryButtonClick()

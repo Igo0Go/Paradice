@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class SuperCube : MonoBehaviour {
 
@@ -16,7 +16,7 @@ public class SuperCube : MonoBehaviour {
         _rb = GetComponent<Rigidbody>();
         Sticky = false;
         Light.SetActive(false);
-        _async = EditorSceneManager.LoadSceneAsync("InputLesson");
+        _async = SceneManager.LoadSceneAsync("InputLesson");
         _async.allowSceneActivation = false;
     }
 	

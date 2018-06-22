@@ -47,6 +47,7 @@ public class RelictusController : MonoBehaviour {
         _controller = GetComponent<CharacterController>();
         _rotationX = _rotationY = 0;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         foreach (var c in KeysImages)
         {
             c.SetActive(false);
