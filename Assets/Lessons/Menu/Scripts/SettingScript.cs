@@ -18,14 +18,17 @@ public class SettingScript : MonoBehaviour {
     void Start () {
 		if (LoadLevel.GlobalVolume == 0)
         {
-            globalSlider.value = musicSlider.value = soundSlider.value = defaultState;
-            fieldOfViewSlider.value = defaultFieldOfView*(float)0.01;
             LoadLevel.FieldOfView = defaultFieldOfView;
             LoadLevel.GlobalVolume = LoadLevel.MusicVolume = LoadLevel.SoundVolume = defaultState;
-            particalToggle.isOn = LoadLevel.Partical = true; 
-            dropdownTypeLevel.value = 0;
+            LoadLevel.Partical = true; 
             LoadLevel.LevelDetal = (LevelDetal)0;
         }
+        globalSlider.value = LoadLevel.GlobalVolume;
+        musicSlider.value = LoadLevel.MusicVolume;
+        soundSlider.value = LoadLevel.SoundVolume;
+        fieldOfViewSlider.value = LoadLevel.FieldOfView * (float)0.01;
+        particalToggle.isOn = LoadLevel.Partical;
+        dropdownTypeLevel.value = (int)LoadLevel.LevelDetal;
         globalSlider.onValueChanged.AddListener(delegate { GlobalSliderValueChanged(); });
         musicSlider.onValueChanged.AddListener(delegate { MusicSliderValueChanged(); });
         soundSlider.onValueChanged.AddListener(delegate { SoundSliderValueChanged(); });
