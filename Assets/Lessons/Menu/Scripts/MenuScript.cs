@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public static class LoadLevel
@@ -151,6 +152,7 @@ public delegate void CameraHelper(float fieldOfView);
 public class MenuScript : MonoBehaviour {
 
     public event SelectHelper SelectIndexChanged;
+    public InputField nameField;
     public float speedMoveCam;
     public float speedAngleCam;
 
@@ -295,6 +297,10 @@ public class MenuScript : MonoBehaviour {
             _right = 1;
         }
     }
+    public void NameFieldValueChanged()
+    {
+        LoadLevel.namePlayer = nameField.text;
+    }
     //sad
     private void Start()
     {
@@ -317,8 +323,9 @@ public class MenuScript : MonoBehaviour {
             new SelectLevel(_simulationGate, _simulationNombers,simmulationLookAt,"UICam"),
             new SelectLevel(_templeGate, _templeNombers,templeLookAt,"RaycastParticle")
         };
-
+        nameField.text = LoadLevel.namePlayer + ".";
         SelectedIndex = 0;
+        nameField.onValueChanged.AddListener(delegate { NameFieldValueChanged(); });
         LoadLevel.name = _selectLevels[SelectedIndex].name;
         _go = false;
         _right = 0;
