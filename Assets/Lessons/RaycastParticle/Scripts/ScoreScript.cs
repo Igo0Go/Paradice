@@ -15,14 +15,13 @@ public static class RaycastRecordTable
 
 public class ScoreScript : MonoBehaviour
 {
+    public PauseScript pauseScript;
     public GameObject finishPanel;
     public GameObject scorePanel;
     public GameObject GoalPanel;
     public Text scoreTextFinish;
     public Text nameText;
-
     public Text ScoreText;
-    public Text TimeBonus;
 
     public int Score
     {
@@ -46,7 +45,6 @@ public class ScoreScript : MonoBehaviour
         set
         {
             _timer = value;
-            TimeBonus.text = "Бонус за время: " + value;
         }
     }
 
@@ -62,7 +60,7 @@ public class ScoreScript : MonoBehaviour
         GoalPanel.SetActive(false);
         scorePanel.SetActive(false);
         finishPanel.SetActive(true);
-        GameObject.Find("GameMenuPanel").GetComponent<PauseScript>().enabled = false;
+        pauseScript.enabled = false;
         scoreTextFinish.text = (Score + Timer).ToString();
         if (RaycastRecordTable.Records == null)
         {

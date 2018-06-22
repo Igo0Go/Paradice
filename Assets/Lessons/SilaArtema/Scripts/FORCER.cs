@@ -20,7 +20,7 @@ public class FORCER : MonoBehaviour
     private bool Grab = false; // взять
     private bool Throw = false; // кинуть
     public bool hitRb = false;
-    
+    private ForceReaction _forceReaction;
 
     private void Start()
     {
@@ -28,6 +28,7 @@ public class FORCER : MonoBehaviour
         ForceZone.SetActive(false);
         NRC = GetComponent<NewRelictusController>();
         _forceTime = 1;
+        
     }
   
     void Update()
@@ -39,10 +40,11 @@ public class FORCER : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 if (hitRb == false)
-                {
+                {//
                     if (Physics.Raycast(transform.position, transform.forward, out hit, RayDistance, (1 << 10)))
                     {
                         hitRb = true;
+                        _forceReaction = hit.rigidbody.GetComponent<ForceReaction>();
                     }
                 }
 
@@ -87,8 +89,8 @@ public class FORCER : MonoBehaviour
                 NRC.EnergyTime = 0;
                 hit.rigidbody.velocity =
                     (offset.position - (hit.transform.position + hit.rigidbody.centerOfMass)) * grabPower;
-                
-                   hit.rigidbody.GetComponent<ForceReaction>().BoostAvailable.enabled = true;
+
+                _forceReaction.BoostAvailable.enabled = true;
             }
         }
 
@@ -117,7 +119,7 @@ public class FORCER : MonoBehaviour
 
     void Poff()
     {
-        hit.rigidbody.GetComponent<ForceReaction>().BoostAvailable.enabled = false;
+        _forceReaction.BoostAvailable.enabled = false;
     }
 
     private void Timer()

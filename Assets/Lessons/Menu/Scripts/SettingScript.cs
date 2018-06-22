@@ -14,7 +14,7 @@ public class SettingScript : MonoBehaviour {
     public Dropdown dropdownTypeLevel;
     public Slider fieldOfViewSlider;
 
-    // Use this for initialization
+  
     void Start () {
 		if (LoadLevel.GlobalVolume == 0)
         {

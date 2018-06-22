@@ -15,9 +15,10 @@ public static class UIRecordTable
         Records = new List<WriteTableRecord>();
     }
 }
-
+//
 public class FinishUI_Script : MonoBehaviour
 {
+    public PauseScript pauseScript;
     public GameObject finishPanel;
     public GameObject Error;
     public GameObject Goal;
@@ -34,7 +35,7 @@ public class FinishUI_Script : MonoBehaviour
         Error.SetActive(false);
         Goal.SetActive(false);
         Cursor.lockState = CursorLockMode.None;
-        GameObject.Find("GameMenuPanel").GetComponent<PauseScript>().enabled = false;
+        pauseScript.enabled = false;
         if (UIRecordTable.Records == null)
         {
             UIRecordTable.Create();

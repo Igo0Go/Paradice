@@ -7,6 +7,7 @@ public delegate void ShootHandler(Vector3 pos);
 
 public class NewRelictusController : MonoBehaviour
 {
+    public PauseScript pauseScript;
     public event ShootHandler ShootSound;
     public List<ObjectForMission> Keys;
     public List<GameObject> KeysImages;
@@ -110,24 +111,29 @@ public class NewRelictusController : MonoBehaviour
             var z = Input.GetAxis("Vertical");
             _moveVector = transform.right * x + transform.forward * z;
             _anim.SetFloat("RunWalk", Mathf.Clamp(_moveVector.magnitude * _speed / (Speed * 2), 0, 1));
-            if (_controller.isGrounded)
+        }
+        else
+        {
+            _anim.SetFloat("RunWalk", 0);
+        }
+        if (_controller.isGrounded)
+        {
+            _vertSpeed = 0;
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                _vertSpeed = 0;
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    _vertSpeed = _jumpSpeed;
-                    EnergyTime = 0;
-                }
-            }
-
-            _vertSpeed += _grav * Time.deltaTime;
-            _moveVector = new Vector3(_moveVector.x * _speed * Time.fixedDeltaTime, _vertSpeed * Time.deltaTime,
-                _moveVector.z * _speed * Time.fixedDeltaTime);
-            if (_moveVector != Vector3.zero)
-            {
-                _controller.Move(_moveVector);
+                _vertSpeed = _jumpSpeed;
+                EnergyTime = 0;
             }
         }
+
+        _vertSpeed += _grav * Time.deltaTime;
+        _moveVector = new Vector3(_moveVector.x * _speed * Time.fixedDeltaTime, _vertSpeed * Time.deltaTime,
+            _moveVector.z * _speed * Time.fixedDeltaTime);
+        if (_moveVector != Vector3.zero)
+        {
+            _controller.Move(_moveVector);
+        }
+
     }
 
     private void Rotate()
@@ -145,7 +151,7 @@ public class NewRelictusController : MonoBehaviour
 
     private void MaxSpeed()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && !_reforce)
+        if (Input.GetKey(KeyCode.LeftShift) && _anim.GetFloat("RunWalk") > 0 && !_reforce)
         {
             Fast = true;
             _speed = Speed * 2;
@@ -166,7 +172,7 @@ public class NewRelictusController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         if (Input.anyKeyDown)
         {
-            GameObject.Find("GameMenuPanel").GetComponent<PauseScript>().RetryButtonClick();
+            pauseScript.RetryButtonClick();
         }
     }
 

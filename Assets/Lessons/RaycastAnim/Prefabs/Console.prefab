@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4653185987908056}
   - component: {fileID: 33315171583125380}
   - component: {fileID: 23924068052866890}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114853382618394228}
   - component: {fileID: 95262726205491116}
   - component: {fileID: 65640204609859162}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Console
   m_TagString: SavePoint
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4369178884985086}
   - component: {fileID: 108275003295263694}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 33543855957731940}
   - component: {fileID: 23601938108374190}
   - component: {fileID: 136056160109128832}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 33631692682342122}
   - component: {fileID: 23245980906912554}
   - component: {fileID: 65991806409130008}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4181108733789788}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,10 +411,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f0046888fb7174c86de7d9e7f2dca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Obj: {fileID: 0}
+  Objects:
+  - {fileID: 0}
+  - {fileID: 0}
   Pos: {fileID: 1732355332580626}
   ConsoleLight: {fileID: 1596456730202398}
   Connect: 0
+  active: 0
 --- !u!136 &136056160109128832
 CapsuleCollider:
   m_ObjectHideFlags: 1

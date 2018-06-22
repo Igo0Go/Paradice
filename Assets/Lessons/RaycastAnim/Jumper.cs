@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Jumper : MonoBehaviour {
 
+    public PauseScript pauseScript;
     public GameObject Cam;
     public GameObject Body;
     public float ForceJump;
@@ -35,7 +36,7 @@ public class Jumper : MonoBehaviour {
         MoveJumper();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (Physics.Raycast(transform.position, Vector3.down, k_GroundRayLength, ~(1 << 8)))
+            if (Physics.Raycast(transform.position, Vector3.down, k_GroundRayLength, (1 << 0)))
             {
                 Jump();
             }
@@ -83,9 +84,9 @@ public class Jumper : MonoBehaviour {
     {
         if (other.tag.Equals("Durk"))
         {
-            GameObject.Find("GameMenuPanel").GetComponent<PauseScript>().RetryButtonClick();
+            pauseScript.RetryButtonClick();
         }
-    }
+    }//
 
     private void OnTriggerStay(Collider other)
     {

@@ -34,6 +34,8 @@ public static class JumperRecordTable
 
 public class FinishScript : MonoBehaviour
 {
+    public PauseScript pauseScript;
+
     public GameObject finishPanel;
     public GameObject console1;
     public GameObject timerText;
@@ -93,7 +95,7 @@ public class FinishScript : MonoBehaviour
         timerText.SetActive(false);
         timeText.text = _time.ToString();
         nameText.text = LoadLevel.namePlayer + ", " + nameText.text;
-        GameObject.Find("GameMenuPanel").GetComponent<PauseScript>().enabled = false;
+        pauseScript.enabled = false;
         if (JumperRecordTable.Records == null)
         {
             JumperRecordTable.Create();
