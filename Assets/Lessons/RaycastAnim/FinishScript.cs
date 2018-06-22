@@ -64,7 +64,7 @@ public class FinishScript : MonoBehaviour
         if (_consoleScript.active && !_finish)
         {
             _time += Time.deltaTime;
-            textTimer.text = ((int)_time).ToString();
+            textTimer.text = (Math.Round( _time,2).ToString());
             if (f)
             {
                 timerText.SetActive(true);
@@ -76,7 +76,7 @@ public class FinishScript : MonoBehaviour
             if (!f)
             {
                 _time = 0;
-                textTimer.text = ((int)_time).ToString();
+                textTimer.text = (Math.Round(_time, 2).ToString()); 
                 timerText.SetActive(false);
                 f = !f;
             }
