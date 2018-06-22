@@ -7,6 +7,7 @@ public class PauseScript : MonoBehaviour {
 
     public GameObject pausePanel;
     public GameObject settingPanel;
+
     private AsyncOperation _asyncOperation;
 
 	// Use this for initialization
@@ -33,7 +34,7 @@ public class PauseScript : MonoBehaviour {
             }
             Time.timeScale = 0;
             pausePanel.SetActive(true);
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 

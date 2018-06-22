@@ -7,9 +7,11 @@ public static class LoadLevel
 {
     public static event VolumeHelper VolumeChanged;
     public static event ParticalHelper ParticalChanged;
+    public static event CameraHelper FieldOfViewChanged;
 
     public static string namePlayer = "Anonim";
     public static string name;
+
     public static float GlobalVolume
     {
         get
@@ -70,12 +72,24 @@ public static class LoadLevel
             ParticalChanged?.Invoke(Partical, value);
         }
     }
-
+    public static float FieldOfView
+    {
+        get
+        {
+            return s_fieldOfView;
+        }
+        set
+        {
+            s_fieldOfView = value;
+            FieldOfViewChanged?.Invoke(value);
+        }
+    }
     private static float s_globalVolume;
     private static float s_musicVolume;
     private static float s_soundVolume;
     private static bool s_partical;
     private static LevelDetal s_levelDetal;
+    private static float s_fieldOfView;
 }
 //sdsd
 public class SelectLevel
@@ -132,6 +146,7 @@ public enum LevelDetal
 public delegate void SelectHelper(int index);
 public delegate void ParticalHelper(bool partical,LevelDetal levelDetal);
 public delegate void VolumeHelper(TypeAudio typeAudio, float level);
+public delegate void CameraHelper(float fieldOfView);
 
 public class MenuScript : MonoBehaviour {
 
@@ -139,7 +154,6 @@ public class MenuScript : MonoBehaviour {
     public float speedMoveCam;
     public float speedAngleCam;
 
-    [SerializeField]
     public int SelectedIndex
     {
         get
@@ -169,6 +183,7 @@ public class MenuScript : MonoBehaviour {
             }
         }
     }
+
     public GameObject camMain;
     public GameObject preViewButton;
     public GameObject nextViewButton;

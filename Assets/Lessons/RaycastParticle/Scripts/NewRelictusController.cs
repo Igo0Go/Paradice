@@ -32,7 +32,8 @@ public class NewRelictusController : MonoBehaviour
     public bool Reload;
     public bool Fast;
     public GameObject ShootParticle;
-    
+    public CamScript camScript;
+
     private Animator _camAnim;
     private Animator _anim;
     private CharacterController _controller;
@@ -402,7 +403,8 @@ public class NewRelictusController : MonoBehaviour
             _vertSpeed = 0;
             _speed = 0;
             transform.position = _savePosition;
-            _camAnim.SetTrigger("Portal");
+            //_camAnim.SetTrigger("Portal");
+            camScript.ChangeAnimFieldOfView(162);
             Energy.value -= 50;
             EnergySpeed = 0;
             EnergyTime = 0;

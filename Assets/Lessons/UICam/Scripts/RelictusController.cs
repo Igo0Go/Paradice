@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class RelictusController : MonoBehaviour {
 
-    public GameObject FinalEnergy;
-    public Text FinalText;
-
     public List<ObjectForMission> Keys;
     public List<GameObject> KeysImages;
     public AudioSource Music;
@@ -21,6 +18,7 @@ public class RelictusController : MonoBehaviour {
     public float MaxVert;
     public float MinVert;
     public int EnergySpeed;
+    public CamScript camScript;
 
     private CharacterController _controller;
     private Animator _anim;
@@ -36,7 +34,6 @@ public class RelictusController : MonoBehaviour {
     private float _vertSpeed;
 
     void Start() {
-        FinalEnergy.SetActive(false);
         _savePosition = transform.position;
         _speed = Speed;
         _anim = GetComponent<Animator>();
@@ -141,7 +138,8 @@ public class RelictusController : MonoBehaviour {
             _vertSpeed = 0;
             _speed = 0;
             transform.position = _savePosition;
-            Cam.SetTrigger("Portal");
+            camScript.ChangeAnimFieldOfView(162);
+            //Cam.SetTrigger("Portal");
             Energy.value -= 10;
         }
         if (other.tag.Equals("Gun"))
@@ -171,7 +169,8 @@ public class RelictusController : MonoBehaviour {
             PortalScript ps = other.GetComponent<PortalScript>();
             if (ps.Active)
             {
-                Cam.SetTrigger("Portal");
+                //Cam.SetTrigger("Portal");
+                camScript.ChangeAnimFieldOfView(162);
                 transform.position = other.GetComponent<PortalScript>().Ref.pos.position;
                 transform.forward = other.transform.forward;
                 ps.Ref.Active = false;
@@ -204,12 +203,6 @@ public class RelictusController : MonoBehaviour {
                 InterfaceText.text = "Требуется ключ";
             }
             _anim.SetTrigger("Connect");
-        }
-        if (other.tag.Equals("Finish"))
-        {
-            FinalText.text = "Остаток энкргии: " + Energy.value.ToString();
-            FinalEnergy.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
         }
     }
 

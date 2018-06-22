@@ -3,15 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreScript : MonoBehaviour {
+public static class RaycastRecordTable
+{
+    public static List<WriteTableRecord> Records { get; set; }
 
-    public GameObject FinalButton;
+    public static void Create()
+    {
+        Records = new List<WriteTableRecord>();
+    }
+}
+
+public class ScoreScript : MonoBehaviour
+{
+    public GameObject finishPanel;
+    public GameObject scorePanel;
+    public GameObject GoalPanel;
+    public Text scoreTextFinish;
+    public Text nameText;
+
     public Text ScoreText;
     public Text TimeBonus;
-
-    private int _time;
-    private bool _key;
-    private int _score;
 
     public int Score
     {
@@ -22,37 +33,70 @@ public class ScoreScript : MonoBehaviour {
         set
         {
             _score = value;
-            ScoreText.text = "Счёт: " + _score;
+            ScoreText.text = "Счёт: " + value;
         }
     }
 
+    public int Timer
+    {
+        get
+        {
+            return _timer;
+        }
+        set
+        {
+            _timer = value;
+            TimeBonus.text = "Бонус за время: " + value;
+        }
+    }
 
-    void Start () {
-        _time = 500;
+    private bool _key;
+    private int _score;
+    private int _timer;
+
+    private void Finish()
+    {
+        _key = false;
+        Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0;
+        GoalPanel.SetActive(false);
+        scorePanel.SetActive(false);
+        finishPanel.SetActive(true);
+        GameObject.Find("GameMenuPanel").GetComponent<PauseScript>().enabled = false;
+        scoreTextFinish.text = (Score + Timer).ToString();
+        if (RaycastRecordTable.Records == null)
+        {
+            RaycastRecordTable.Create();
+        }
+        RaycastRecordTable.Records.Add(new WriteTableRecord(LoadLevel.namePlayer, Score + Timer));
+    }
+
+    void Start()
+    {
+        finishPanel.SetActive(false);
+        scorePanel.SetActive(true);
+        nameText.text = LoadLevel.namePlayer + ", " + nameText.text;
+        Timer = 500;
         _key = true;
-        _score = 0;
-        FinalButton.SetActive(false);
-        ScoreText.text = "Счёт: " + _score;
+        Score = 0;
         StartCoroutine(BonusScore());
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag.Equals("Finish"))
+        if (other.tag.Equals("Finish"))
         {
-            TimeBonus.text = "Бонус за время: " + (int)_time;
-            FinalButton.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
+            Finish();
             Destroy(other.gameObject);
         }
     }
 
     private IEnumerator BonusScore()
     {
-        while (_key)
+        while (_key && Timer > 0) 
         {
             yield return new WaitForSeconds(1);
-            _time -= 1;
+            Timer -= 1;
         }
     }
 }

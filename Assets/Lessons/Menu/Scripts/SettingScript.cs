@@ -5,20 +5,24 @@ using UnityEngine.UI;
 
 public class SettingScript : MonoBehaviour {
 
+    public float defaultFieldOfView;
     public float defaultState;
     public Slider globalSlider;
     public Slider musicSlider;
     public Slider soundSlider;
     public Toggle particalToggle;
     public Dropdown dropdownTypeLevel;
+    public Slider fieldOfViewSlider;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		if (LoadLevel.GlobalVolume == 0)
         {
             globalSlider.value = musicSlider.value = soundSlider.value = defaultState;
+            fieldOfViewSlider.value = defaultFieldOfView*(float)0.01;
+            LoadLevel.FieldOfView = defaultFieldOfView;
             LoadLevel.GlobalVolume = LoadLevel.MusicVolume = LoadLevel.SoundVolume = defaultState;
-            particalToggle.isOn = LoadLevel.Partical = true;
+            particalToggle.isOn = LoadLevel.Partical = true; 
             dropdownTypeLevel.value = 0;
             LoadLevel.LevelDetal = (LevelDetal)0;
         }
@@ -27,12 +31,8 @@ public class SettingScript : MonoBehaviour {
         soundSlider.onValueChanged.AddListener(delegate { SoundSliderValueChanged(); });
         particalToggle.onValueChanged.AddListener(delegate { ParticalToggleChanged(); });
         dropdownTypeLevel.onValueChanged.AddListener(delegate { TypeLevelValueChanged(); });
+        fieldOfViewSlider.onValueChanged.AddListener(delegate { FieldOfViewSliderValueChanged(); });
     }
-
-    // Update is called once per frame
-    void Update () {
-		
-	}
 
     public void GlobalSliderValueChanged()
     {
@@ -54,5 +54,9 @@ public class SettingScript : MonoBehaviour {
     public void TypeLevelValueChanged()
     {
         LoadLevel.LevelDetal = (LevelDetal)dropdownTypeLevel.value;
+    }
+    public void FieldOfViewSliderValueChanged()
+    {
+        LoadLevel.FieldOfView = fieldOfViewSlider.value*100;
     }
 }
