@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: 2f512a1c4b3d77547980df6b3a29f807
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bone016
+    100002: Bone017
+    100004: Bone018
+    100006: Bone019
+    100008: Bone020
+    100010: Bone021
+    100012: Bone022
+    100014: Bone023
+    100016: Bone024
+    100018: Bone025
+    100020: Bone026
+    100022: Bone027
+    100024: Bone028
+    100026: Bone029
+    100028: Bone030
+    100030: Box005
+    100032: Box006
+    100034: Bracelet008
+    100036: Bracelet009
+    100038: Bracelet010
+    100040: Bracelet011
+    100042: Cylinder004
+    100044: Cylinder005
+    100046: //RootNode
+    100048: Object016
+    100050: Object017
+    100052: Object018
+    100054: Object019
+    100056: Object020
+    100058: Object021
+    400000: Bone016
+    400002: Bone017
+    400004: Bone018
+    400006: Bone019
+    400008: Bone020
+    400010: Bone021
+    400012: Bone022
+    400014: Bone023
+    400016: Bone024
+    400018: Bone025
+    400020: Bone026
+    400022: Bone027
+    400024: Bone028
+    400026: Bone029
+    400028: Bone030
+    400030: Box005
+    400032: Box006
+    400034: Bracelet008
+    400036: Bracelet009
+    400038: Bracelet010
+    400040: Bracelet011
+    400042: Cylinder004
+    400044: Cylinder005
+    400046: //RootNode
+    400048: Object016
+    400050: Object017
+    400052: Object018
+    400054: Object019
+    400056: Object020
+    400058: Object021
+    2100000: 03 - Default
+    2100002: 02 - Default
+    2100004: 'Material #25'
+    2100006: 01 - Default
+    2100008: 09 - Default
+    2100010: No Name
+    2100012: 04 - Default
+    2100014: 'Material #27'
+    2300000: Box005
+    2300002: Bracelet008
+    2300004: Bracelet009
+    2300006: Bracelet010
+    2300008: Bracelet011
+    2300010: Cylinder004
+    2300012: Cylinder005
+    2300014: Object016
+    2300016: Object017
+    2300018: Object018
+    2300020: Object019
+    2300022: Object020
+    2300024: Object021
+    2300026: Bone016
+    2300028: Bone017
+    2300030: Bone018
+    2300032: Bone019
+    2300034: Bone020
+    2300036: Bone021
+    2300038: Bone022
+    2300040: Bone023
+    2300042: Bone024
+    2300044: Bone025
+    2300046: Bone026
+    2300048: Bone027
+    2300050: Bone028
+    2300052: Bone029
+    2300054: Bone030
+    3300000: Box005
+    3300002: Bracelet008
+    3300004: Bracelet009
+    3300006: Bracelet010
+    3300008: Bracelet011
+    3300010: Cylinder004
+    3300012: Cylinder005
+    3300014: Object016
+    3300016: Object017
+    3300018: Object018
+    3300020: Object019
+    3300022: Object020
+    3300024: Object021
+    3300026: Bone016
+    3300028: Bone017
+    3300030: Bone018
+    3300032: Bone019
+    3300034: Bone020
+    3300036: Bone021
+    3300038: Bone022
+    3300040: Bone023
+    3300042: Bone024
+    3300044: Bone025
+    3300046: Bone026
+    3300048: Bone027
+    3300050: Bone028
+    3300052: Bone029
+    3300054: Bone030
+    4300000: Object018
+    4300002: Bracelet009
+    4300004: Object017
+    4300006: Bracelet008
+    4300008: Object016
+    4300010: Bracelet011
+    4300012: Object020
+    4300014: Bracelet010
+    4300016: Object019
+    4300018: Box005
+    4300020: Cylinder005
+    4300022: Object021
+    4300024: Cylinder004
+    4300026: Box006
+    4300028: Bone020
+    4300030: Bone016
+    4300032: Bone017
+    4300034: Bone018
+    4300036: Bone019
+    4300038: Bone021
+    4300040: Bone022
+    4300042: Bone023
+    4300044: Bone024
+    4300046: Bone025
+    4300048: Bone026
+    4300050: Bone027
+    4300052: Bone028
+    4300054: Bone029
+    4300056: Bone030
+    9500000: //RootNode
+    13700000: Box006
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.3
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -19,6 +19,7 @@ TagManager:
   - Pistol
   - Rifle
   - Bullet
+  - '-----------------------'
   layers:
   - Default
   - TransparentFX
