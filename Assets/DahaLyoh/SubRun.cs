@@ -21,7 +21,7 @@ public class SubRun : MonoBehaviour
 	// Update is called once per frame
 	//
 	void Update () {
-		if (Vector3.Distance(transform.position, Glavtrans.position) > 0.5f )
+		if (Vector3.Distance(transform.position, Glavtrans.position) > 1.66f )
 		{
 			MoveToGlav();
 			//Gizmos.DrawLine(transform.position.normalized, GetDistinationNacMech(Glavtrans.position.normalized));
