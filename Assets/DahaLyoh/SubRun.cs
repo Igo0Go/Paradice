@@ -19,11 +19,12 @@ public class SubRun : MonoBehaviour
 	
 	
 	// Update is called once per frame
+	//
 	void Update () {
 		if (Vector3.Distance(transform.position, Glavtrans.position) > 0.5f )
 		{
 			MoveToGlav();
-			Gizmos.DrawLine(transform.position.normalized, GetDistinationNacMech(Glavtrans.position.normalized));
+			//Gizmos.DrawLine(transform.position.normalized, GetDistinationNacMech(Glavtrans.position.normalized));
 		}
 		else
 		{
@@ -33,7 +34,7 @@ public class SubRun : MonoBehaviour
 
 	private void MoveToGlav()
 	{
-		_NMA.Move((Glavtrans.position-transform.position).normalized*5f*Time.deltaTime);
+		_NMA.Move(((Glavtrans.position)-GetDistinationNacMech(transform.position)).normalized*5f*Time.deltaTime);
 
 
 	}
@@ -43,10 +44,11 @@ public class SubRun : MonoBehaviour
 		NavMeshHit myHitik;
 		if (NavMesh.SamplePosition(request, out myHitik, 100, NavMesh.AllAreas))
 		{
+			navPath.ClearCorners();
 			NavMesh.CalculatePath(transform.position, myHitik.position, NavMesh.AllAreas, navPath);
 			if (navPath != null && navPath.corners.Length > 1)
 			{
-				return navPath.corners[1];
+				return navPath.corners[1] - navPath.corners[0];
 			}
 		}
 

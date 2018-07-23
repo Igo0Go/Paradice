@@ -13,7 +13,6 @@ public class GlavRun : MonoBehaviour
     private Vector3 target = new Vector3 ();
     private Vector3 lastTarget = new Vector3 ();
     private bool walk;
-    
     private void Update ()
     {
         if (Input.GetMouseButton (1)) {
