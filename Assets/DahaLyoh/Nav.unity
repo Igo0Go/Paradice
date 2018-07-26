@@ -98,15 +98,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 1
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 0.4
+    agentClimb: 0.75
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.33333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -330,7 +330,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!136 &92806102
 CapsuleCollider:
@@ -359,20 +359,20 @@ NavMeshObstacle:
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.24
 --- !u!4 &92806104
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 92806101}
-  m_LocalRotation: {x: -0, y: -0.5568051, z: -0, w: 0.8306432}
-  m_LocalPosition: {x: 3.04, y: 1.53, z: -11.03}
+  m_LocalRotation: {x: -0, y: 0.99363744, z: -0, w: 0.11262622}
+  m_LocalPosition: {x: -0.13, y: 0, z: 0.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: -67.670006, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 167.067, z: 0}
 --- !u!1 &245962416
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 245962416}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e7e031561d7b374ead84e86c7d409f3, type: 3}
   m_Name: 
@@ -451,12 +451,12 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.4, y: 1, z: 0.4}
-  m_MoveThreshold: 0.1
+  m_Extents: {x: 1, y: 1, z: 1}
+  m_MoveThreshold: 0.0002
   m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.0002
 --- !u!136 &245962421
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -519,7 +519,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 245962416}
   m_LocalRotation: {x: -0, y: 0.9946075, z: -0, w: 0.103711076}
-  m_LocalPosition: {x: -27.37693, y: 1.3, z: 6.523863}
+  m_LocalPosition: {x: -26.62, y: 1.3, z: 2.94}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -881,12 +881,12 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.4, y: 1, z: 0.4}
-  m_MoveThreshold: 0.1
+  m_Extents: {x: 1, y: 1, z: 1}
+  m_MoveThreshold: 0.0002
   m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.0002
 --- !u!136 &368327213
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -949,7 +949,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 368327210}
   m_LocalRotation: {x: -0, y: 0.9946075, z: -0, w: 0.103711076}
-  m_LocalPosition: {x: -23.644505, y: 1.5, z: 2.9282227}
+  m_LocalPosition: {x: -22.887575, y: 1.5, z: -0.6556401}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1300,7 +1300,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!136 &668033575
 CapsuleCollider:
@@ -1329,20 +1329,20 @@ NavMeshObstacle:
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.24
 --- !u!4 &668033577
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 668033574}
-  m_LocalRotation: {x: -0, y: -0.5568051, z: -0, w: 0.8306432}
-  m_LocalPosition: {x: 0.44729877, y: 0.6600001, z: -11.2623625}
+  m_LocalRotation: {x: -0, y: 0.99363744, z: -0, w: 0.11262622}
+  m_LocalPosition: {x: -0.31, y: 0, z: 3.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: -67.670006, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 167.067, z: 0}
 --- !u!1 &697591698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1358,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!136 &697591699
 CapsuleCollider:
@@ -1387,20 +1387,20 @@ NavMeshObstacle:
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.24
 --- !u!4 &697591701
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 697591698}
-  m_LocalRotation: {x: -0, y: -0.5568051, z: -0, w: 0.8306432}
-  m_LocalPosition: {x: 1.8602808, y: 0.2800002, z: -10.480581}
+  m_LocalRotation: {x: -0, y: 0.99363744, z: -0, w: 0.11262622}
+  m_LocalPosition: {x: -0.074501395, y: 0, z: 0.15210474}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: -67.670006, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 167.067, z: 0}
 --- !u!1 &789258885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 789258885}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e7e031561d7b374ead84e86c7d409f3, type: 3}
   m_Name: 
@@ -1479,12 +1479,12 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.4, y: 1, z: 0.4}
-  m_MoveThreshold: 0.1
+  m_Extents: {x: 1, y: 1, z: 1}
+  m_MoveThreshold: 0.0002
   m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.0002
 --- !u!136 &789258890
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1547,7 +1547,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 789258885}
   m_LocalRotation: {x: -0, y: 0.9946075, z: -0, w: 0.103711076}
-  m_LocalPosition: {x: -23.968369, y: 1.5, z: 0.44048166}
+  m_LocalPosition: {x: -23.21144, y: 1.5, z: -3.143381}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1782,7 +1782,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!136 &869429163
 CapsuleCollider:
@@ -1811,20 +1811,20 @@ NavMeshObstacle:
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.24
 --- !u!4 &869429165
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 869429162}
-  m_LocalRotation: {x: -0, y: -0.5568051, z: -0, w: 0.8306432}
-  m_LocalPosition: {x: 2.4808714, y: 1.53, z: -10.443593}
+  m_LocalRotation: {x: -0, y: 0.99363744, z: -0, w: 0.11262622}
+  m_LocalPosition: {x: -0.95, y: 0, z: -1.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: -67.670006, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 167.067, z: 0}
 --- !u!1 &920936040
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +1840,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!136 &920936041
 CapsuleCollider:
@@ -1869,20 +1869,20 @@ NavMeshObstacle:
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.24
 --- !u!4 &920936043
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 920936040}
-  m_LocalRotation: {x: -0, y: -0.5568051, z: -0, w: 0.8306432}
-  m_LocalPosition: {x: 3.5561829, y: 1.53, z: -11.642007}
+  m_LocalRotation: {x: -0, y: 0.99363744, z: -0, w: 0.11262622}
+  m_LocalPosition: {x: -0.10528755, y: 0, z: 2.2073545}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: -67.670006, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 167.067, z: 0}
 --- !u!1 &920936843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,7 +1939,7 @@ NavMeshObstacle:
   m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.1
 --- !u!136 &920936846
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2148,7 +2148,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1080526616}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e7e031561d7b374ead84e86c7d409f3, type: 3}
   m_Name: 
@@ -2163,12 +2163,12 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.4, y: 1, z: 0.4}
-  m_MoveThreshold: 0.1
+  m_Extents: {x: 1, y: 1, z: 1}
+  m_MoveThreshold: 0.0002
   m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.0002
 --- !u!136 &1080526621
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2231,7 +2231,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1080526616}
   m_LocalRotation: {x: -0, y: 0.9946075, z: -0, w: 0.103711076}
-  m_LocalPosition: {x: -28.44, y: 1.5, z: 1}
+  m_LocalPosition: {x: -27.683071, y: 1.5, z: -2.5838628}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2412,12 +2412,12 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.4, y: 1, z: 0.4}
-  m_MoveThreshold: 0.1
+  m_Extents: {x: 1, y: 1, z: 1}
+  m_MoveThreshold: 0.0002
   m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.0002
 --- !u!136 &1285975089
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2480,7 +2480,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1285975084}
   m_LocalRotation: {x: -0, y: 0.9946075, z: -0, w: 0.103711076}
-  m_LocalPosition: {x: -27.52, y: 1.3, z: 8.71}
+  m_LocalPosition: {x: -26.763071, y: 1.3, z: 5.1261373}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2576,12 +2576,12 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.4, y: 1, z: 0.4}
-  m_MoveThreshold: 0.1
+  m_Extents: {x: 1, y: 1, z: 1}
+  m_MoveThreshold: 0.0002
   m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.0002
 --- !u!136 &1377279733
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2644,7 +2644,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1377279728}
   m_LocalRotation: {x: -0, y: 0.9946075, z: -0, w: 0.103711076}
-  m_LocalPosition: {x: -23.048382, y: 1.3, z: 8.150478}
+  m_LocalPosition: {x: -22.291452, y: 1.3, z: 4.5666156}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2711,12 +2711,12 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.4, y: 1, z: 0.4}
-  m_MoveThreshold: 0.1
+  m_Extents: {x: 1, y: 1, z: 1}
+  m_MoveThreshold: 0.0002
   m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.0002
 --- !u!136 &1433575490
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2779,7 +2779,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1433575487}
   m_LocalRotation: {x: -0, y: 0.9946075, z: -0, w: 0.103711076}
-  m_LocalPosition: {x: -25.47, y: 1.5, z: 5}
+  m_LocalPosition: {x: -24.71307, y: 1.5, z: 1.4161372}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3801,7 +3801,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!136 &1960330908
 CapsuleCollider:
@@ -3830,20 +3830,20 @@ NavMeshObstacle:
   m_Carve: 1
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.24
 --- !u!4 &1960330910
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1960330907}
-  m_LocalRotation: {x: -0, y: -0.5568051, z: -0, w: 0.8306432}
-  m_LocalPosition: {x: 0.9848089, y: -0.019999743, z: -10.769634}
+  m_LocalRotation: {x: -0, y: 0.99363744, z: -0, w: 0.11262622}
+  m_LocalPosition: {x: 0.6669522, y: 0, z: -0.395849}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: -67.670006, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 167.067, z: 0}
 --- !u!1 &1993823286
 GameObject:
   m_ObjectHideFlags: 0
@@ -3893,12 +3893,12 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.4, y: 1, z: 0.4}
-  m_MoveThreshold: 0.1
+  m_Extents: {x: 1, y: 1, z: 1}
+  m_MoveThreshold: 0.0002
   m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.0002
 --- !u!136 &1993823289
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3961,7 +3961,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1993823286}
   m_LocalRotation: {x: -0, y: 0.9946075, z: -0, w: 0.103711076}
-  m_LocalPosition: {x: -28.116138, y: 1.5, z: 3.4877431}
+  m_LocalPosition: {x: -27.35921, y: 1.5, z: -0.09611964}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4037,7 +4037,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2024777099}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e7e031561d7b374ead84e86c7d409f3, type: 3}
   m_Name: 
@@ -4086,12 +4086,12 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 0
-  m_Extents: {x: 0.4, y: 1, z: 0.4}
-  m_MoveThreshold: 0.1
+  m_Extents: {x: 1, y: 1, z: 1}
+  m_MoveThreshold: 0.0002
   m_Carve: 1
   m_CarveOnlyStationary: 0
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.0002
 --- !u!136 &2024777104
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -4154,7 +4154,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2024777099}
   m_LocalRotation: {x: -0, y: 0.9946075, z: -0, w: 0.103711076}
-  m_LocalPosition: {x: -22.905306, y: 1.3, z: 5.964345}
+  m_LocalPosition: {x: -22.148376, y: 1.3, z: 2.3804822}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

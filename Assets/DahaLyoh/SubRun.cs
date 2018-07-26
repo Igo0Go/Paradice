@@ -48,7 +48,7 @@ public class SubRun : MonoBehaviour
 			NavMesh.CalculatePath(transform.position, myHitik.position, NavMesh.AllAreas, navPath);
 			if (navPath != null && navPath.corners.Length > 1)
 			{
-				return navPath.corners[1] - navPath.corners[0];
+				return navPath.corners[1];
 			}
 		}
 
