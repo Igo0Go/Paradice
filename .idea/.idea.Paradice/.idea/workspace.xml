@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a9612a98-9012-48fc-a11d-a9369da6f48b" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/DahaLyoh/Quad.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/DahaLyoh/Quad.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Paradice/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Paradice/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Paradice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Paradice/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lessons/RaycastParticle/Prefabs/TampleParts/Brick.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lessons/RaycastParticle/Prefabs/TampleParts/Brick.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lessons/RaycastParticle/Prefabs/TampleParts/HealthStation.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lessons/RaycastParticle/Prefabs/TampleParts/HealthStation.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lessons/RaycastParticle/RaycastParticle.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lessons/RaycastParticle/RaycastParticle.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lessons/RaycastParticle/Scripts/NewRelictusController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lessons/RaycastParticle/Scripts/NewRelictusController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/FORCER.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/FORCER.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/ForceReaction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/ForceReaction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DahaLyoh/Nav.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DahaLyoh/Nav.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DahaLyoh/Nav/NavMesh.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DahaLyoh/Nav/NavMesh.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/DahaLyoh/SubRun.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DahaLyoh/SubRun.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,145 +23,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ForceReaction.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/ForceReaction.cs">
+      <file leaf-file-name="SubRun.cs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/DahaLyoh/SubRun.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+            <state relative-caret-position="510">
+              <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
               <folding>
-                <marker date="1528802265587" expanded="false" signature="6:58" ph="..." />
-                <marker date="1528802265587" expanded="true" signature="88:3537" ph="{...}" />
-                <marker date="1528802265587" expanded="true" signature="137:3535" ph="{...}" />
-                <marker date="1528802265587" expanded="true" signature="408:520" ph="{...}" />
-                <marker date="1528802265587" expanded="true" signature="581:646" ph="{...}" />
-                <marker date="1528802265587" expanded="false" signature="655:2591" ph="/* private IEnumerator MoveToTarget(Vector3 target) ... */" />
-                <marker date="1528802265587" expanded="true" signature="2660:2843" ph="{...}" />
-                <marker date="1528802265587" expanded="true" signature="2896:3227" ph="{...}" />
-                <marker date="1528802265587" expanded="true" signature="2949:3071" ph="{...}" />
-                <marker date="1528802265587" expanded="true" signature="3115:3217" ph="{...}" />
-                <marker date="1528802265587" expanded="true" signature="3278:3444" ph="{...}" />
-                <marker date="1528802265587" expanded="true" signature="3332:3434" ph="{...}" />
-                <marker date="1528802265587" expanded="true" signature="3465:3529" ph="{...}" />
+                <marker date="1532586413468" expanded="false" signature="6:137" ph="..." />
+                <marker date="1532586413468" expanded="true" signature="174:1296" ph="{...}" />
+                <marker date="1532586413468" expanded="true" signature="311:392" ph="{...}" />
+                <marker date="1532586413468" expanded="true" signature="400:438" ph="/* Update is called once per frame ... */" />
+                <marker date="1532586413468" expanded="true" signature="455:683" ph="{...}" />
+                <marker date="1532586413468" expanded="true" signature="529:661" ph="{...}" />
+                <marker date="1532586413468" expanded="true" signature="668:680" ph="{...}" />
+                <marker date="1532586413468" expanded="true" signature="711:822" ph="{...}" />
+                <marker date="1532586413468" expanded="true" signature="878:1294" ph="{...}" />
+                <marker date="1532586413468" expanded="true" signature="978:1263" ph="{...}" />
+                <marker date="1532586413468" expanded="true" signature="1213:1259" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FORCER.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/FORCER.cs">
+      <file leaf-file-name="EDit.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/DahaLyoh/Nav/Editor/EDit.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="42" column="109" selection-start-line="42" selection-start-column="109" selection-end-line="42" selection-end-column="109" />
+            <state relative-caret-position="210">
+              <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
               <folding>
-                <marker date="1528801578527" expanded="true" signature="6:126" ph="..." />
-                <marker date="1528801578527" expanded="true" signature="163:3613" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="632:799" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="820:3226" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="878:2174" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="933:1386" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="983:1214" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="1114:1196" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="1250:1372" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="1431:1615" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="1661:1889" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="1934:2164" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="2202:2652" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="2243:2642" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="2687:2909" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="2929:3220" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="2970:3210" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="3243:3339" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="3365:3611" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="3400:3532" ph="{...}" />
-                <marker date="1528801578527" expanded="true" signature="3545:3605" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewRelictusController.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastParticle/Scripts/NewRelictusController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="253" column="56" selection-start-line="253" selection-start-column="56" selection-end-line="253" selection-end-column="56" />
-              <folding>
-                <marker date="1528801958119" expanded="false" signature="6:135" ph="..." />
-                <marker date="1528801958119" expanded="true" signature="187:9951" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="1352:2304" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="2125:2177" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="2187:2298" ph="/* _async = EditorSceneManager.LoadSceneAsync(&quot;RaycastParticle&quot;); ... */" />
-                <marker date="1528801958119" expanded="true" signature="2323:2582" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="2377:2492" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="2505:2550" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="2615:3435" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="2912:3110" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="2999:3100" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="3366:3429" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="3462:3928" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="3544:3922" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="3957:4227" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="4021:4131" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="4144:4221" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="4257:4352" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="4381:4437" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="4487:5101" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="4557:5095" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="5154:5737" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="5181:5731" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="5762:6199" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="5803:5885" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="5926:6193" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="6032:6098" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="6115:6183" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="6243:6514" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="6322:6508" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="6544:6965" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="6847:6959" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="7069:7522" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="7303:7395" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="7565:7643" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="7604:7637" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="7682:7732" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="7777:7855" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="7914:8077" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="8131:8705" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="8165:8285" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="8298:8405" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="8437:8486" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="8523:8590" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="8603:8699" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="8754:9462" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="8796:8848" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="8891:9010" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="9048:9331" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="9371:9456" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="9509:9656" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="9558:9650" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="9703:9949" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="9752:9818" ph="{...}" />
-                <marker date="1528801958119" expanded="true" signature="9858:9943" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Mover.cs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/Mover.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-              <folding>
-                <marker date="1528379911731" expanded="false" signature="6:78" ph="..." />
-                <marker date="1528379911731" expanded="true" signature="114:1496" ph="{...}" />
-                <marker date="1528379911731" expanded="true" signature="346:514" ph="{...}" />
-                <marker date="1528379911731" expanded="true" signature="533:589" ph="{...}" />
-                <marker date="1528379911731" expanded="true" signature="622:1308" ph="{...}" />
-                <marker date="1528379911731" expanded="true" signature="819:985" ph="{...}" />
-                <marker date="1528379911731" expanded="true" signature="906:975" ph="{...}" />
-                <marker date="1528379911731" expanded="true" signature="1239:1302" ph="{...}" />
-                <marker date="1528379911731" expanded="true" signature="1338:1494" ph="{...}" />
-                <marker date="1528379911731" expanded="true" signature="1389:1432" ph="{...}" />
-                <marker date="1528379911731" expanded="true" signature="1445:1488" ph="{...}" />
+                <marker date="1532444148426" expanded="false" signature="6:97" ph="..." />
+                <marker date="1532444148426" expanded="true" signature="156:715" ph="{...}" />
+                <marker date="1532444148426" expanded="true" signature="234:342" ph="{...}" />
+                <marker date="1532444148426" expanded="true" signature="345:707" ph="..." />
               </folding>
             </state>
           </provider>
@@ -179,18 +71,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lessons/RaycastAnim/Jumper.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Viktoria/Homework1/Les1.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/ForceReaction.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/Mover.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/FORCER.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lessons/RaycastParticle/Scripts/NewRelictusController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Lessons/Transform/CubeCreator.cs" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/Assets/DahaLyoh/SubRun.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/DahaLyoh/Nav/Editor/EDit.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -213,6 +95,8 @@
         <option value="$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/FORCER.cs" />
         <option value="$PROJECT_DIR$/Assets/Lessons/RaycastParticle/Scripts/NewRelictusController.cs" />
         <option value="$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/ForceReaction.cs" />
+        <option value="$PROJECT_DIR$/Assets/DahaLyoh/SubRun.cs" />
+        <option value="$PROJECT_DIR$/Assets/DahaLyoh/Nav/Editor/EDit.cs" />
       </list>
     </option>
   </component>
@@ -235,10 +119,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="SolutionExplorer">
-        <option name="show-file-system" value="false" />
-        <option name="show-all-items" value="false" />
-      </pane>
       <pane id="Scratches" />
       <pane id="UnityExplorer">
         <subPane>
@@ -251,6 +131,10 @@
           <select />
         </subPane>
         <option name="show-hidden-items" value="false" />
+      </pane>
+      <pane id="SolutionExplorer">
+        <option name="show-file-system" value="false" />
+        <option name="show-all-items" value="false" />
       </pane>
     </panes>
   </component>
@@ -293,11 +177,13 @@
       <workItem from="1528198627855" duration="8060000" />
       <workItem from="1528599773569" duration="7035000" />
       <workItem from="1528712883452" duration="1264000" />
+      <workItem from="1532582699376" duration="56000" />
+      <workItem from="1532582916241" duration="2896000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46118000" />
+    <option name="totallyTimeSpent" value="50439000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -310,46 +196,30 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Errors In Solution" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Unit Tests" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49834985" visible="true" weight="0.17004265" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49834985" visible="true" weight="0.1716418" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unity" order="7" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info id="Structure" order="1" sideWeight="0.50165015" side_tool="true" weight="0.25340393" />
-      <window_info id="Favorites" order="2" sideWeight="0.50165015" side_tool="true" weight="0.25340393" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" sideWeight="0.50165015" side_tool="true" weight="0.25340393" />
       <window_info anchor="bottom" id="NuGet" order="7" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Unity" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49834985" visible="true" weight="0.1684435" />
-      <window_info id="Structure" order="1" sideWeight="0.50165015" side_tool="true" weight="0.25340393" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Unit Tests" order="7" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Errors In Solution" order="3" />
-      <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Favorites" order="2" sideWeight="0.50165015" side_tool="true" weight="0.25340393" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,377 +236,84 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2700">
-          <caret line="180" column="80" selection-start-line="180" selection-start-column="80" selection-end-line="180" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/CubeCreator.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2700">
-          <caret line="180" column="80" selection-start-line="180" selection-start-column="80" selection-end-line="180" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework1/Les1.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/CubeCreator.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework1/Les1.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Shoot.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastAnim/Jumper.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastAnim/Jumper.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Force.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/ForceReaction.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/FORCER.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastParticle/ForceReactor.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastParticle/ForceReactor.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/ForceReaction.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Force.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="61" selection-start-line="21" selection-start-column="61" selection-end-line="21" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2700">
-          <caret line="180" column="80" selection-start-line="180" selection-start-column="80" selection-end-line="180" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/CubeCreator.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2700">
-          <caret line="180" column="80" selection-start-line="180" selection-start-column="80" selection-end-line="180" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework1/Les1.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/CubeCreator.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/Transform/LessonTransform.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework1/Les1.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Shoot.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="19" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastAnim/Jumper.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/FallingTarget.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/ObjectMove.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/Bullet.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Viktoria/Homework2/MouseMove2.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastAnim/Jumper.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Force.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/ForceReaction.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/FORCER.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/RelictusController.cs" />
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastParticle/ForceReactor.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastParticle/ForceReactor.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/Mover.cs" />
+    <entry file="file://$USER_HOME$/Desktop/NewRelictusController.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastParticle/NewRelictusController.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/ForceReaction.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastParticle/Scripts/NewRelictusController.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/FORCER.cs" />
+    <entry file="file://$PROJECT_DIR$/Assets/DahaLyoh/SubRun.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/Mover.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        <state relative-caret-position="510">
+          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
           <folding>
-            <marker date="1528379911731" expanded="false" signature="6:78" ph="..." />
-            <marker date="1528379911731" expanded="true" signature="114:1496" ph="{...}" />
-            <marker date="1528379911731" expanded="true" signature="346:514" ph="{...}" />
-            <marker date="1528379911731" expanded="true" signature="533:589" ph="{...}" />
-            <marker date="1528379911731" expanded="true" signature="622:1308" ph="{...}" />
-            <marker date="1528379911731" expanded="true" signature="819:985" ph="{...}" />
-            <marker date="1528379911731" expanded="true" signature="906:975" ph="{...}" />
-            <marker date="1528379911731" expanded="true" signature="1239:1302" ph="{...}" />
-            <marker date="1528379911731" expanded="true" signature="1338:1494" ph="{...}" />
-            <marker date="1528379911731" expanded="true" signature="1389:1432" ph="{...}" />
-            <marker date="1528379911731" expanded="true" signature="1445:1488" ph="{...}" />
+            <marker date="1532586413468" expanded="false" signature="6:137" ph="..." />
+            <marker date="1532586413468" expanded="true" signature="174:1296" ph="{...}" />
+            <marker date="1532586413468" expanded="true" signature="311:392" ph="{...}" />
+            <marker date="1532586413468" expanded="true" signature="400:438" ph="/* Update is called once per frame ... */" />
+            <marker date="1532586413468" expanded="true" signature="455:683" ph="{...}" />
+            <marker date="1532586413468" expanded="true" signature="529:661" ph="{...}" />
+            <marker date="1532586413468" expanded="true" signature="668:680" ph="{...}" />
+            <marker date="1532586413468" expanded="true" signature="711:822" ph="{...}" />
+            <marker date="1532586413468" expanded="true" signature="878:1294" ph="{...}" />
+            <marker date="1532586413468" expanded="true" signature="978:1263" ph="{...}" />
+            <marker date="1532586413468" expanded="true" signature="1213:1259" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/NewRelictusController.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/DahaLyoh/Nav/Editor/EDit.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="246" column="8" selection-start-line="246" selection-start-column="8" selection-end-line="246" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastParticle/NewRelictusController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/FORCER.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="42" column="109" selection-start-line="42" selection-start-column="109" selection-end-line="42" selection-end-column="109" />
+        <state relative-caret-position="210">
+          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
           <folding>
-            <marker date="1528801578527" expanded="true" signature="6:126" ph="..." />
-            <marker date="1528801578527" expanded="true" signature="163:3613" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="632:799" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="820:3226" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="878:2174" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="933:1386" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="983:1214" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="1114:1196" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="1250:1372" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="1431:1615" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="1661:1889" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="1934:2164" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="2202:2652" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="2243:2642" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="2687:2909" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="2929:3220" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="2970:3210" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="3243:3339" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="3365:3611" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="3400:3532" ph="{...}" />
-            <marker date="1528801578527" expanded="true" signature="3545:3605" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/RaycastParticle/Scripts/NewRelictusController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="253" column="56" selection-start-line="253" selection-start-column="56" selection-end-line="253" selection-end-column="56" />
-          <folding>
-            <marker date="1528801958119" expanded="false" signature="6:135" ph="..." />
-            <marker date="1528801958119" expanded="true" signature="187:9951" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="1352:2304" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="2125:2177" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="2187:2298" ph="/* _async = EditorSceneManager.LoadSceneAsync(&quot;RaycastParticle&quot;); ... */" />
-            <marker date="1528801958119" expanded="true" signature="2323:2582" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="2377:2492" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="2505:2550" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="2615:3435" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="2912:3110" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="2999:3100" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="3366:3429" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="3462:3928" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="3544:3922" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="3957:4227" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="4021:4131" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="4144:4221" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="4257:4352" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="4381:4437" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="4487:5101" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="4557:5095" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="5154:5737" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="5181:5731" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="5762:6199" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="5803:5885" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="5926:6193" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="6032:6098" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="6115:6183" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="6243:6514" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="6322:6508" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="6544:6965" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="6847:6959" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="7069:7522" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="7303:7395" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="7565:7643" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="7604:7637" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="7682:7732" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="7777:7855" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="7914:8077" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="8131:8705" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="8165:8285" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="8298:8405" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="8437:8486" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="8523:8590" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="8603:8699" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="8754:9462" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="8796:8848" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="8891:9010" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="9048:9331" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="9371:9456" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="9509:9656" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="9558:9650" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="9703:9949" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="9752:9818" ph="{...}" />
-            <marker date="1528801958119" expanded="true" signature="9858:9943" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Lessons/SilaArtema/Scripts/ForceReaction.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding>
-            <marker date="1528802265587" expanded="false" signature="6:58" ph="..." />
-            <marker date="1528802265587" expanded="true" signature="88:3537" ph="{...}" />
-            <marker date="1528802265587" expanded="true" signature="137:3535" ph="{...}" />
-            <marker date="1528802265587" expanded="true" signature="408:520" ph="{...}" />
-            <marker date="1528802265587" expanded="true" signature="581:646" ph="{...}" />
-            <marker date="1528802265587" expanded="false" signature="655:2591" ph="/* private IEnumerator MoveToTarget(Vector3 target) ... */" />
-            <marker date="1528802265587" expanded="true" signature="2660:2843" ph="{...}" />
-            <marker date="1528802265587" expanded="true" signature="2896:3227" ph="{...}" />
-            <marker date="1528802265587" expanded="true" signature="2949:3071" ph="{...}" />
-            <marker date="1528802265587" expanded="true" signature="3115:3217" ph="{...}" />
-            <marker date="1528802265587" expanded="true" signature="3278:3444" ph="{...}" />
-            <marker date="1528802265587" expanded="true" signature="3332:3434" ph="{...}" />
-            <marker date="1528802265587" expanded="true" signature="3465:3529" ph="{...}" />
+            <marker date="1532444148426" expanded="false" signature="6:97" ph="..." />
+            <marker date="1532444148426" expanded="true" signature="156:715" ph="{...}" />
+            <marker date="1532444148426" expanded="true" signature="234:342" ph="{...}" />
+            <marker date="1532444148426" expanded="true" signature="345:707" ph="..." />
           </folding>
         </state>
       </provider>

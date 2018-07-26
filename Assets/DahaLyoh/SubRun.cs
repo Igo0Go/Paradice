@@ -8,6 +8,7 @@ public class SubRun : MonoBehaviour
 {
 	private CharacterController _NMA;
 	public Transform Glavtrans;
+	public GameObject go;
 
 	public NavMeshPath navPath;
 	
@@ -34,7 +35,8 @@ public class SubRun : MonoBehaviour
 
 	private void MoveToGlav()
 	{
-		_NMA.Move(((Glavtrans.position)-GetDistinationNacMech(transform.position)).normalized*5f*Time.deltaTime);
+		var pos = GetDistinationNacMech(transform.position);
+		_NMA.Move(-pos.normalized*5f*Time.deltaTime);
 
 
 	}
@@ -46,8 +48,10 @@ public class SubRun : MonoBehaviour
 		{
 			navPath.ClearCorners();
 			NavMesh.CalculatePath(transform.position, myHitik.position, NavMesh.AllAreas, navPath);
+			Instantiate(go, myHitik.position, Quaternion.identity);
 			if (navPath != null && navPath.corners.Length > 1)
 			{
+				
 				return navPath.corners[1];
 			}
 		}

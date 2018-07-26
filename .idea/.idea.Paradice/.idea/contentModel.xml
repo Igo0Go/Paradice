@@ -3,106 +3,151 @@
   <component name="ContentModelStore">
     <e p="C:\Users\Cuwor\.Rider2018.1\system\resharper-host\local\Transient\ReSharperHost\v12\SolutionCaches\_Paradice.432602986.00" t="ExcludeRecursive" />
     <e p="E:\0LL_PROJECTS\Unity_Projects\Paradice" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="CameraChenged.cs" t="Include" />
-        <e p="ControlWork" t="Include">
-          <e p="Scripts" t="Include">
-            <e p="BulletDestroy.cs" t="Include" />
-            <e p="GetBullets.cs" t="Include" />
-            <e p="GunDestroy.cs" t="Include" />
-            <e p="LookAndShoot.cs" t="Include" />
-            <e p="PlayerHealth.cs" t="Include" />
-            <e p="PlayerMove.cs" t="Include" />
-            <e p="Weapon.cs" t="Include" />
-          </e>
-        </e>
-        <e p="FromAssetStore" t="Include">
-          <e p="read me.txt" t="Include" />
-        </e>
-        <e p="Homeworks" t="Include">
-          <e p="Homework1.txt" t="Include" />
-          <e p="Homework2.txt" t="Include" />
-        </e>
-        <e p="Lessons" t="Include">
-          <e p="GetComponentMouse" t="Include">
-            <e p="ButtonScript.cs" t="Include" />
-            <e p="ButtonsPanelScript.cs" t="Include" />
-            <e p="ConveyorMainScript.cs" t="Include" />
-            <e p="ConveyorScript.cs" t="Include" />
-            <e p="IMechanic.cs" t="Include" />
-            <e p="PlayerCameraScript.cs" t="Include" />
-            <e p="SuperCube.cs" t="Include" />
-          </e>
-          <e p="Input" t="Include">
-            <e p="DroidScript.cs" t="Include" />
-          </e>
-          <e p="RaycastAnim" t="Include">
-            <e p="ConsoleScript.cs" t="Include" />
-            <e p="Jumper.cs" t="Include" />
-          </e>
-          <e p="RaycastParticle" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="DemonController.cs" t="Include" />
-              <e p="EnemyDamage.cs" t="Include" />
-              <e p="ForceReactor.cs" t="Include" />
-              <e p="ForceScript.cs" t="Include" />
-              <e p="ForceTech.cs" t="Include" />
-              <e p="NewRelictusController.cs" t="Include" />
-              <e p="PlatformForBox.cs" t="Include" />
+        <e p="DahaLyoh" t="Include">
+          <e p="AttackReactor.cs" t="Include" />
+          <e p="Debil.cs" t="Include" />
+          <e p="GlavRun.cs" t="Include" />
+          <e p="Nav" t="Include">
+            <e p="daHUI.cs" t="Include" />
+            <e p="Edit2.cs" t="Include" />
+            <e p="Editor" t="Include">
+              <e p="EDit.cs" t="Include" />
             </e>
           </e>
-          <e p="SilaArtema" t="Include">
+          <e p="ObjectsNavigation.cs" t="Include" />
+          <e p="RUN.cs" t="Include" />
+          <e p="SubRun.cs" t="Include" />
+          <e p="VPohod.cs" t="Include" />
+        </e>
+        <e p="Learning" t="Include">
+          <e p="ControlWork" t="Include">
             <e p="Scripts" t="Include">
-              <e p="FORCER.cs" t="Include" />
-              <e p="ForceReaction.cs" t="Include" />
-              <e p="MouseLook.cs" t="Include" />
-              <e p="Mover.cs" t="Include" />
+              <e p="BulletDestroy.cs" t="Include" />
+              <e p="GetBullets.cs" t="Include" />
+              <e p="GunDestroy.cs" t="Include" />
+              <e p="LookAndShoot.cs" t="Include" />
+              <e p="PlayerHealth.cs" t="Include" />
+              <e p="PlayerMove.cs" t="Include" />
+              <e p="Weapon.cs" t="Include" />
             </e>
           </e>
-          <e p="Transform" t="Include">
-            <e p="CubeCreator.cs" t="Include" />
-            <e p="LessonTransform.cs" t="Include" />
+          <e p="FromAssetStore" t="Include">
+            <e p="read me.txt" t="Include" />
           </e>
-          <e p="UICam" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="KeyTerminal.cs" t="Include" />
-              <e p="MissionPoint.cs" t="Include" />
-              <e p="NewConsoleScript.cs" t="Include" />
-              <e p="ObjectReactor.cs" t="Include" />
-              <e p="PortalScript.cs" t="Include" />
-              <e p="RelictusController.cs" t="Include" />
+          <e p="Homeworks" t="Include">
+            <e p="Homework1.txt" t="Include" />
+            <e p="Homework2.txt" t="Include" />
+          </e>
+          <e p="IgoGo" t="Include">
+            <e p="Homework1" t="Include">
+              <e p="PasteObject.cs" t="Include" />
+              <e p="TransformToObject.cs" t="Include" />
+            </e>
+            <e p="Homework2" t="Include">
+              <e p="ShooterScript.cs" t="Include" />
+              <e p="TargetReaction.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Lessons" t="Include">
+            <e p="GetComponentMouse" t="Include">
+              <e p="ButtonScript.cs" t="Include" />
+              <e p="ButtonsPanelScript.cs" t="Include" />
+              <e p="CameraChenged.cs" t="Include" />
+              <e p="ConveyorMainScript.cs" t="Include" />
+              <e p="ConveyorScript.cs" t="Include" />
+              <e p="IMechanic.cs" t="Include" />
+              <e p="PlayerCameraScript.cs" t="Include" />
+              <e p="SuperCube.cs" t="Include" />
+              <e p="Wheel.cs" t="Include" />
+            </e>
+            <e p="Input" t="Include">
+              <e p="DroidScript.cs" t="Include" />
+            </e>
+            <e p="Menu" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="CameraMoving.cs" t="Include" />
+                <e p="LoadingScript.cs" t="Include" />
+                <e p="MenuScene.cs" t="Include" />
+                <e p="MenuScript.cs" t="Include" />
+                <e p="PauseScript.cs" t="Include" />
+                <e p="SettingScript.cs" t="Include" />
+                <e p="VolumeScript.cs" t="Include" />
+              </e>
+            </e>
+            <e p="RaycastAnim" t="Include">
+              <e p="ConsoleScript.cs" t="Include" />
+              <e p="FinishScript.cs" t="Include" />
+              <e p="Jumper.cs" t="Include" />
+              <e p="TimerScript.cs" t="Include" />
+            </e>
+            <e p="RaycastParticle" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="DemonController.cs" t="Include" />
+                <e p="EnemyDamage.cs" t="Include" />
+                <e p="ForceReactor.cs" t="Include" />
+                <e p="ForceScript.cs" t="Include" />
+                <e p="ForceTech.cs" t="Include" />
+                <e p="NewRelictusController.cs" t="Include" />
+                <e p="PlatformForBox.cs" t="Include" />
+                <e p="ScoreScript.cs" t="Include" />
+              </e>
+            </e>
+            <e p="SilaArtema" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="FORCER.cs" t="Include" />
+                <e p="ForceReaction.cs" t="Include" />
+                <e p="MouseLook.cs" t="Include" />
+                <e p="Mover.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Transform" t="Include">
+              <e p="CubeCreator.cs" t="Include" />
+              <e p="LessonTransform.cs" t="Include" />
+            </e>
+            <e p="UICam" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="CamScript.cs" t="Include" />
+                <e p="FinishUI_Script.cs" t="Include" />
+                <e p="KeyTerminal.cs" t="Include" />
+                <e p="MissionPoint.cs" t="Include" />
+                <e p="NewConsoleScript.cs" t="Include" />
+                <e p="ObjectReactor.cs" t="Include" />
+                <e p="PortalScript.cs" t="Include" />
+                <e p="RelictusController.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Semen" t="Include">
+            <e p="Homework 1" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Creator.cs" t="Include" />
+                <e p="Move.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Homework 2" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="GunShoot.cs" t="Include" />
+                <e p="MouseRotate.cs" t="Include" />
+                <e p="Target.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Viktoria" t="Include">
+            <e p="Homework1" t="Include">
+              <e p="Les1.cs" t="Include" />
+              <e p="PrefabsCreator.cs" t="Include" />
+            </e>
+            <e p="Homework2" t="Include">
+              <e p="Bullet.cs" t="Include" />
+              <e p="FallingTarget.cs" t="Include" />
+              <e p="MouseMove2.cs" t="Include" />
+              <e p="ObjectMove.cs" t="Include" />
             </e>
           </e>
         </e>
-        <e p="Semen" t="Include">
-          <e p="Homework 1" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="Creator.cs" t="Include" />
-              <e p="Move.cs" t="Include" />
-            </e>
-          </e>
-          <e p="Homework 2" t="Include">
-            <e p="Scripts" t="Include">
-              <e p="GunShoot.cs" t="Include" />
-              <e p="MouseRotate.cs" t="Include" />
-              <e p="Target.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Viktoria" t="Include">
-          <e p="Homework1" t="Include">
-            <e p="Les1.cs" t="Include" />
-            <e p="PrefabsCreator.cs" t="Include" />
-          </e>
-          <e p="Homework2" t="Include">
-            <e p="Bullet.cs" t="Include" />
-            <e p="FallingTarget.cs" t="Include" />
-            <e p="MouseMove2.cs" t="Include" />
-            <e p="ObjectMove.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Wheel.cs" t="Include" />
       </e>
       <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
