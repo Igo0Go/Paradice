@@ -8,7 +8,7 @@ public class SubRun : MonoBehaviour
 {
 	private CharacterController _NMA;
 	public Transform Glavtrans;
-	public GameObject go;
+	//public GameObject go;
 
 	public NavMeshPath navPath;
 	
@@ -47,8 +47,8 @@ public class SubRun : MonoBehaviour
 		if (NavMesh.SamplePosition(request, out myHitik, 100, NavMesh.AllAreas))
 		{
 			navPath.ClearCorners();
-			NavMesh.CalculatePath(transform.position, myHitik.position, NavMesh.AllAreas, navPath);
-			Instantiate(go, myHitik.position, Quaternion.identity);
+			NavMesh.CalculatePath(transform.position,  Glavtrans.position, NavMesh.AllAreas, navPath);
+			Instantiate(Glavtrans, myHitik.position, Quaternion.identity);
 			if (navPath != null && navPath.corners.Length > 1)
 			{
 				
