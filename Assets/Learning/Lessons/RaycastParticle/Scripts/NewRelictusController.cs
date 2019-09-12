@@ -1,4 +1,8 @@
 ﻿using System.Collections;
+using System;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,9 +32,13 @@ public class NewRelictusController : MonoBehaviour
     public float MaxVert;
     public float MinVert;
     public float EnergyTime;
-    public int EnergySpeed;
+    public int EnergySpeedCurrent;
+    public int EnergySpeedDefault = 2;
+    public int EnergySpeedCharge = 10;
+    public int EnergySpeedDown = -5;
+    public int EnergyShootDown = 4;
+    public int ShootDelayMiliseconds = 500;
     public float WaitShootTime = 0;
-    public bool Reload;
     public bool Fast;
     public GameObject ShootParticle;
     public CamScript camScript;
@@ -45,13 +53,20 @@ public class NewRelictusController : MonoBehaviour
     private float _speed;
     private float _rotationX;
     private float _rotationY;
-    private bool _reforce;
+    private bool _reforce = false;
     private int _defaultLayerMask;
+
+    public float EnergyValue
+    {
+        get => Energy.value;
+        set => Energy.value = value;
+    }
+    public bool Reload = false;
 
 
     //гравитация
-    private float _grav;
-    private float _jumpSpeed;
+    private float _grav = -9.8f;
+    private float _jumpSpeed = 5;
     private float _vertSpeed;
 
     void Start()
@@ -62,29 +77,27 @@ public class NewRelictusController : MonoBehaviour
         VisorPanel.SetActive(false);
         _lineRendVisTime = new WaitForSeconds(WaitShootTime);
         LineRenderer.positionCount = 2;
-        _reforce = false;
-        Reload = false;
         Health.value = 100;
         _savePosition = transform.position;
         _speed = Speed;
+        EnergySpeedCurrent = EnergySpeedDefault;
         _anim = GetComponent<Animator>();
-        _grav = -9.8f;
-        _jumpSpeed = 5;
         InterfaceText.text = "Новая задача";
         Invoke("EmptyInterfaceText", 2);
-        Energy.value = 100;
-        EnergySpeed = 2;
+        EnergyValue = 100;
         _controller = GetComponent<CharacterController>();
         _rotationX = _rotationY = 0;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         foreach (var c in KeysImages)
-        {
             c.SetActive(false);
-        }
     }
-    
+
     void Update()
+    {
+        RelictusSet();
+    }
+    void FixedUpdate()
     {
         if (Time.timeScale > 0)
         {
@@ -92,35 +105,47 @@ public class NewRelictusController : MonoBehaviour
             {
                 Shoot();
                 RelictusMove();
-                Rotate();
                 MaxSpeed();
                 Visor();
             }
             else
-            {
                 FatlError();
-            }
             EnergyChanger();
         }
     }
 
+    void LateUpdate()
+    {
+        if (Time.timeScale > 0)
+            if (Health.value > 0)
+                Rotate();
+    }
+
+    float x, z;
+    bool y;
+    private void RelictusSet()
+    {
+        h = Input.GetAxis("Mouse X");
+        vert = Input.GetAxis("Mouse Y");
+        x = Input.GetAxis("Horizontal");
+        z = Input.GetAxis("Vertical");
+        y = Input.GetKeyDown(KeyCode.Space);
+        lS = Input.GetKey(KeyCode.LeftShift);
+        v = Input.GetKeyDown(KeyCode.V);
+        shoot = Input.GetMouseButtonDown(0);
+    }
     private void RelictusMove()
     {
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-        {
-            var x = Input.GetAxis("Horizontal");
-            var z = Input.GetAxis("Vertical");
-            _moveVector = transform.right * x + transform.forward * z;
+        _moveVector = transform.right * x + transform.forward * z;
+        if (x != 0 || z != 0)
             _anim.SetFloat("RunWalk", Mathf.Clamp(_moveVector.magnitude * _speed / (Speed * 2), 0, 1));
-        }
         else
-        {
             _anim.SetFloat("RunWalk", 0);
-        }
+
         if (_controller.isGrounded)
         {
             _vertSpeed = 0;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (y)
             {
                 _vertSpeed = _jumpSpeed;
                 EnergyTime = 0;
@@ -128,42 +153,40 @@ public class NewRelictusController : MonoBehaviour
         }
 
         _vertSpeed += _grav * Time.deltaTime;
+
         _moveVector = new Vector3(_moveVector.x * _speed * Time.fixedDeltaTime, _vertSpeed * Time.deltaTime,
             _moveVector.z * _speed * Time.fixedDeltaTime);
+
         if (_moveVector != Vector3.zero)
-        {
             _controller.Move(_moveVector);
-        }
 
     }
-
+    float h, vert;
     private void Rotate()
     {
-        if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+        if (h != 0 || vert != 0)
         {
-            var h = Input.GetAxis("Mouse X");
-            var v = Input.GetAxis("Mouse Y");
             _rotationX = transform.localEulerAngles.y + h * RotateSpeed;
-            _rotationY += v * RotateSpeed;
+            _rotationY += vert * RotateSpeed;
             _rotationY = Mathf.Clamp(_rotationY, MinVert, MaxVert);
             transform.localEulerAngles = new Vector3(-_rotationY, _rotationX, 0);
         }
     }
-
+    bool lS;
     private void MaxSpeed()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && _anim.GetFloat("RunWalk") > 0 && !_reforce)
+        if (lS && _anim.GetFloat("RunWalk") > 0 && !_reforce)
         {
             Fast = true;
             _speed = Speed * 2;
-            EnergySpeed = -5;
+            EnergySpeedCurrent = EnergySpeedDown;
             EnergyTime = 0;
         }
         else
         {
             Fast = false;
             _speed = Speed;
-            EnergySpeed = 1;
+            EnergySpeedCurrent = EnergySpeedDefault;
         }
     }
 
@@ -172,9 +195,7 @@ public class NewRelictusController : MonoBehaviour
         _anim.SetTrigger("Fatal");
         Cursor.lockState = CursorLockMode.None;
         if (Input.anyKeyDown)
-        {
             pauseScript.RetryButtonClick();
-        }
     }
 
     public void GetSpecKey(ObjectForMission key)
@@ -183,23 +204,23 @@ public class NewRelictusController : MonoBehaviour
         switch (key)
         {
             case ObjectForMission.GreenKey:
-            {
-                KeysImages[0].SetActive(true);
-                Keys.Add(key);
-                break;
-            }
+                {
+                    KeysImages[0].SetActive(true);
+                    Keys.Add(key);
+                    break;
+                }
             case ObjectForMission.YellowKey:
-            {
-                KeysImages[1].SetActive(true);
-                Keys.Add(key);
-                break;
-            }
+                {
+                    KeysImages[1].SetActive(true);
+                    Keys.Add(key);
+                    break;
+                }
             case ObjectForMission.RedKey:
-            {
-                KeysImages[2].SetActive(true);
-                Keys.Add(key);
-                break;
-            }
+                {
+                    KeysImages[2].SetActive(true);
+                    Keys.Add(key);
+                    break;
+                }
         }
     }
 
@@ -208,33 +229,33 @@ public class NewRelictusController : MonoBehaviour
         switch (key)
         {
             case ObjectForMission.GreenKey:
-            {
-                KeysImages[0].SetActive(false);
-                Keys.Remove(key);
-                break;
-            }
+                {
+                    KeysImages[0].SetActive(false);
+                    Keys.Remove(key);
+                    break;
+                }
             case ObjectForMission.YellowKey:
-            {
-                KeysImages[1].SetActive(false);
-                Keys.Remove(key);
-                break;
-            }
+                {
+                    KeysImages[1].SetActive(false);
+                    Keys.Remove(key);
+                    break;
+                }
             case ObjectForMission.RedKey:
-            {
-                KeysImages[2].SetActive(false);
-                Keys.Remove(key);
-                break;
-            }
+                {
+                    KeysImages[2].SetActive(false);
+                    Keys.Remove(key);
+                    break;
+                }
         }
     }
-
+    bool v;
     public void Visor()
     {
         if (VisorPanel.activeSelf)
         {
-            Energy.value -= 0.1f;
+            EnergyValue -= 0.1f;
             EnergyTime = 0;
-            if(Energy.value <= 0)
+            if (EnergyValue <= 0)
             {
                 VisorPanel.SetActive(false);
             }
@@ -247,7 +268,7 @@ public class NewRelictusController : MonoBehaviour
         {
             Cam.cullingMask = _defaultLayerMask;
         }
-        if (Input.GetKeyDown(KeyCode.V))
+        if (v)
         {
             VisorPanel.SetActive(!VisorPanel.activeSelf);
         }
@@ -255,10 +276,7 @@ public class NewRelictusController : MonoBehaviour
 
     public void MakeSound()
     {
-        if(ShootSound != null)
-        {
-            ShootSound.Invoke(transform.position);
-        }
+        ShootSound?.Invoke(transform.position);
     }
 
     public void EmptyInterfaceText()
@@ -266,31 +284,36 @@ public class NewRelictusController : MonoBehaviour
         InterfaceText.text = string.Empty;
     }
 
-//выстрелы НАЧАЛО
-    private void Shoot()
+    //выстрелы НАЧАЛО
+    bool shoot;
+    private async void Shoot()
     {
-        if (Input.GetMouseButtonDown(0) && !Reload && Energy.value > 15)
+        if (shoot && !Reload && EnergyValue > EnergyShootDown)
         {
+            Reload = true;
             MakeSound();
-            Energy.value -= 12;
+            EnergyValue -= EnergyShootDown;
             _anim.SetFloat("RunWalk", 0);
             _anim.SetTrigger("Shoot");
             EnergyTime = 0;
             DrowShoot();
+            await Delay(ShootDelayMiliseconds, delegate { Reload = false; });
         }
+    }
+
+    private async Task Delay(int miliseconddelay,Action action)
+    {
+        await Task.Delay(miliseconddelay);
+        action.Invoke();
+        return;
     }
 
     private void DrowShoot()
     {
         Ray ray = new Ray(GunEnd.position, transform.forward);
-        RaycastHit hit;
 
-        //Debug.DrawRay(transform.position, transform.forward * 10, Color.magenta, 0.2f);
-
-        if (Physics.Raycast(ray, out hit, 1000, ~(1 << 2)))
-        {
+        if (Physics.Raycast(ray, out RaycastHit hit, 1000, ~(1 << 2)))
             MakeShoot(hit.point, -hit.normal, hit.collider.GetComponent<Rigidbody>(), hit);
-        }
     }
 
     private void MakeShoot(Vector3 shootPoint, Vector3 shootForce, Rigidbody targetRb, RaycastHit hit)
@@ -311,8 +334,8 @@ public class NewRelictusController : MonoBehaviour
 
     private void TargetDamage(GameObject hit)
     {
-        
-        if(hit.tag.Equals("Bullet"))
+
+        if (hit.tag.Equals("Bullet"))
         {
             EnemyDamage ED = hit.GetComponent<EnemyDamage>();
             Animator anim = hit.GetComponent<Animator>();
@@ -342,7 +365,7 @@ public class NewRelictusController : MonoBehaviour
             hit.GetComponent<Animator>().SetInteger("Active", 1);
         }
     }
-    
+
     public void ClearShootTrace()
     {
         LineRenderer.enabled = false;
@@ -352,35 +375,35 @@ public class NewRelictusController : MonoBehaviour
         yield return _lineRendVisTime;
         ClearShootTrace();
     }
-    
+
     private IEnumerator ShootPart(Vector3 shootPoint)
     {
-        GameObject obj = Instantiate(ShootParticle,shootPoint, Quaternion.identity);
+        GameObject obj = Instantiate(ShootParticle, shootPoint, Quaternion.identity);
         yield return new WaitForSeconds(1);
         Destroy(obj);
     }
 
 
-// Выстрелы КОНЕЦ
+    // Выстрелы КОНЕЦ
 
     private void EnergyChanger()
     {
         if (EnergyTime < 2)
         {
             EnergyTime += Time.deltaTime;
-            Energy.value += EnergySpeed * Time.deltaTime;
+            EnergyValue += EnergySpeedCurrent * Time.deltaTime;
         }
         else
         {
-            EnergySpeed = 7;
-            Energy.value += EnergySpeed * Time.deltaTime;
+            EnergySpeedCurrent = EnergySpeedCharge;
+            EnergyValue += EnergySpeedCurrent * Time.deltaTime;
         }
 
-        if (Energy.value == 0)
+        if (EnergyValue == 0)
         {
             _reforce = true;
         }
-        else if (Energy.value <= 15)
+        else if (EnergyValue <= 15)
         {
             EnergyFill.SetBool("Fill", false);
         }
@@ -390,11 +413,11 @@ public class NewRelictusController : MonoBehaviour
             EnergyFill.SetBool("Fill", true);
         }
     }
-   
+
     private void OnTriggerEnter(Collider other)
     {
 
-        if(other.tag.Equals("Gun"))
+        if (other.tag.Equals("Gun"))
         {
             _score.Score -= 5;
             Health.value -= 40;
@@ -412,15 +435,15 @@ public class NewRelictusController : MonoBehaviour
             transform.position = _savePosition;
             //_camAnim.SetTrigger("Portal");
             camScript.ChangeAnimFieldOfView(162);
-            Energy.value -= 50;
-            EnergySpeed = 0;
+            EnergyValue -= 50;
+            EnergySpeedCurrent = 0;
             EnergyTime = 0;
             Health.value -= 7;
         }
         if (other.tag.Equals("Rifle"))
         {
             _score.Score += 5;
-            Energy.value += 5;
+            EnergyValue += 5;
             Destroy(other.gameObject);
         }
         if (other.tag.Equals("CameraChenger"))
@@ -446,7 +469,7 @@ public class NewRelictusController : MonoBehaviour
         if (other.tag.Equals("SavePoint"))
         {
             Health.value += 10 * Time.deltaTime;
-            Energy.value += 5 * Time.deltaTime;
+            EnergyValue += 5 * Time.deltaTime;
             EnergyTime = 0;
         }
     }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RelictusController : MonoBehaviour {
+public class RelictusController : MonoBehaviour
+{
 
     public List<ObjectForMission> Keys;
     public List<GameObject> KeysImages;
@@ -18,7 +19,7 @@ public class RelictusController : MonoBehaviour {
     public float RotateSpeed;
     public float MaxVert;
     public float MinVert;
-    public int EnergySpeed;
+    public int EnergySpeed = 1;
     public CamScript camScript;
 
     private CharacterController _controller;
@@ -34,7 +35,8 @@ public class RelictusController : MonoBehaviour {
     private float _jumpSpeed;
     private float _vertSpeed;
 
-    void Start() {
+    void Start()
+    {
         _savePosition = transform.position;
         _speed = Speed;
         _anim = GetComponent<Animator>();
@@ -43,25 +45,37 @@ public class RelictusController : MonoBehaviour {
         MissionText.text = "Доберитесь до медецинского отсека";
         InterfaceText.text = string.Empty;
         Energy.value = 100;
-        EnergySpeed = 1;
         _controller = GetComponent<CharacterController>();
         _rotationX = _rotationY = 0;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         foreach (var c in KeysImages)
-        {
             c.SetActive(false);
-        }
     }
 
-    void Update() {
+    float x, z;
+    bool y, lS;
+    private void RelictusSet()
+    {
+        x = Input.GetAxis("Horizontal");
+        z = Input.GetAxis("Vertical");
+        y = Input.GetKeyDown(KeyCode.Space);
+        lS = Input.GetKey(KeyCode.LeftShift);
+        //v = Input.GetKeyDown(KeyCode.V);
+        //shoot = Input.GetMouseButtonDown(0);
+    }
+    private void Update()
+    {
+        RelictusSet();
+    }
+    void FixedUpdate()
+    {
         if (Time.timeScale > 0)
         {
             if (Energy.value > 0)
             {
                 Energy.value -= EnergySpeed * Time.deltaTime;
                 RelictusMove();
-                Rotate();
                 MaxSpeed();
             }
             else
@@ -70,24 +84,25 @@ public class RelictusController : MonoBehaviour {
             }
         }
     }
-
+    private void LateUpdate()
+    {
+        if (Time.timeScale > 0)
+            if (Energy.value > 0)
+                Rotate();
+    }
     private void RelictusMove()
     {
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-        {
-            var x = Input.GetAxis("Horizontal");
-            var z = Input.GetAxis("Vertical");
-            _moveVector = transform.right * x + transform.forward * z;
+        _moveVector = transform.right * x + transform.forward * z;
+
+        if (x != 0 || z != 0)
             _anim.SetFloat("RunWalk", Mathf.Clamp(_moveVector.magnitude * _speed / 24, 0, 1));
-        }
         else
-        {
             _anim.SetFloat("RunWalk", 0);
-        }
+
         if (_controller.isGrounded)
         {
             _vertSpeed = 0;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (y)
             {
                 _vertSpeed = _jumpSpeed;
                 Energy.value -= 1;
@@ -164,11 +179,11 @@ public class RelictusController : MonoBehaviour {
         {
             MissionPoint MP = other.GetComponent<MissionPoint>();
             MissionText.text = MP.Message;
-            if(MP.Clip != null)
+            if (MP.Clip != null)
             {
                 Music.clip = MP.Clip;
             }
-           
+
             Destroy(other.gameObject);
         }
         if (other.tag.Equals("FallingTarget"))
@@ -191,7 +206,7 @@ public class RelictusController : MonoBehaviour {
         }
         if (other.tag.Equals("Look"))
         {
-            if(other.GetComponent<NewConsoleScript>().Connect)
+            if (other.GetComponent<NewConsoleScript>().Connect)
             {
                 InterfaceText.text = "Чтобы использовать консоль, нажмите E";
                 Connect.SetBool("Active", true);
@@ -318,7 +333,7 @@ public class RelictusController : MonoBehaviour {
 
     private void MaxSpeed()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && _anim.GetFloat("RunWalk") > 0)//sad
+        if (lS && _anim.GetFloat("RunWalk") > 0)//sad
         {
             _speed = Speed * 2;
             EnergySpeed = 5;
