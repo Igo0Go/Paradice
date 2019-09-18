@@ -50,7 +50,8 @@ public class FinishUI_Script : MonoBehaviour
         Error.SetActive(true);
         Goal.SetActive(true);
         finishPanel.SetActive(false);
-        textName.text = LoadLevel.namePlayer + ", " + textName.text;
+        if (textName != null)
+            textName.text = LoadLevel.namePlayer + ", " + textName?.text;
         _relictusController = gameObject.GetComponent<RelictusController>();
     }
 
