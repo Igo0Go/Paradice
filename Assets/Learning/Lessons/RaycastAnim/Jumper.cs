@@ -11,7 +11,7 @@ public class Jumper : MonoBehaviour {
     public float ForceJump;
     public float ForceGrav;
     public float Speed;
-
+    public bool onGround = false;
     private Vector3 _moveVector;
     private Vector3 _standartCamPos;
     private Vector3 _camOfset;
@@ -41,46 +41,25 @@ public class Jumper : MonoBehaviour {
         _controller = GetComponent<CharacterController>();
     }
 
-   
-    private void FixedUpdate()
+    private void Update()
     {
         Cam.transform.LookAt(transform.position);
+        h = Input.GetAxis("Horizontal");
+        v = Input.GetAxis("Vertical");
+        j = Input.GetKeyDown(KeyCode.Space);
+    }
+    private void FixedUpdate()
+    {
         Move();
         CamMove();
     }
-
-    //private void Jump()
-    //{
-    //    _rigidbody.AddForce(Vector3.up * ForceJump, ForceMode.Impulse);
-    //}
-
-    //private void MoveJumper()
-    //{
-    //    if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
-    //    {
-    //        var x = Input.GetAxis("Horizontal");
-    //        var z = Input.GetAxis("Vertical");
-    //        _moveVector = Cam.transform.right * x + Cam.transform.forward * z;
-    //        _moveVector = new Vector3(_moveVector.x, 0, _moveVector.z);
-    //        if (_moveVector != Vector3.zero)
-    //        {
-    //            _anim.SetBool("Move", true);
-    //            transform.position += _moveVector.normalized*Speed*Time.fixedDeltaTime;
-    //            transform.forward = _moveVector.normalized;
-    //        }
-    //    }
-    //    else
-    //    {
-    //        _anim.SetBool("Move", false);
-    //    }
-    //}
+    float h, v;
+    bool j;
     private void Move()
     {
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
+        if (h != 0 || v != 0)
         {
-            var x = Input.GetAxis("Horizontal");
-            var z = Input.GetAxis("Vertical");
-            _moveVector = Cam.transform.right * x + Cam.transform.forward * z;
+            _moveVector = Cam.transform.right * h + Cam.transform.forward * v;
             _moveVector = new Vector3(_moveVector.x, 0, _moveVector.z);
             if (_moveVector != Vector3.zero)
             {
@@ -93,16 +72,17 @@ public class Jumper : MonoBehaviour {
         {
             _anim.SetBool("Move", false);
         }
+        onGround = Physics.Linecast(transform.position, transform.position + Physics.gravity.normalized * 1.5f, out var hit);
         if (_controller.isGrounded)
         {
             _vertSpeed = 0;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (j)
             {
                 _vertSpeed = _jumpSpeed;
             }
         }
-        _vertSpeed += _grav * Time.deltaTime;
-        _moveVector = new Vector3(_moveVector.x * _speed * Time.fixedDeltaTime, _vertSpeed * Time.deltaTime,
+        _vertSpeed += _grav * Time.fixedDeltaTime;
+        _moveVector = new Vector3(_moveVector.x * _speed * Time.fixedDeltaTime, _vertSpeed * Time.fixedDeltaTime,
             _moveVector.z * _speed * Time.fixedDeltaTime);
         if (_moveVector != Vector3.zero)
         {

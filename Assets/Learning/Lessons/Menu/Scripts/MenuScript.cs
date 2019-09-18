@@ -219,7 +219,7 @@ public class MenuScript : MonoBehaviour {
     private Animator[] _templeNombers;
 
     private SelectLevel[] _selectLevels;
-    private bool _go;
+    private bool _go = false;
     private int _right;
     private Transform _target;
     private Vector3 _vectorToTarget;

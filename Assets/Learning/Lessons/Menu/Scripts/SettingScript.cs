@@ -33,6 +33,7 @@ public class SettingScript : MonoBehaviour {
         musicSlider.onValueChanged.AddListener(delegate { MusicSliderValueChanged(); });
         soundSlider.onValueChanged.AddListener(delegate { SoundSliderValueChanged(); });
         particalToggle.onValueChanged.AddListener(delegate { ParticalToggleChanged(); });
+        ParticalToggleChanged();
         dropdownTypeLevel.onValueChanged.AddListener(delegate { TypeLevelValueChanged(); });
         fieldOfViewSlider.onValueChanged.AddListener(delegate { FieldOfViewSliderValueChanged(); });
     }
