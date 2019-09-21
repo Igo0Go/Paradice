@@ -6,18 +6,12 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-public static class UIRecordTable
-{
-    public static List<WriteTableRecord> Records { get; set; }
 
-    public static void Create()
-    {
-        Records = new List<WriteTableRecord>();
-    }
-}
-//
 public class FinishUI_Script : MonoBehaviour
 {
+    public ScoreData score;
+    public int index;
+
     public PauseScript pauseScript;
     public GameObject finishPanel;
     public GameObject Error;
@@ -37,12 +31,11 @@ public class FinishUI_Script : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         pauseScript.enabled = false;
-        if (UIRecordTable.Records == null)
-        {
-            UIRecordTable.Create();
-        }
-        UIRecordTable.Records.Add(new WriteTableRecord(LoadLevel.namePlayer, _relictusController.Energy.value));
+
+        score.scores[index].Add(new ScoreField() { name = LoadLevel.namePlayer, score = _relictusController.Energy.value });
+        score.Save();
         _relictusController.Energy.value = 100;
+
     }
 
     private void Start()

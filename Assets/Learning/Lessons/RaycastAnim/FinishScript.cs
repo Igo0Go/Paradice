@@ -6,34 +6,11 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
-public class WriteTableRecord
-{
-    [SerializeField]
-    public string Name { get; private set; }
-    [SerializeField]
-    public float Result { get; private set; }
-
-    public WriteTableRecord(string name, float result)
-    {
-        Name = name;
-        Result = result;
-    }
-}
-
-public static class JumperRecordTable
-{
-    public static List<WriteTableRecord> Records { get; set; }
-
-    public static void Create()
-    {
-        Records = new List<WriteTableRecord>();
-    }
-
-}
-
 public class FinishScript : MonoBehaviour
 {
+    public ScoreData score;
+    public int index;
+
     public PauseScript pauseScript;
 
     public GameObject finishPanel;
@@ -97,12 +74,9 @@ public class FinishScript : MonoBehaviour
         timeText.text = _time.ToString();
         nameText.text = LoadLevel.namePlayer + ", " + nameText.text;
         pauseScript.enabled = false;
-        if (JumperRecordTable.Records == null)
-        {
-            JumperRecordTable.Create();
-        }
-        JumperRecordTable.Records.Add(new WriteTableRecord(LoadLevel.namePlayer, _time));
 
+        score.scores[index].Add(new ScoreField() { name = LoadLevel.namePlayer, score = _time });
+        score.Save();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public static class LoadLevel
 {
+    public const int countChallenge = 3;
+
     public static event VolumeHelper VolumeChanged;
     public static event ParticalHelper ParticalChanged;
     public static event CameraHelper FieldOfViewChanged;
@@ -198,6 +200,7 @@ public class MenuScript : MonoBehaviour {
     public GameObject gamePanel;
     public GameObject settingPanel;
     public GameObject controlPanel;
+    public GameObject scorePanel;
 
     public GameObject minionGate;
     public GameObject simulationGate;
@@ -251,6 +254,12 @@ public class MenuScript : MonoBehaviour {
         controlPanel.SetActive(true);
     }
 
+    public void ScoreButtonClick()
+    {
+        mainPanel.SetActive(false);
+        scorePanel.SetActive(true);
+    }
+
     public void ExitButtonClick()
     {
         Application.Quit();
@@ -260,6 +269,12 @@ public class MenuScript : MonoBehaviour {
     {
         mainPanel.SetActive(true);
         settingPanel.SetActive(false);
+    }
+
+    public void BackScoreButtonClick()
+    {
+        mainPanel.SetActive(true);
+        scorePanel.SetActive(false);
     }
 
     public void BackGameButtonClick()
@@ -308,6 +323,7 @@ public class MenuScript : MonoBehaviour {
         mainPanel.SetActive(true);
         settingPanel.SetActive(false);
         controlPanel.SetActive(false);
+        scorePanel.SetActive(false);
 
         _minionGate = minionGate.GetComponent<Animator>();
         _simulationGate = simulationGate.GetComponent<Animator>();

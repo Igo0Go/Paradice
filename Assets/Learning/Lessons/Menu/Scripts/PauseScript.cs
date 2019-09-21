@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PauseScript : MonoBehaviour {
+public class PauseScript : MonoBehaviour
+{
 
     public GameObject pausePanel;
     public GameObject settingPanel;
 
     private AsyncOperation _asyncOperation;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         pausePanel.SetActive(false);
         settingPanel.SetActive(false);
         Time.timeScale = 1;
@@ -19,10 +21,11 @@ public class PauseScript : MonoBehaviour {
         _asyncOperation.allowSceneActivation = false;
         LoadLevel.name = SceneManager.GetActiveScene().name;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape))
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pausePanel.activeSelf)
             {

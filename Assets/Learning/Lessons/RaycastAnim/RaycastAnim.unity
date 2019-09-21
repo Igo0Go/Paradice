@@ -1586,6 +1586,11 @@ PrefabInstance:
       propertyPath: nameText
       value: 
       objectReference: {fileID: 1308988112}
+    - target: {fileID: 1935230867, guid: 2eb1bd5e7b33c484a832ce36ad6cb9fb, type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 1eab6f186c1ef59428e2537e07c20725,
+        type: 2}
     - target: {fileID: 114743467235122638, guid: 2eb1bd5e7b33c484a832ce36ad6cb9fb,
         type: 3}
       propertyPath: pauseScript

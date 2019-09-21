@@ -15907,6 +15907,17 @@ PrefabInstance:
       propertyPath: textScore
       value: 
       objectReference: {fileID: 660487457}
+    - target: {fileID: 114826239162452466, guid: 0b03bb0982d52b94fbdd8ae4c23550eb,
+        type: 3}
+      propertyPath: score
+      value: 
+      objectReference: {fileID: 11400000, guid: 1eab6f186c1ef59428e2537e07c20725,
+        type: 2}
+    - target: {fileID: 114826239162452466, guid: 0b03bb0982d52b94fbdd8ae4c23550eb,
+        type: 3}
+      propertyPath: index
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 593411561134635688, guid: 0b03bb0982d52b94fbdd8ae4c23550eb,
         type: 3}
       propertyPath: pausePanel

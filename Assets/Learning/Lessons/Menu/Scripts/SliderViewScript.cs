@@ -7,6 +7,7 @@ public class SliderViewScript : MonoBehaviour
 {
     public Text text;
     public Slider slider;
+
     // Start is called before the first frame update
     void Start()
     {

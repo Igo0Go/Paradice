@@ -3,18 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public static class RaycastRecordTable
-{
-    public static List<WriteTableRecord> Records { get; set; }
-
-    public static void Create()
-    {
-        Records = new List<WriteTableRecord>();
-    }
-}
-
 public class ScoreScript : MonoBehaviour
 {
+    public ScoreData score;
+    public int index;
+
     public PauseScript pauseScript;
     public GameObject finishPanel;
     public GameObject scorePanel;
@@ -63,11 +56,9 @@ public class ScoreScript : MonoBehaviour
         finishPanel.SetActive(true);
         pauseScript.enabled = false;
         scoreTextFinish.text = (Score + Timer).ToString();
-        if (RaycastRecordTable.Records == null)
-        {
-            RaycastRecordTable.Create();
-        }
-        RaycastRecordTable.Records.Add(new WriteTableRecord(LoadLevel.namePlayer, Score + Timer));
+
+        score.scores[index].Add(new ScoreField() { name = LoadLevel.namePlayer, score = Score + Timer });
+        score.Save();
     }
 
     void Start()
